@@ -99,6 +99,10 @@ export const quickAccessLinks = [
 
 **Rule:** `portalPath` is `null` when a real deep link exists. When only the portal root is available, `href` is `https://portal.suss.edu.sg` and `portalPath` contains the navigation hint (e.g. `"Login → E-Services → Graduation Filing"`). Deep links will be substituted in future iterations as they are confirmed through user testing.
 
+**Exception:** Contact/info cards (e.g. Student Support, IT Service Desk) may use `href: "https://portal.suss.edu.sg"` with `portalPath: null` when the link is a general portal entry point and the key information (phone number, hours) is in the description itself. These cards do not require a navigation path hint.
+
+**Cross-category duplication policy:** Some links intentionally appear in multiple categories (e.g. Discussion Room Booking in both Library and Facilities; SSG Funding in both Admin and Financial). This is by design — users approaching from different mental models should find the same resource. Descriptions may differ slightly between appearances to match the context of the category. Deduplication is not required.
+
 ### Known direct deep links (confirmed)
 
 | Link name | URL |
@@ -111,6 +115,8 @@ export const quickAccessLinks = [
 
 All others currently point to `https://portal.suss.edu.sg` with a `portalPath` hint.
 
+**Canvas-proxied links:** iSmart-Guide and Panopto do not have standalone public URLs — they are accessed via the Canvas left navigation panel. Both intentionally link to `https://canvas.suss.edu.sg` with `portalPath: null`. Their descriptions make this clear to users.
+
 ---
 
 ## 5. Components
@@ -119,13 +125,16 @@ All others currently point to `https://portal.suss.edu.sg` with a `portalPath` h
 - Sticky, navy (`#002147`) background, white text
 - Left: site name "SUSS Links"
 - Right: dark mode toggle (sun/moon Lucide icon) + "Home" back button (shown on category pages only)
-- Dark mode toggle switches `dark` class on `<html>` and persists to `localStorage`
+- Dark mode toggle writes/removes `dark` class on `document.documentElement` and persists choice to `localStorage`
+- The Navbar does NOT read localStorage on mount — that init logic lives in `main.jsx` (see Section 7)
 
 ### `SearchBar`
 - Rendered in the hero section on the landing page only
 - Client-side filter across all categories' `links[]`, matching `name` and `description` (case-insensitive)
-- Results render as a flat `LinkCard` list beneath the bar, replacing the category grid
-- Clearing the input restores the normal landing view
+- Results render as a flat `LinkCard` list beneath the bar, replacing the category grid and QuickAccess strip
+- **Empty query:** category grid and QuickAccess strip are shown normally (no search state active)
+- **Query with no matches:** show a "No results for '[query]'" message in place of the grid; QuickAccess strip remains hidden
+- Clearing the input restores the full landing view
 
 ### `QuickAccess`
 - Horizontal strip of 6 large icon buttons
@@ -149,12 +158,17 @@ All others currently point to `https://portal.suss.edu.sg` with a `portalPath` h
 - Full-width, navy background, white text
 - Title: "Discussion Room Booking", subtitle: "Check live availability", CTA arrow link to `https://suss.libcal.com/spaces`
 - Visually distinct — not part of the standard card grid
+- `CategoryPage` renders it via a hardcoded `slug === "library"` check; no extensibility to other categories is required in this version
 
 ### `FeedbackForm`
 - At the bottom of the landing page
 - Fields: Name (optional text input), Suggestion or feedback (required textarea)
 - POSTs to `https://formspree.io/f/REPLACE_WITH_YOUR_ID` via fetch
-- Manages three UI states: idle, submitting, success/error
+- Manages four UI states:
+  - **idle:** form is shown, submit button enabled
+  - **submitting:** submit button shows a spinner, inputs are disabled
+  - **success:** form fields are hidden; show a green confirmation message "Thanks for your feedback!"
+  - **error:** form fields remain visible and pre-filled; show a red error message "Something went wrong. Please try again." with the submit button re-enabled
 
 ### `Footer`
 - Static text: "Made for SUSS students, by SUSS students. This is an unofficial student project and is not affiliated with SUSS."
@@ -178,7 +192,7 @@ Renders in order:
 - Renders: `Navbar` (with back button), page title, and:
   - If slug is `library`: `FeaturedCard` then link grid
   - Otherwise: link grid only
-- 404-style message if slug is unrecognised
+- **Unrecognised slug:** renders `Navbar` + a centred message "Page not found" with a "Go back home" React Router `<Link>` to `/`. No HTTP 404 status is set (SPA limitation — static host always returns 200).
 
 ---
 
