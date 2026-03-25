@@ -108,6 +108,10 @@ export const quickAccessLinks = [
 }
 ```
 
+**`href` permitted values:**
+1. An HTTPS URL (direct deep link or portal root)
+2. `mailto:` URI — used for email contact entries (e.g. `mailto:students@suss.edu.sg`). `LinkCard` renders these identically to HTTPS links (`target="_blank"` is harmless on `mailto:` and is applied uniformly). No special UI treatment.
+
 **Rule:** `portalPath` is `null` when a real deep link exists. When only the portal root is available, `href` is `https://portal.suss.edu.sg` and `portalPath` contains the navigation hint (e.g. `"Login → E-Services → Graduation Filing"`). Deep links will be substituted in future iterations as they are confirmed through user testing.
 
 **Exception:** Contact/info cards (e.g. Student Support, IT Service Desk) may use `href: "https://portal.suss.edu.sg"` with `portalPath: null` when the link is a general portal entry point and the key information (phone number, hours) is in the description itself. These cards do not require a navigation path hint. `LinkCard` behaviour is unchanged — clicking opens the portal root in a new tab. The description is the primary value of these entries, not the link destination.
@@ -147,6 +151,7 @@ All others currently point to `https://portal.suss.edu.sg` with a `portalPath` h
   - With matches: render a flat `LinkCard` list beneath the bar
   - With no matches: show a "No results for '[query]'" message in place of the list
 - Clearing the input restores the full default landing view
+- Search covers `categories[].links[]` only. `quickAccessLinks` entries are **not** searched separately — however, items that also appear in a category's `links[]` (e.g. iSmart-Guide, Canvas) will surface naturally via the category data.
 
 ### `QuickAccess`
 - Horizontal strip of 6 large icon buttons
@@ -196,7 +201,7 @@ Renders in order:
 1. `Navbar`
 2. Hero section — title "All your SUSS portals in one place" + `SearchBar`
 3. `QuickAccess` strip
-4. Category grid (8 × `CategoryCard`) — hidden when search has results
+4. Category grid (8 × `CategoryCard`) — hidden when search query is non-empty
 5. `FeedbackForm`
 6. `Footer`
 
@@ -230,7 +235,12 @@ darkMode: "class",
 
 ### Dark Mode
 - Toggle in Navbar writes `dark` / removes `dark` from `document.documentElement.classList`
-- Preference persisted to `localStorage` and read on initial load in `main.jsx`
+- Preference persisted to `localStorage` under the key `"theme"` (`"dark"` or `"light"`)
+- **Init in `main.jsx`** (runs before React renders, prevents flash of wrong theme):
+  ```js
+  const saved = localStorage.getItem("theme")
+  if (saved === "dark") document.documentElement.classList.add("dark")
+  ```
 - Dark palette: `gray-950` page background, `gray-900` cards, `gray-100` text
 - Navbar in dark mode: `gray-900` background
 
@@ -271,7 +281,8 @@ No other Vercel configuration needed — Vite builds to `dist/` which Vercel det
 | View Curriculum Plan | Track degree progress | https://portal.suss.edu.sg | Login → E-Services → View Curriculum Plan |
 | Student Academic Progression | Monitor progression status | https://portal.suss.edu.sg | Login → E-Services → Student Academic Progression |
 | Course Material Contents Checklist | Check materials for your courses | https://portal.suss.edu.sg | Login → Course Material Contents Checklist |
-| Panopto | Replay recorded lectures | https://canvas.suss.edu.sg | null |
+| Panopto | Replay recorded lectures — accessible via Canvas left nav | https://canvas.suss.edu.sg | null |
+| iSmart-Guide | Study guide tools — accessible via Canvas left nav | https://canvas.suss.edu.sg | null |
 
 ### 2. Admin and E-Services
 | Name | Description | href | portalPath |
