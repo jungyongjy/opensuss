@@ -55,7 +55,18 @@ React Router v6, client-side only.
 | `/` | `Home.jsx` | Landing page |
 | `/category/:slug` | `CategoryPage.jsx` | Generic, driven by slug |
 
-Valid slugs: `academics`, `admin`, `library`, `career`, `financial`, `facilities`, `forms`, `notices`.
+Explicit slug-to-category mapping (authoritative):
+
+| Slug | Category Name |
+|------|---------------|
+| `academics` | Academics |
+| `admin` | Admin and E-Services |
+| `library` | Library |
+| `career` | Career |
+| `financial` | Financial |
+| `facilities` | Facilities and Campus |
+| `forms` | Forms and Admin |
+| `notices` | Notices and Support |
 
 `vercel.json` rewrites all paths to `index.html` so React Router handles navigation on direct URL load or refresh.
 
@@ -99,7 +110,7 @@ export const quickAccessLinks = [
 
 **Rule:** `portalPath` is `null` when a real deep link exists. When only the portal root is available, `href` is `https://portal.suss.edu.sg` and `portalPath` contains the navigation hint (e.g. `"Login → E-Services → Graduation Filing"`). Deep links will be substituted in future iterations as they are confirmed through user testing.
 
-**Exception:** Contact/info cards (e.g. Student Support, IT Service Desk) may use `href: "https://portal.suss.edu.sg"` with `portalPath: null` when the link is a general portal entry point and the key information (phone number, hours) is in the description itself. These cards do not require a navigation path hint.
+**Exception:** Contact/info cards (e.g. Student Support, IT Service Desk) may use `href: "https://portal.suss.edu.sg"` with `portalPath: null` when the link is a general portal entry point and the key information (phone number, hours) is in the description itself. These cards do not require a navigation path hint. `LinkCard` behaviour is unchanged — clicking opens the portal root in a new tab. The description is the primary value of these entries, not the link destination.
 
 **Cross-category duplication policy:** Some links intentionally appear in multiple categories (e.g. Discussion Room Booking in both Library and Facilities; SSG Funding in both Admin and Financial). This is by design — users approaching from different mental models should find the same resource. Descriptions may differ slightly between appearances to match the context of the category. Deduplication is not required.
 
@@ -115,7 +126,7 @@ export const quickAccessLinks = [
 
 All others currently point to `https://portal.suss.edu.sg` with a `portalPath` hint.
 
-**Canvas-proxied links:** iSmart-Guide and Panopto do not have standalone public URLs — they are accessed via the Canvas left navigation panel. Both intentionally link to `https://canvas.suss.edu.sg` with `portalPath: null`. Their descriptions make this clear to users.
+**Canvas-proxied links:** iSmart-Guide and Panopto do not have standalone public URLs — they are accessed via the Canvas left navigation panel. Both intentionally link to `https://canvas.suss.edu.sg` with `portalPath: null`. No special UI treatment is applied; the description field conveys access context (e.g. "accessible via Canvas left nav"). `LinkCard` renders these identically to any other direct link.
 
 ---
 
@@ -131,15 +142,17 @@ All others currently point to `https://portal.suss.edu.sg` with a `portalPath` h
 ### `SearchBar`
 - Rendered in the hero section on the landing page only
 - Client-side filter across all categories' `links[]`, matching `name` and `description` (case-insensitive)
-- Results render as a flat `LinkCard` list beneath the bar, replacing the category grid and QuickAccess strip
-- **Empty query:** category grid and QuickAccess strip are shown normally (no search state active)
-- **Query with no matches:** show a "No results for '[query]'" message in place of the grid; QuickAccess strip remains hidden
-- Clearing the input restores the full landing view
+- **Empty query (default state):** QuickAccess strip and category grid are shown normally
+- **Non-empty query (active search):** QuickAccess strip and category grid are always hidden, regardless of result count. `FeedbackForm` and `Footer` remain visible below.
+  - With matches: render a flat `LinkCard` list beneath the bar
+  - With no matches: show a "No results for '[query]'" message in place of the list
+- Clearing the input restores the full default landing view
 
 ### `QuickAccess`
 - Horizontal strip of 6 large icon buttons
 - Each button: Lucide icon + label, opens `href` in a new tab
 - Layout: 3-column grid on mobile, single row on `md+`
+- For Canvas-proxied entries (iSmart-Guide), the label alone is sufficient — no tooltip or special UI treatment required. The label name is the canonical tool name students already know.
 
 ### `CategoryCard`
 - Used on the landing page grid
@@ -159,6 +172,7 @@ All others currently point to `https://portal.suss.edu.sg` with a `portalPath` h
 - Title: "Discussion Room Booking", subtitle: "Check live availability", CTA arrow link to `https://suss.libcal.com/spaces`
 - Visually distinct — not part of the standard card grid
 - `CategoryPage` renders it via a hardcoded `slug === "library"` check; no extensibility to other categories is required in this version
+- The URL `https://suss.libcal.com/spaces` is intentionally duplicated here and in `links.js`. `FeaturedCard` hardcodes it directly — if the URL changes it must be updated in both places. This is acceptable for a prototype.
 
 ### `FeedbackForm`
 - At the bottom of the landing page
@@ -281,13 +295,14 @@ No other Vercel configuration needed — Vite builds to `dist/` which Vercel det
 | Policy and Procedures | University policies | https://portal.suss.edu.sg | Login → Policy and Procedures |
 
 ### 3. Library
+Discussion Room Booking is rendered as `FeaturedCard` above the grid and is **omitted from the `links[]` array** for this category to avoid duplication. All other links appear in the grid.
+
 | Name | Description | href | portalPath |
 |------|-------------|------|------------|
 | SUSS Library Home | Main library portal | https://library.suss.edu.sg | null |
 | Library Search | Find articles, eBooks, physical books | https://search.library.suss.edu.sg/primo-explore/search?vid=SUSS&lang=en_US | null |
 | Databases A–Z | All subscribed academic databases | https://libguides.suss.edu.sg/az/databases | null |
 | Research Guides | Subject-specific research help | https://libguides.suss.edu.sg/researchguides | null |
-| Discussion Room Booking | Book a group study room | https://suss.libcal.com/spaces | null |
 | Library FAQs | Common library questions | https://libanswers.suss.edu.sg | null |
 | Librarian Consultation | Book a 1-on-1 with a librarian | https://suss.libcal.com/appointments/suss/online-consultations | null |
 | Library Events | Workshops and library events | https://suss.libcal.com/calendar/ | null |
