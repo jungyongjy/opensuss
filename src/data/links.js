@@ -14,6 +14,7 @@ export const categories = [
     icon: 'GraduationCap',
     description: 'Courses, grades, timetables and registrations',
     links: [
+      { name: 'iSmart-Guide', description: 'Digital textbooks and study guides for your courses', href: 'https://isg.suss.edu.sg/', portalPath: null },
       { name: 'Canvas', description: 'Course materials, submissions, grades', href: 'https://canvas.suss.edu.sg', portalPath: null },
       { name: 'Canvas Calendar', description: 'Deadlines across all courses', href: 'https://canvas.suss.edu.sg/calendar', portalPath: null },
       { name: 'Canvas Inbox', description: 'Messages from tutors and lecturers', href: 'https://canvas.suss.edu.sg/conversations', portalPath: null },
