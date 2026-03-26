@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import CategoryPage from './pages/CategoryPage'
 import ToolsPage from './pages/ToolsPage'
 import AcademicCalendarPage from './pages/AcademicCalendarPage'
+import MobileBottomNav from './components/MobileBottomNav'
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/tools" element={<ToolsPage />} />
         <Route path="/academic-calendar" element={<AcademicCalendarPage />} />
       </Routes>
+      <MobileBottomNav />
     </BrowserRouter>
   )
 }

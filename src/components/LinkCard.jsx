@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ExternalLink, Phone, Mail, Copy, Check, Flag } from 'lucide-react'
 
 const FORMSPREE_URL = 'https://formspree.io/f/mqegklop'
@@ -201,6 +202,23 @@ function getHostname(href) {
 export default function LinkCard({ link }) {
   if (link.type === 'contact') {
     return <ContactCard link={link} />
+  }
+
+  if (link.internal) {
+    return (
+      <Link
+        to={link.href}
+        className="group flex flex-col justify-between rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 hover:shadow-lg transition-all duration-200 hover:border-navy dark:hover:border-blue-400"
+      >
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-navy dark:group-hover:text-blue-400 transition-colors leading-snug">
+            {link.name}
+          </h3>
+          <ExternalLink size={14} className="text-gray-400 dark:text-gray-500 group-hover:text-navy dark:group-hover:text-blue-400 transition-colors shrink-0 mt-0.5" />
+        </div>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{link.description}</p>
+      </Link>
+    )
   }
 
   const isPortalCard = link.portalPath != null

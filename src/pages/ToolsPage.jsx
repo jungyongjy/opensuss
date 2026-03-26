@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Calculator, BookOpen } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -13,6 +13,8 @@ const TABS = [
 export default function ToolsPage() {
   const [activeTab, setActiveTab] = useState('cgpa')
   const active = TABS.find(t => t.id === activeTab)
+
+  useEffect(() => { document.title = 'Academic Tools | OpenSUSS' }, [])
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col">

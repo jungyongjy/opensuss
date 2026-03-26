@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import SearchBar from '../components/SearchBar'
 import QuickAccess from '../components/QuickAccess'
@@ -10,6 +10,23 @@ import { categories } from '../data/links'
 
 export default function Home() {
   const [query, setQuery] = useState('')
+  const searchRef = useRef(null)
+
+  useEffect(() => { document.title = 'OpenSUSS — All your SUSS portals in one place' }, [])
+
+  useEffect(() => {
+    function handleKey(e) {
+      const tag = document.activeElement?.tagName
+      const isTyping = tag === 'INPUT' || tag === 'TEXTAREA' || document.activeElement?.isContentEditable
+      if (isTyping) return
+      if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || e.key === '/') {
+        e.preventDefault()
+        searchRef.current?.focus()
+      }
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [])
 
   const groupedResults = useMemo(() => {
     if (!query.trim()) return null
@@ -85,7 +102,7 @@ export default function Home() {
             </p>
           </div>
           <div className="w-full animate-fade-up-2">
-            <SearchBar value={query} onChange={setQuery} />
+            <SearchBar ref={searchRef} value={query} onChange={setQuery} />
           </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ExternalLink, CalendarDays } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -39,6 +39,8 @@ const ALL_CALENDARS_URL = 'https://www.suss.edu.sg/life-at-suss/onboarding/matri
 export default function AcademicCalendarPage() {
   const [activeId, setActiveId] = useState('ft')
   const active = CALENDARS.find((c) => c.id === activeId)
+
+  useEffect(() => { document.title = 'Academic Calendar | OpenSUSS' }, [])
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col">

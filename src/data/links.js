@@ -14,6 +14,8 @@ export const categories = [
     icon: 'GraduationCap',
     description: 'Courses, grades, timetables and registrations',
     links: [
+      { name: 'Academic Calendar', description: 'Key dates, semester start and end, exam periods for all programmes', href: '/academic-calendar', internal: true },
+      { name: 'Academic Tools', description: 'CGPA Simulator, OCAS Calculator — simulate grades and calculate scores', href: '/tools', internal: true },
       { name: 'iSmart-Guide', description: 'Digital textbooks and study guides for your courses', href: 'https://isg.suss.edu.sg/', portalPath: null },
       { name: 'Canvas', description: 'Course materials, submissions, grades', href: 'https://canvas.suss.edu.sg', portalPath: null },
       { name: 'Canvas Calendar', description: 'Deadlines across all courses', href: 'https://canvas.suss.edu.sg/calendar', portalPath: null },

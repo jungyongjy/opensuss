@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import LinkCard from '../components/LinkCard'
 import FeaturedCard from '../components/FeaturedCard'
@@ -20,6 +21,11 @@ const iconStyles = {
 export default function CategoryPage() {
   const { slug } = useParams()
   const category = categories.find((c) => c.slug === slug)
+
+  useEffect(() => {
+    if (category) document.title = `${category.name} | OpenSUSS`
+    return () => { document.title = 'OpenSUSS' }
+  }, [category])
 
   if (!category) {
     return (

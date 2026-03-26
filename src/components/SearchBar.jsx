@@ -1,15 +1,16 @@
+import { forwardRef } from 'react'
 import { Search, X } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 const PHRASES = [
-  'Search all SUSS portals and tools...',
   'Try "iStudy"...',
-  'Try "grade calculator"...',
   'Try "exam timetable"...',
-  'Try "library booking"...',
+  'Try "grade calculator"...',
   'Try "course registration"...',
+  'Try "library booking"...',
   'Try "STARS"...',
   'Try "financial aid"...',
+  'Search all SUSS portals and tools...',
 ]
 
 function useTypingPlaceholder(active) {
@@ -63,7 +64,7 @@ function useTypingPlaceholder(active) {
   return display
 }
 
-export default function SearchBar({ value, onChange }) {
+const SearchBar = forwardRef(function SearchBar({ value, onChange }, ref) {
   const [focused, setFocused] = useState(false)
   const animating = !value && !focused
   const placeholder = useTypingPlaceholder(animating)
@@ -75,6 +76,7 @@ export default function SearchBar({ value, onChange }) {
         className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none"
       />
       <input
+        ref={ref}
         type="search"
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -94,4 +96,6 @@ export default function SearchBar({ value, onChange }) {
       )}
     </div>
   )
-}
+})
+
+export default SearchBar
