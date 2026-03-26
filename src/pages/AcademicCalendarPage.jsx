@@ -23,7 +23,7 @@ const CALENDARS = [
     label: 'Law',
     title: 'School of Law',
     description: 'Academic and event calendar for School of Law students.',
-    href: 'https://www.suss.edu.sg/life-at-suss/onboarding/matriculation/academic-calendar',
+    href: 'https://www.suss.edu.sg/docs/default-source/dept_s-r-a/academic-calendar_law-2026_250507.pdf?sfvrsn=a03271e1_14',
   },
   {
     id: 'postgrad',
@@ -98,17 +98,15 @@ export default function AcademicCalendarPage() {
             <ExternalLink size={14} />
           </a>
 
-          {active.id !== 'law' && (
-            <a
-              href={ALL_CALENDARS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-navy dark:hover:text-blue-400 transition-colors self-start"
-            >
-              View all calendars on SUSS website
-              <ExternalLink size={12} />
-            </a>
-          )}
+          <a
+            href={ALL_CALENDARS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-navy dark:hover:text-blue-400 transition-colors self-start"
+          >
+            View all calendars on SUSS website
+            <ExternalLink size={12} />
+          </a>
         </div>
       </main>
 
