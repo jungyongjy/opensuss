@@ -4,9 +4,9 @@
 
 🔗 **Live site: [suss-links.vercel.app](https://suss-links.vercel.app)**
 
-OpenSUSS is an unofficial student-built link directory for Singapore University of Social Sciences (SUSS). It solves the fragmented portal problem. Instead of hunting across multiple bookmarks or trying to remember which portal does what, every student-facing service is organised in one clean, searchable hub.
+Have you ever felt like SUSS's portals were all over the place? Canvas for content, the Student Portal for admin, Kinobi for career stuff, a separate booking system for discussion rooms -- and somehow none of them talk to each other. Have you ever needed to find something simple like your exam timetable or fee invoice and ended up clicking through five pages to get there? Have you ever opened the Backpack app, sighed, and just given up?
 
-No login. No data collected. Just links.
+OpenSUSS is the unofficial fix. It is a student-built, all-in-one hub that organises every SUSS service students actually use -- searchable, categorised and accessible in seconds. No login. No data collected. Just links.
 
 ---
 
@@ -16,13 +16,14 @@ No login. No data collected. Just links.
 
 ## What's inside
 
-- **Quick access strip** — one-click access to Canvas, Student Portal, MyMail, Library, and Career Portal
-- **Search** — find any link across all categories instantly by name or description
-- **8 categories** — Academics, Admin and E-Services, Library, Career, Financial, Facilities and Campus, Forms and Admin, Notices and Support
-- **Breadcrumb navigation paths** — for Student Portal links that require login, clear step-by-step paths are shown so you know exactly where to go after logging in
-- **Live library room availability** — direct link to the real-time discussion room booking grid
-- **Tools** — CGPA Simulator and OCAS Calculator built in for quick academic planning
-- **Feedback form** — suggest missing links or report broken ones
+- **Quick access strip** -- one-click access to Canvas, Student Portal, MyMail, Library and Career Portal
+- **Search** -- find any link across all categories instantly by name, description or portal path
+- **8 categories** -- Academics, Admin and E-Services, Library, Career, Financial, Facilities and Campus, Forms and Admin, and Notices and Support
+- **Academic Calendar** -- dedicated page with calendars for Full-time UG, Part-time UG, Law and Postgrad programmes
+- **Breadcrumb navigation paths** -- for Student Portal links, step-by-step paths show exactly where to go after logging in
+- **Live library room availability** -- direct link to the real-time discussion room booking grid
+- **Tools** -- CGPA Simulator and OCAS Calculator for quick academic planning
+- **Report broken links** -- flag any outdated link in one click directly from the card
 
 ---
 
