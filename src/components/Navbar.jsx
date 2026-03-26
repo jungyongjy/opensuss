@@ -1,10 +1,11 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Sun, Moon, Home } from 'lucide-react'
+import { Sun, Moon, Home, Calculator } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function Navbar() {
   const location = useLocation()
   const isHome = location.pathname === '/'
+  const isTools = location.pathname === '/tools'
   const [dark, setDark] = useState(() =>
     document.documentElement.classList.contains('dark')
   )
@@ -25,21 +26,32 @@ export default function Navbar() {
         <Link to="/" className="text-white font-bold text-lg tracking-tight">
           OpenSUSS
         </Link>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
+          <Link
+            to="/tools"
+            className={`flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg transition-colors ${
+              isTools
+                ? 'bg-white/15 text-white'
+                : 'text-white/70 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            <Calculator size={15} />
+            <span className="hidden sm:inline">Tools</span>
+          </Link>
           <button
             onClick={() => setDark(d => !d)}
-            className="text-white/80 hover:text-white transition-colors p-1"
+            className="text-white/70 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/10"
             aria-label="Toggle dark mode"
           >
-            {dark ? <Sun size={20} /> : <Moon size={20} />}
+            {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           {!isHome && (
             <Link
               to="/"
-              className="flex items-center gap-1.5 text-white/80 hover:text-white text-sm transition-colors"
+              className="flex items-center gap-1.5 text-white/70 hover:text-white text-sm transition-colors p-1.5 rounded-lg hover:bg-white/10"
             >
               <Home size={16} />
-              Home
+              <span className="hidden sm:inline">Home</span>
             </Link>
           )}
         </div>
