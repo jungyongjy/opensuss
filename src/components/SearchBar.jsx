@@ -3,12 +3,12 @@ import { Search, X } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 const PHRASES = [
-  'Try "iStudy"...',
+  'Try "iSmart"...',
   'Try "exam timetable"...',
-  'Try "grade calculator"...',
+  'Try "CGPA"...',
   'Try "course registration"...',
-  'Try "library booking"...',
-  'Try "STARS"...',
+  'Try "room booking"...',
+  'Try "grade appeal"...',
   'Try "financial aid"...',
   'Search all SUSS portals and tools...',
 ]
