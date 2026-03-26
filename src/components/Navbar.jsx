@@ -22,7 +22,7 @@ export default function Navbar() {
   }, [dark])
 
   return (
-    <nav className="sticky top-0 z-50 bg-navy dark:bg-gray-900 shadow-md">
+    <nav className="md:sticky top-0 z-50 bg-navy dark:bg-gray-900 shadow-md">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link to="/" className="text-white font-bold text-lg tracking-tight">
           OpenS<span className="text-suss-red">U</span>SS

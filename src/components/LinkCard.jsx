@@ -23,29 +23,48 @@ function CopyButton({ text }) {
 }
 
 function ReportButton({ link }) {
-  const [reported, setReported] = useState(false)
-  function handleReport(e) {
+  const [stage, setStage] = useState('idle') // idle | confirm | reported
+  function handleClick(e) {
     e.preventDefault()
     e.stopPropagation()
-    if (reported) return
-    setReported(true)
-    fetch(FORMSPREE_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ message: `Broken link: ${link.name} — ${link.href || 'no href'}` }),
-    })
+    if (stage === 'idle') {
+      setStage('confirm')
+      setTimeout(() => setStage(s => s === 'confirm' ? 'idle' : s), 3000)
+    } else if (stage === 'confirm') {
+      setStage('reported')
+      fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ message: `Broken link: ${link.name} — ${link.href || 'no href'}` }),
+      })
+    }
+  }
+  if (stage === 'reported') {
+    return (
+      <span className="shrink-0 p-0.5 text-green-500 dark:text-green-400">
+        <Check size={12} />
+      </span>
+    )
+  }
+  if (stage === 'confirm') {
+    return (
+      <button
+        onClick={handleClick}
+        title="Click again to confirm"
+        className="shrink-0 flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-medium bg-suss-red/10 text-suss-red dark:bg-red-900/30 dark:text-red-400 transition-all"
+      >
+        <Flag size={11} />
+        <span>Broken?</span>
+      </button>
+    )
   }
   return (
     <button
-      onClick={handleReport}
-      title={reported ? 'Reported — thanks!' : 'Report broken link'}
-      className={`shrink-0 p-0.5 rounded transition-all ${
-        reported
-          ? 'text-green-500 dark:text-green-400'
-          : 'opacity-0 group-hover:opacity-100 text-gray-300 dark:text-gray-600 hover:text-suss-red dark:hover:text-red-400'
-      }`}
+      onClick={handleClick}
+      title="Report broken link"
+      className="shrink-0 p-0.5 rounded transition-all opacity-0 group-hover:opacity-100 text-gray-300 dark:text-gray-600 hover:text-suss-red dark:hover:text-red-400"
     >
-      {reported ? <Check size={12} /> : <Flag size={12} />}
+      <Flag size={12} />
     </button>
   )
 }

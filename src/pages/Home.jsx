@@ -72,11 +72,11 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-6xl mx-auto flex flex-col items-center text-center gap-6">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs font-medium px-3 py-1.5 rounded-full">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs font-medium px-3 py-1.5 rounded-full animate-fade-up">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
             Unofficial · Student-built · Free to use
           </div>
-          <div>
+          <div className="animate-fade-up-1">
             <h1 className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
               All your S<span className="text-suss-red">U</span>SS portals<br className="hidden md:block" /> in one place
             </h1>
@@ -84,14 +84,16 @@ export default function Home() {
               The unofficial student link directory for SUSS
             </p>
           </div>
-          <SearchBar value={query} onChange={setQuery} />
+          <div className="w-full animate-fade-up-2">
+            <SearchBar value={query} onChange={setQuery} />
+          </div>
         </div>
       </section>
 
       <main className="flex-1">
         {/* Search results */}
         {isSearching && (
-          <section className="max-w-6xl mx-auto px-4 py-8">
+          <section className="max-w-6xl mx-auto px-4 py-8 animate-fade-in">
             {totalResults === 0 ? (
               <p className="text-gray-500 dark:text-gray-400 text-sm">
                 No results for &ldquo;{query}&rdquo;
@@ -108,8 +110,10 @@ export default function Home() {
                         {category.name}
                       </h2>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {links.map((link) => (
-                          <LinkCard key={`${link.name}-${link.href}`} link={link} />
+                        {links.map((link, i) => (
+                          <div key={`${link.name}-${link.href}`} className="animate-fade-up" style={{ animationDelay: `${i * 40}ms` }}>
+                            <LinkCard link={link} />
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -135,8 +139,10 @@ export default function Home() {
                 </span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {categories.map((cat) => (
-                  <CategoryCard key={cat.slug} category={cat} />
+                {categories.map((cat, i) => (
+                  <div key={cat.slug} className="animate-fade-up" style={{ animationDelay: `${i * 60}ms` }}>
+                    <CategoryCard category={cat} />
+                  </div>
                 ))}
               </div>
             </section>
