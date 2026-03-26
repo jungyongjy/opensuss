@@ -4,9 +4,17 @@
 
 🔗 **Live site: [suss-links.vercel.app](https://suss-links.vercel.app)**
 
-Have you ever felt like SUSS's portals were all over the place? Canvas for content, the Student Portal for admin, Kinobi for career stuff, a separate booking system for discussion rooms -- and somehow none of them talk to each other. Have you ever needed to find something simple like your exam timetable or fee invoice and ended up clicking through five pages to get there? Have you ever opened the Backpack app, sighed, and just given up?
+---
 
-OpenSUSS is the unofficial fix. It is a student-built, all-in-one hub that organises every SUSS service students actually use -- searchable, categorised and accessible in seconds. No login. No data collected. Just links.
+You know the feeling. You need your exam timetable. Simple enough, right? Except you cannot remember if it is on Canvas or the Student Portal. You try the Student Portal. Wrong tab. You click through four more pages. You find it, finally, and by then you have forgotten why you needed it in the first place.
+
+Or you are trying to book a discussion room before your groupmates grab all the slots, but you cannot find the booking link because it lives on a completely separate system that nobody told you about at orientation.
+
+Or you open the Backpack app, stare at it for three seconds, and close it.
+
+SUSS has a portal for everything. The problem is everything has a different portal.
+
+OpenSUSS is the unofficial fix. It is a student-built hub that organises every SUSS service you actually use, searchable, categorised, and accessible in seconds. No login. No data collected. Just links.
 
 ---
 
@@ -16,14 +24,14 @@ OpenSUSS is the unofficial fix. It is a student-built, all-in-one hub that organ
 
 ## What's inside
 
-- **Quick access strip** -- one-click access to Canvas, Student Portal, MyMail, Library and Career Portal
-- **Search** -- find any link across all categories instantly by name, description or portal path
-- **8 categories** -- Academics, Admin and E-Services, Library, Career, Financial, Facilities and Campus, Forms and Admin, and Notices and Support
-- **Academic Calendar** -- dedicated page with calendars for Full-time UG, Part-time UG, Law and Postgrad programmes
-- **Breadcrumb navigation paths** -- for Student Portal links, step-by-step paths show exactly where to go after logging in
-- **Live library room availability** -- direct link to the real-time discussion room booking grid
-- **Tools** -- CGPA Simulator and OCAS Calculator for quick academic planning
-- **Report broken links** -- flag any outdated link in one click directly from the card
+- **Quick access strip** — one-click access to Canvas, Student Portal, MyMail, Library and Career Portal
+- **Search** — find any link across all categories instantly by name, description or portal path
+- **8 categories** — Academics, Admin and E-Services, Library, Career, Financial, Facilities and Campus, Forms and Admin, and Notices and Support
+- **Academic Calendar** — dedicated page with calendars for Full-time UG, Part-time UG, Law and Postgrad programmes
+- **Breadcrumb navigation paths** — for Student Portal links, step-by-step paths show exactly where to go after logging in
+- **Live library room availability** — direct link to the real-time discussion room booking grid
+- **Tools** — CGPA Simulator and OCAS Calculator for quick academic planning
+- **Report broken links** — flag any outdated link in one click directly from the card
 
 ---
 
