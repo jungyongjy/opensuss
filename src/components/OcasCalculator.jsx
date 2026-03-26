@@ -91,7 +91,6 @@ export default function OcasCalculator() {
   }
   function addComponent() { setComponents(prev => [...prev, newComponent()]) }
   function removeComponent(id) {
-    if (components.length === 1) return
     setComponents(prev => prev.filter(c => c.id !== id))
   }
   function reset() {
@@ -170,13 +169,13 @@ export default function OcasCalculator() {
                   ))}
                 </select>
                 <input
-                  type="number" min="0" max="100" step="0.5"
+                  type="number" min="0" max="100" step="1"
                   value={comp.weight}
                   onChange={e => updateComponent(comp.id, 'weight', Number(e.target.value))}
                   className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
                 />
                 <input
-                  type="number" min="0" max="100" step="0.1"
+                  type="number" min="0" max="100" step="1"
                   value={comp.score}
                   onChange={e => updateComponent(comp.id, 'score', e.target.value)}
                   placeholder="—"
@@ -184,8 +183,7 @@ export default function OcasCalculator() {
                 />
                 <button
                   onClick={() => removeComponent(comp.id)}
-                  disabled={components.length === 1}
-                  className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-20 disabled:cursor-not-allowed mt-0.5"
+                  className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors mt-0.5"
                 >
                   <Trash2 size={14} />
                 </button>
@@ -204,7 +202,7 @@ export default function OcasCalculator() {
               <div className="flex items-center gap-3 pl-1 pr-10">
                 <input
                   type="range"
-                  min="0" max="100" step="0.5"
+                  min="0" max="100" step="1"
                   value={comp.score === '' ? 0 : Number(comp.score)}
                   onChange={e => updateComponent(comp.id, 'score', e.target.value)}
                   className="flex-1 h-1.5 appearance-none rounded-full cursor-pointer accent-navy dark:accent-blue-400 bg-gray-200 dark:bg-gray-700"
@@ -314,7 +312,7 @@ export default function OcasCalculator() {
           </div>
           <div className="flex items-center gap-3">
             <input
-              type="number" min="0" max="100" step="0.1"
+              type="number" min="0" max="100" step="1"
               value={examScore}
               onChange={e => setExamScore(e.target.value)}
               placeholder="—"
@@ -322,7 +320,7 @@ export default function OcasCalculator() {
             />
             <input
               type="range"
-              min="0" max="100" step="0.5"
+              min="0" max="100" step="1"
               value={examScore === '' ? 0 : Number(examScore)}
               onChange={e => setExamScore(e.target.value)}
               className="flex-1 h-1.5 appearance-none rounded-full cursor-pointer accent-navy dark:accent-blue-400 bg-gray-200 dark:bg-gray-700"
