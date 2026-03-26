@@ -57,6 +57,8 @@ export default function CategoryPage() {
           backgroundSize: '24px 24px',
         }}
       >
+        {/* Top red strip */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-suss-red" />
         <div className="relative max-w-6xl mx-auto flex items-center gap-5">
           <div className={`rounded-xl p-3.5 shrink-0 ${style.bg}`}>
             <Icon name={category.icon} size={28} className={style.icon} />

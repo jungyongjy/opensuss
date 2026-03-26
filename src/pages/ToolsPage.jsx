@@ -25,6 +25,8 @@ export default function ToolsPage() {
           backgroundSize: '24px 24px',
         }}
       >
+        {/* Top red strip */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-suss-red" />
         <div className="absolute -top-16 -right-16 w-64 h-64 bg-suss-red/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/70 text-xs font-medium px-3 py-1.5 rounded-full mb-4">

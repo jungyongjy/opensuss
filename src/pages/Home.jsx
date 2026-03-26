@@ -37,13 +37,38 @@ export default function Home() {
       <section
         className="relative bg-navy dark:bg-gray-900 text-white py-16 px-4 overflow-hidden"
         style={{
-          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)',
           backgroundSize: '28px 28px',
         }}
       >
-        {/* Soft glow accent */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-suss-red/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-blue-400/5 rounded-full blur-3xl pointer-events-none" />
+        {/* Top red strip */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-suss-red" />
+
+        {/* Logo-inspired left motif: vertical bar + 4 dots */}
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-2">
+          <div className="w-0.5 h-8 bg-suss-red/50 rounded-full" />
+          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/70" />
+          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/70" />
+          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/70" />
+          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/70" />
+          <div className="w-0.5 h-8 bg-suss-red/50 rounded-full" />
+        </div>
+
+        {/* Mirror motif on right */}
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-2">
+          <div className="w-0.5 h-8 bg-white/10 rounded-full" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+          <div className="w-0.5 h-8 bg-white/10 rounded-full" />
+        </div>
+
+        {/* Bottom white strip */}
+        <div className="absolute bottom-0 left-0 right-0 flex flex-col">
+          <div className="h-px bg-white/15" />
+          <div className="h-px bg-suss-red/30" />
+        </div>
 
         <div className="relative max-w-6xl mx-auto flex flex-col items-center text-center gap-6">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs font-medium px-3 py-1.5 rounded-full">
@@ -52,7 +77,7 @@ export default function Home() {
           </div>
           <div>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
-              All your SUSS portals<br className="hidden md:block" /> in one place
+              All your S<span className="text-suss-red">U</span>SS portals<br className="hidden md:block" /> in one place
             </h1>
             <p className="text-white/60 mt-3 text-sm md:text-base">
               The unofficial student link directory for SUSS
