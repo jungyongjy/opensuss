@@ -20,7 +20,8 @@ export default function Home() {
         links: cat.links.filter(
           (link) =>
             link.name.toLowerCase().includes(q) ||
-            link.description.toLowerCase().includes(q)
+            link.description.toLowerCase().includes(q) ||
+            (link.portalPath && link.portalPath.toLowerCase().includes(q))
         ),
       }))
       .filter((g) => g.links.length > 0)

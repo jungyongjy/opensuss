@@ -1,4 +1,54 @@
-import { ExternalLink, Phone, Mail } from 'lucide-react'
+import { useState } from 'react'
+import { ExternalLink, Phone, Mail, Copy, Check, Flag } from 'lucide-react'
+
+const FORMSPREE_URL = 'https://formspree.io/f/mqegklop'
+
+function CopyButton({ text }) {
+  const [copied, setCopied] = useState(false)
+  function handleCopy(e) {
+    e.preventDefault()
+    navigator.clipboard.writeText(text)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+  return (
+    <button
+      onClick={handleCopy}
+      title={copied ? 'Copied!' : 'Copy email'}
+      className="ml-1 p-0.5 rounded text-gray-400 hover:text-navy dark:hover:text-blue-400 transition-colors"
+    >
+      {copied ? <Check size={11} /> : <Copy size={11} />}
+    </button>
+  )
+}
+
+function ReportButton({ link }) {
+  const [reported, setReported] = useState(false)
+  function handleReport(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    if (reported) return
+    setReported(true)
+    fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ message: `Broken link: ${link.name} — ${link.href || 'no href'}` }),
+    })
+  }
+  return (
+    <button
+      onClick={handleReport}
+      title={reported ? 'Reported — thanks!' : 'Report broken link'}
+      className={`shrink-0 p-0.5 rounded transition-all ${
+        reported
+          ? 'text-green-500 dark:text-green-400'
+          : 'opacity-0 group-hover:opacity-100 text-gray-300 dark:text-gray-600 hover:text-suss-red dark:hover:text-red-400'
+      }`}
+    >
+      {reported ? <Check size={12} /> : <Flag size={12} />}
+    </button>
+  )
+}
 
 function Breadcrumb({ path }) {
   const parts = path.split(' → ')
@@ -54,6 +104,7 @@ function ContactCard({ link }) {
                   <a href={`mailto:${link.email}`} className="text-sm text-navy dark:text-blue-400 hover:underline break-all">
                     {link.email}
                   </a>
+                  <CopyButton text={link.email} />
                 </div>
               )}
             </div>
@@ -153,10 +204,13 @@ export default function LinkCard({ link }) {
           <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-navy dark:group-hover:text-blue-400 transition-colors leading-snug">
             {link.name}
           </h3>
-          <ExternalLink
-            size={14}
-            className="shrink-0 mt-0.5 text-gray-400 dark:text-gray-500 group-hover:text-navy dark:group-hover:text-blue-400 transition-colors"
-          />
+          <div className="flex items-center gap-1 shrink-0 mt-0.5">
+            <ReportButton link={link} />
+            <ExternalLink
+              size={14}
+              className="text-gray-400 dark:text-gray-500 group-hover:text-navy dark:group-hover:text-blue-400 transition-colors"
+            />
+          </div>
         </div>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           {link.description}
