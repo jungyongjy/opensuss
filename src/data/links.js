@@ -78,7 +78,7 @@ export const categories = [
   },
   {
     slug: 'career',
-    name: 'Career',
+    name: 'Career / Kinobi',
     icon: 'Briefcase',
     description: 'Jobs, Work Attachment, resume builder and career services',
     links: [
