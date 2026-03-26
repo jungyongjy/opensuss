@@ -200,6 +200,19 @@ export default function OcasCalculator() {
                   className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
                 />
               )}
+              {/* Score slider */}
+              <div className="flex items-center gap-3 pl-1 pr-10">
+                <input
+                  type="range"
+                  min="0" max="100" step="0.5"
+                  value={comp.score === '' ? 0 : Number(comp.score)}
+                  onChange={e => updateComponent(comp.id, 'score', e.target.value)}
+                  className="flex-1 h-1.5 appearance-none rounded-full cursor-pointer accent-navy dark:accent-blue-400 bg-gray-200 dark:bg-gray-700"
+                />
+                <span className="text-xs text-gray-400 w-8 text-right tabular-nums">
+                  {comp.score === '' ? '—' : Number(comp.score).toFixed(0)}
+                </span>
+              </div>
               {/* Live contribution preview */}
               {comp.score !== '' && (
                 <p className="text-xs text-gray-400 dark:text-gray-500 pl-1">
@@ -299,13 +312,25 @@ export default function OcasCalculator() {
               />
             )}
           </div>
-          <input
-            type="number" min="0" max="100" step="0.1"
-            value={examScore}
-            onChange={e => setExamScore(e.target.value)}
-            placeholder="Enter your exam score (0–100)"
-            className="w-full sm:w-56 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
-          />
+          <div className="flex items-center gap-3">
+            <input
+              type="number" min="0" max="100" step="0.1"
+              value={examScore}
+              onChange={e => setExamScore(e.target.value)}
+              placeholder="—"
+              className="w-24 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
+            />
+            <input
+              type="range"
+              min="0" max="100" step="0.5"
+              value={examScore === '' ? 0 : Number(examScore)}
+              onChange={e => setExamScore(e.target.value)}
+              className="flex-1 h-1.5 appearance-none rounded-full cursor-pointer accent-navy dark:accent-blue-400 bg-gray-200 dark:bg-gray-700"
+            />
+            <span className="text-xs text-gray-400 w-8 text-right tabular-nums">
+              {examScore === '' ? '—' : Number(examScore).toFixed(0)}
+            </span>
+          </div>
         </div>
       )}
 
