@@ -2,17 +2,15 @@
 
 **All your SUSS portals in one place.**
 
-🔗 **Live site: [suss-links.vercel.app](https://suss-links.vercel.app)**
+🔗 **Live site: [opensuss.vercel.app](https://opensuss.vercel.app)**
 
 ---
 
-You know the feeling. You need your exam timetable. Simple enough, right? Except you cannot remember if it is on Canvas or the Student Portal. You try the Student Portal. Wrong tab. You click through four more pages. You find it, finally, and by then you have forgotten why you needed it in the first place.
+SUSS offers a lot: academics, room bookings, career tools, financial aid, and more. The catch is each one lives on its own portal.
 
-Or you are trying to book a discussion room before your groupmates grab all the slots, but you cannot find the booking link because it lives on a completely separate system that nobody told you about at orientation.
+So you end up with five tabs open trying to find your exam timetable. Or you want to book a discussion room but can't quite remember where the link is. Or you open Backpack, stare at it for a moment, and close it.
 
-Or you open the Backpack app, stare at it for three seconds, and close it.
-
-SUSS has a portal for everything. The problem is everything has a different portal.
+OpenSUSS is a student-built shortcut to all of it.
 
 OpenSUSS is the unofficial fix. It is a student-built hub that organises every SUSS service you actually use, searchable, categorised, and accessible in seconds. No login. No data collected. Just links.
 
@@ -31,7 +29,7 @@ OpenSUSS is the unofficial fix. It is a student-built hub that organises every S
 - **Breadcrumb navigation paths** — for Student Portal links, step-by-step paths show exactly where to go after logging in
 - **Live library room availability** — direct link to the real-time discussion room booking grid
 - **Tools** — CGPA Simulator and OCAS Calculator for quick academic planning
-- **Report broken links** — flag any outdated link in one click directly from the card
+- **Report broken links** — flag any outdated link directly from the card, with a confirmation step to prevent accidental submissions
 
 ---
 
@@ -41,7 +39,7 @@ OpenSUSS is the unofficial fix. It is a student-built hub that organises every S
 
 ## Suggest a link or report an issue
 
-This project does not accept pull requests at this time. If you have a suggestion for a new link, a broken URL to report, or any other feedback, please fill in the feedback form at the bottom of the live site at [suss-links.vercel.app](https://suss-links.vercel.app).
+This project does not accept pull requests at this time. If you have a suggestion for a new link, a broken URL to report, or any other feedback, please fill in the feedback form at the bottom of the live site at [opensuss.vercel.app](https://opensuss.vercel.app).
 
 All submissions go directly to the maintainer and are reviewed regularly.
 
@@ -75,4 +73,4 @@ Built by **Jung Yong** — SUSS Business Analytics student.
 
 ---
 
-*Made for SUSS students, by a SUSS student.*
+*One less thing to hunt for.*
