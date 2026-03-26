@@ -85,9 +85,11 @@ export default function CGPASimulator() {
   function clearAll() { setModules([newModule()]) }
 
   const cgpaLabel =
-    cgpa >= 4.5 ? 'Distinction' :
-    cgpa >= 3.5 ? 'Merit' :
-    cgpa >= 2.0 ? 'Pass' : 'At risk'
+    cgpa >= 4.5 ? 'Honours (Highest Distinction)' :
+    cgpa >= 4.0 ? 'Honours (Distinction)' :
+    cgpa >= 3.5 ? 'Honours (Merit)' :
+    cgpa >= 3.0 ? 'Honours' :
+    cgpa >= 2.0 ? 'Pass' : 'Fail'
 
   return (
     <div className="space-y-6">
