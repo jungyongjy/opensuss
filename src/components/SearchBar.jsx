@@ -16,15 +16,16 @@ function useTypingPlaceholder(active) {
   const [display, setDisplay] = useState(PHRASES[0])
   const phraseIndex = useRef(0)
   const charIndex = useRef(PHRASES[0].length)
-  const deleting = useRef(false)
+  const deleting = useRef(true) // start by erasing the initial phrase
   const timeout = useRef(null)
 
   useEffect(() => {
+    clearTimeout(timeout.current)
     if (!active) {
       setDisplay(PHRASES[0])
       phraseIndex.current = 0
       charIndex.current = PHRASES[0].length
-      deleting.current = false
+      deleting.current = true
       return
     }
 
@@ -54,7 +55,8 @@ function useTypingPlaceholder(active) {
       }
     }
 
-    timeout.current = setTimeout(tick, 1200)
+    // Wait 2s on the initial phrase before starting the cycle
+    timeout.current = setTimeout(tick, 2000)
     return () => clearTimeout(timeout.current)
   }, [active])
 
