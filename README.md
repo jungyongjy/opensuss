@@ -10,8 +10,6 @@ SUSS offers a lot: academics, room bookings, career tools, financial aid, and mo
 
 So you end up with five tabs open trying to find your exam timetable. Or you want to book a discussion room but can't quite remember where the link is. Or you open Backpack, stare at it for a moment, and close it.
 
-OpenSUSS is a student-built shortcut to all of it.
-
 OpenSUSS is the unofficial fix. It is a student-built hub that organises every SUSS service you actually use, searchable, categorised, and accessible in seconds. No login. No data collected. Just links.
 
 ---
