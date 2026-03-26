@@ -147,13 +147,10 @@ export default function Home() {
             <QuickAccess />
 
             <section className="max-w-6xl mx-auto px-4 pb-10">
-              <div className="flex items-center justify-between mb-4">
+              <div className="mb-4">
                 <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                   Browse by Category
                 </h2>
-                <span className="text-xs text-gray-400 dark:text-gray-500">
-                  {categories.reduce((sum, c) => sum + c.links.length, 0)} links across {categories.length} categories
-                </span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {categories.map((cat, i) => (
