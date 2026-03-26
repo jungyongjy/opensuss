@@ -7,6 +7,21 @@ import Footer from '../components/Footer'
 import Icon from '../components/Icon'
 import { categories } from '../data/links'
 
+function toId(str) {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+}
+
+function buildGroups(links) {
+  const map = []
+  for (const link of links) {
+    if (!link.group) continue
+    const existing = map.find(g => g.name === link.group)
+    if (existing) existing.links.push(link)
+    else map.push({ name: link.group, links: [link] })
+  }
+  return map
+}
+
 const iconStyles = {
   academics:  { bg: 'bg-blue-500/20',   icon: 'text-blue-200' },
   admin:      { bg: 'bg-violet-500/20', icon: 'text-violet-200' },
@@ -51,6 +66,9 @@ export default function CategoryPage() {
   }
 
   const style = iconStyles[slug] ?? { bg: 'bg-white/10', icon: 'text-white/80' }
+  const groups = buildGroups(category.links)
+  const isGrouped = groups.length > 0
+  const ungrouped = category.links.filter(l => !l.group)
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col">
@@ -80,11 +98,53 @@ export default function CategoryPage() {
       <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
         {slug === 'library' && <FeaturedCard />}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {category.links.map((link) => (
-            <LinkCard key={`${link.name}-${link.href}`} link={link} />
-          ))}
-        </div>
+        {isGrouped ? (
+          <>
+            {/* Overview nav */}
+            <div className="flex flex-wrap gap-2 mb-10 p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+              {groups.map(({ name, links }) => (
+                <button
+                  key={name}
+                  onClick={() => document.getElementById(toId(name))?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-lg border border-navy/25 dark:border-blue-400/30 text-navy dark:text-blue-400 hover:bg-navy/5 dark:hover:bg-blue-900/20 transition-colors"
+                >
+                  {name}
+                  <span className="text-navy/40 dark:text-blue-400/50 font-normal">{links.length}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Grouped sections */}
+            <div className="flex flex-col gap-12">
+              {groups.map(({ name, links }) => (
+                <div key={name} id={toId(name)} className="scroll-mt-6 md:scroll-mt-20">
+                  <div className="flex items-center gap-3 mb-5">
+                    <h2 className="text-sm font-semibold text-gray-800 dark:text-gray-200 whitespace-nowrap">{name}</h2>
+                    <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {links.map((link) => (
+                      <LinkCard key={`${link.name}-${link.href}`} link={link} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+              {ungrouped.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {ungrouped.map((link) => (
+                    <LinkCard key={`${link.name}-${link.href}`} link={link} />
+                  ))}
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {category.links.map((link) => (
+              <LinkCard key={`${link.name}-${link.href}`} link={link} />
+            ))}
+          </div>
+        )}
       </main>
 
       <Footer />
