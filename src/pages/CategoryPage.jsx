@@ -3,7 +3,19 @@ import Navbar from '../components/Navbar'
 import LinkCard from '../components/LinkCard'
 import FeaturedCard from '../components/FeaturedCard'
 import Footer from '../components/Footer'
+import Icon from '../components/Icon'
 import { categories } from '../data/links'
+
+const iconStyles = {
+  academics:  { bg: 'bg-blue-500/20',   icon: 'text-blue-200' },
+  admin:      { bg: 'bg-violet-500/20', icon: 'text-violet-200' },
+  library:    { bg: 'bg-teal-500/20',   icon: 'text-teal-200' },
+  career:     { bg: 'bg-orange-500/20', icon: 'text-orange-200' },
+  financial:  { bg: 'bg-green-500/20',  icon: 'text-green-200' },
+  facilities: { bg: 'bg-indigo-500/20', icon: 'text-indigo-200' },
+  forms:      { bg: 'bg-amber-500/20',  icon: 'text-amber-200' },
+  notices:    { bg: 'bg-rose-500/20',   icon: 'text-rose-200' },
+}
 
 export default function CategoryPage() {
   const { slug } = useParams()
@@ -32,14 +44,28 @@ export default function CategoryPage() {
     )
   }
 
+  const style = iconStyles[slug] ?? { bg: 'bg-white/10', icon: 'text-white/80' }
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col">
       <Navbar />
 
-      <header className="bg-navy dark:bg-gray-900 text-white py-8 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-2xl md:text-3xl font-bold">{category.name}</h1>
-          <p className="text-white/60 text-sm mt-1">{category.description}</p>
+      <header
+        className="relative bg-navy dark:bg-gray-900 text-white py-10 px-4 overflow-hidden"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+      >
+        <div className="relative max-w-6xl mx-auto flex items-center gap-5">
+          <div className={`rounded-xl p-3.5 shrink-0 ${style.bg}`}>
+            <Icon name={category.icon} size={28} className={style.icon} />
+          </div>
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold tracking-tight">{category.name}</h1>
+            <p className="text-white/60 text-sm mt-1">{category.description}</p>
+            <p className="text-white/40 text-xs mt-1">{category.links.length} link{category.links.length !== 1 ? 's' : ''}</p>
+          </div>
         </div>
       </header>
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const FORMSPREE_URL = 'https://formspree.io/f/REPLACE_WITH_YOUR_ID'
+const FORMSPREE_URL = 'https://formspree.io/f/mqegklop'
 
 export default function FeedbackForm() {
   const [status, setStatus] = useState('idle') // idle | submitting | success | error

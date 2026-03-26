@@ -23,7 +23,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-navy dark:bg-gray-900 shadow-md">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link to="/" className="text-white font-bold text-lg tracking-tight">
-          SUSS Links
+          OpenSUSS
         </Link>
         <div className="flex items-center gap-3">
           <button
