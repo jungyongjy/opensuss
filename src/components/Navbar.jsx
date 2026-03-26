@@ -1,11 +1,12 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Sun, Moon, Home, Calculator } from 'lucide-react'
+import { Sun, Moon, Home, Calculator, CalendarDays } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function Navbar() {
   const location = useLocation()
   const isHome = location.pathname === '/'
   const isTools = location.pathname === '/tools'
+  const isCalendar = location.pathname === '/academic-calendar'
   const [dark, setDark] = useState(() =>
     document.documentElement.classList.contains('dark')
   )
@@ -27,6 +28,17 @@ export default function Navbar() {
           OpenS<span className="text-suss-red">U</span>SS
         </Link>
         <div className="flex items-center gap-1">
+          <Link
+            to="/academic-calendar"
+            className={`flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg transition-colors ${
+              isCalendar
+                ? 'bg-white/15 text-white'
+                : 'text-white/70 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            <CalendarDays size={15} />
+            <span className="hidden sm:inline">Calendar</span>
+          </Link>
           <Link
             to="/tools"
             className={`flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg transition-colors ${

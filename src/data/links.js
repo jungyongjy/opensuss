@@ -4,7 +4,7 @@ export const quickAccessLinks = [
   { name: 'MyMail', href: 'https://outlook.office365.com', icon: 'Mail' },
   { name: 'Library', href: 'https://library.suss.edu.sg', icon: 'Library' },
   { name: 'Career Portal', href: 'https://susscareerportal.suss.edu.sg', icon: 'Briefcase' },
-  { name: 'iSmart-Guide', href: 'https://canvas.suss.edu.sg', icon: 'Compass', sublabel: 'via Canvas' },
+  { name: 'iSmart-Guide', href: 'https://isg.suss.edu.sg/', icon: 'Compass' },
 ]
 
 export const categories = [
