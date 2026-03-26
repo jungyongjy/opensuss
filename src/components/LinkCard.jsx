@@ -25,6 +25,50 @@ function Breadcrumb({ path }) {
 }
 
 function ContactCard({ link }) {
+  // New-style card: has phone/email fields directly (no contactType)
+  if (link.contactType == null) {
+    const HeaderIcon = link.phone != null ? Phone : Mail
+    return (
+      <div className="flex flex-col rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+        <div className="flex items-start gap-3">
+          <div className="rounded-lg bg-navy/10 dark:bg-blue-900/30 p-2 shrink-0">
+            <HeaderIcon size={16} className="text-navy dark:text-blue-400" />
+          </div>
+          <div className="min-w-0">
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100 leading-snug">
+              {link.name}
+            </h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              {link.description}
+            </p>
+            <div className="mt-2 space-y-1">
+              {link.phone && (
+                <div className="flex items-center gap-2">
+                  <Phone size={12} className="text-gray-400 dark:text-gray-500 shrink-0" />
+                  <span className="text-sm text-gray-700 dark:text-gray-200">{link.phone}</span>
+                </div>
+              )}
+              {link.email && (
+                <div className="flex items-center gap-2">
+                  <Mail size={12} className="text-gray-400 dark:text-gray-500 shrink-0" />
+                  <a href={`mailto:${link.email}`} className="text-sm text-navy dark:text-blue-400 hover:underline break-all">
+                    {link.email}
+                  </a>
+                </div>
+              )}
+            </div>
+            {link.hours && (
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 italic">
+                {link.hours}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Legacy single-contact card
   const isEmail = link.contactType === 'email'
   const IconComponent = isEmail ? Mail : Phone
 
