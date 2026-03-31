@@ -12,6 +12,8 @@ export default function Home() {
   const [query, setQuery] = useState('')
   const searchRef = useRef(null)
 
+  const totalLinks = categories.reduce((sum, cat) => sum + cat.links.length, 0)
+
   useEffect(() => { document.title = 'OpenSUSS — All your SUSS portals in one place' }, [])
 
   useEffect(() => {
@@ -55,46 +57,42 @@ export default function Home() {
       <section
         className="relative bg-navy dark:bg-gray-900 text-white py-16 px-4 overflow-hidden"
         style={{
-          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
+          backgroundImage: `
+            radial-gradient(circle at 75% 30%, rgba(200,16,46,0.12) 0%, transparent 50%),
+            radial-gradient(circle at 15% 70%, rgba(200,16,46,0.06) 0%, transparent 40%),
+            radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: 'auto, auto, 28px 28px',
         }}
       >
         {/* Top red strip */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-suss-red" />
 
-        {/* Logo-inspired left motif: vertical bar + 4 dots */}
+        {/* Logo-inspired left motif */}
         <div className="absolute left-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-2">
-          <div className="w-0.5 h-8 bg-suss-red/50 rounded-full" />
-          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/70" />
-          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/70" />
-          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/70" />
-          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/70" />
-          <div className="w-0.5 h-8 bg-suss-red/50 rounded-full" />
+          <div className="w-0.5 h-8 bg-suss-red/40 rounded-full" />
+          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/60" />
+          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/60" />
+          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/60" />
+          <div className="w-1.5 h-1.5 rounded-full bg-suss-red/60" />
+          <div className="w-0.5 h-8 bg-suss-red/40 rounded-full" />
         </div>
-
-        {/* Mirror motif on right */}
         <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-2">
           <div className="w-0.5 h-8 bg-white/10 rounded-full" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white/15" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white/15" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white/15" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white/15" />
           <div className="w-0.5 h-8 bg-white/10 rounded-full" />
-        </div>
-
-        {/* Bottom white strip */}
-        <div className="absolute bottom-0 left-0 right-0 flex flex-col">
-          <div className="h-px bg-white/15" />
-          <div className="h-px bg-suss-red/30" />
         </div>
 
         <div className="relative max-w-6xl mx-auto flex flex-col items-center text-center gap-6">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs font-medium px-3 py-1.5 rounded-full animate-fade-up">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-xs font-medium px-3 py-1.5 rounded-full animate-fade-up">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
             Unofficial · Student-built · Free to use
           </div>
           <div className="animate-fade-up-1">
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+            <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight tracking-tight">
               All your S<span className="text-suss-red">U</span>SS portals<br className="hidden md:block" /> in one place
             </h1>
             <p className="text-white/60 mt-3 text-sm md:text-base">
@@ -103,6 +101,13 @@ export default function Home() {
           </div>
           <div className="w-full animate-fade-up-2">
             <SearchBar ref={searchRef} value={query} onChange={setQuery} />
+          </div>
+          <div className="animate-fade-up-3 flex items-center gap-5 text-white/40 text-xs">
+            <span><span className="text-white/70 font-semibold tabular-nums">{totalLinks}</span> links</span>
+            <span className="w-1 h-1 rounded-full bg-white/20" />
+            <span><span className="text-white/70 font-semibold tabular-nums">{categories.length}</span> categories</span>
+            <span className="w-1 h-1 rounded-full bg-white/20" />
+            <span><span className="text-white/70 font-semibold">2</span> tools</span>
           </div>
         </div>
       </section>
@@ -147,8 +152,9 @@ export default function Home() {
             <QuickAccess />
 
             <section className="max-w-6xl mx-auto px-4 pb-10">
-              <div className="mb-4">
-                <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+              <div className="flex items-center gap-2.5 mb-4">
+                <span className="w-1 h-4 bg-suss-red rounded-sm shrink-0" />
+                <h2 className="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
                   Browse by Category
                 </h2>
               </div>

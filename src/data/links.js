@@ -1,10 +1,10 @@
 export const quickAccessLinks = [
-  { name: 'Canvas', href: 'https://canvas.suss.edu.sg', icon: 'BookOpen' },
-  { name: 'Student Portal', href: 'https://portal.suss.edu.sg', icon: 'LayoutDashboard' },
-  { name: 'MyMail', href: 'https://outlook.office365.com', icon: 'Mail' },
-  { name: 'Library', href: 'https://library.suss.edu.sg', icon: 'Library' },
-  { name: 'Career Portal', href: 'https://susscareerportal.suss.edu.sg', icon: 'Briefcase' },
-  { name: 'iSmart-Guide', href: 'https://isg.suss.edu.sg/', icon: 'Compass' },
+  { name: 'Canvas', href: 'https://canvas.suss.edu.sg', icon: 'BookOpen', color: 'blue' },
+  { name: 'Student Portal', href: 'https://portal.suss.edu.sg', icon: 'LayoutDashboard', color: 'violet' },
+  { name: 'MyMail', href: 'https://outlook.office365.com', icon: 'Mail', color: 'sky' },
+  { name: 'Library', href: 'https://library.suss.edu.sg', icon: 'Library', color: 'teal' },
+  { name: 'Career Portal', href: 'https://susscareerportal.suss.edu.sg', icon: 'Briefcase', color: 'orange' },
+  { name: 'iSmart-Guide', href: 'https://isg.suss.edu.sg/', icon: 'Compass', color: 'amber' },
 ]
 
 export const categories = [
@@ -128,10 +128,16 @@ export const categories = [
     icon: 'FileText',
     description: 'Admin forms, surveys, checklists and policies',
     links: [
-      { name: 'Administrative Forms', description: 'All admin form submissions', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → Administrative Forms' },
-      { name: 'Survey Platform', description: 'SUSS student surveys', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → Survey Platform' },
-      { name: 'Course Material Contents Checklist', description: 'Check what materials you should have', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → Course Material Contents Checklist' },
-      { name: 'Policy and Procedures', description: 'University policies', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → Policy and Procedures' },
+      { name: 'Administrative Forms', description: 'All admin form submissions', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → Administrative Forms', group: 'Forms' },
+      { name: 'Survey Platform', description: 'SUSS student surveys', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → Survey Platform', group: 'Forms' },
+      { name: 'Course Material Contents Checklist', description: 'Check what materials you should have', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → Course Material Contents Checklist', group: 'Forms' },
+      { name: 'PSEA Withdrawal Form', description: 'Withdraw PSEA funds for tuition fee payment', href: 'https://form.gov.sg/686beddd68398fdc1e3058b0', portalPath: null, group: 'Forms' },
+      { name: 'Policy and Procedures', description: 'Full list of university policies via Student Portal', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → Policy and Procedures', group: 'Policies' },
+      { name: 'TMA Auto Marks Deduction Scheme', description: 'Rules for late and plagiarism mark deductions on Tutor Marked Assignments', href: 'https://www.suss.edu.sg/docs/default-source/student-life/student-resources/tutor-marked-assignment-(tma)-auto-marks-deduction-scheme.pdf?sfvrsn=bd6c3fc7_1', portalPath: null, group: 'Policies' },
+      { name: 'Automatic Withdrawal from Course', description: 'Policy on automatic course withdrawal conditions', href: 'https://www.suss.edu.sg/docs/default-source/student-life/student-resources/automatic-withdrawal-from-course.pdf?sfvrsn=436a5cd4_1', portalPath: null, group: 'Policies' },
+      { name: 'Academic Progression Policy (Part-time UG)', description: 'Academic standing and progression requirements for part-time undergraduate students', href: 'https://www.suss.edu.sg/docs/default-source/student-life/student-resources/academic-progression-policy-(part-time-undergraduate-students).pdf?sfvrsn=787a0318_1', portalPath: null, group: 'Policies' },
+      { name: 'Academic Progression Policy (Full-time UG)', description: 'Academic standing and progression requirements for full-time undergraduate students', href: 'https://www.suss.edu.sg/docs/default-source/student-life/student-resources/academic-progression-policy-(full-time-undergraduate-students).pdf?sfvrsn=98a75582_1', portalPath: null, group: 'Policies' },
+      { name: 'Academic Progression Policy (Law)', description: 'Academic standing and progression requirements for School of Law students', href: 'https://www.suss.edu.sg/docs/default-source/student-life/student-resources/academic-progression-policy-(law-students).pdf?sfvrsn=bdf65ba7_1', portalPath: null, group: 'Policies' },
     ],
   },
   {

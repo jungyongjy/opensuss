@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav className="md:sticky top-0 z-50 bg-navy dark:bg-gray-900 shadow-md">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link to="/" className="text-white font-bold text-lg tracking-tight">
+        <Link to="/" className="font-display font-bold text-lg tracking-tight text-white">
           OpenS<span className="text-suss-red">U</span>SS
         </Link>
         <div className="flex items-center gap-1">
@@ -32,7 +32,7 @@ export default function Navbar() {
             to="/academic-calendar"
             className={`flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg transition-colors ${
               isCalendar
-                ? 'bg-white/15 text-white'
+                ? 'bg-suss-red/15 border border-suss-red/25 text-white'
                 : 'text-white/70 hover:text-white hover:bg-white/10'
             }`}
           >
@@ -43,7 +43,7 @@ export default function Navbar() {
             to="/tools"
             className={`flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg transition-colors ${
               isTools
-                ? 'bg-white/15 text-white'
+                ? 'bg-suss-red/15 border border-suss-red/25 text-white'
                 : 'text-white/70 hover:text-white hover:bg-white/10'
             }`}
           >

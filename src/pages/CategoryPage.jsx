@@ -88,7 +88,7 @@ export default function CategoryPage() {
             <Icon name={category.icon} size={28} className={style.icon} />
           </div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight">{category.name}</h1>
+            <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight">{category.name}</h1>
             <p className="text-white/60 text-sm mt-1">{category.description}</p>
             <p className="text-white/40 text-xs mt-1">{category.links.length} link{category.links.length !== 1 ? 's' : ''}</p>
           </div>
@@ -119,6 +119,7 @@ export default function CategoryPage() {
               {groups.map(({ name, links }) => (
                 <div key={name} id={toId(name)} className="scroll-mt-6 md:scroll-mt-20">
                   <div className="flex items-center gap-3 mb-5">
+                    <span className="w-0.5 h-4 bg-suss-red rounded-full shrink-0" />
                     <h2 className="text-sm font-semibold text-gray-800 dark:text-gray-200 whitespace-nowrap">{name}</h2>
                     <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
                   </div>
