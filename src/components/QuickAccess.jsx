@@ -31,7 +31,7 @@ export default function QuickAccess() {
               style={{ animationDelay: `${i * 50}ms` }}
               target="_blank"
               rel="noopener noreferrer"
-              className={`animate-fade-up group flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-5 ${colors.cardHover} hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 text-center min-w-[100px] md:flex-1`}
+              className={`animate-fade-up group flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-5 ${colors.cardHover} hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 text-center min-w-[100px] md:flex-1 md:max-w-[172px]`}
             >
               <div className={`rounded-lg ${colors.bg} p-2.5 transition-colors duration-200`}>
                 <Icon name={item.icon} size={22} className={colors.icon} />

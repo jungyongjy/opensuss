@@ -86,6 +86,9 @@ export default function Home() {
           <div className="w-0.5 h-8 bg-white/10 rounded-full" />
         </div>
 
+        {/* Bottom gradient bridge to page */}
+        <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-b from-transparent to-gray-50 dark:to-gray-950 pointer-events-none" />
+
         <div className="relative max-w-6xl mx-auto flex flex-col items-center text-center gap-6">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-xs font-medium px-3 py-1.5 rounded-full animate-fade-up">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />

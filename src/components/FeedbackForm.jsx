@@ -28,7 +28,7 @@ export default function FeedbackForm() {
 
   return (
     <section className="max-w-xl mx-auto px-4 py-10">
-      <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">
+      <h2 className="font-display text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">
         Suggest a link
       </h2>
       <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
