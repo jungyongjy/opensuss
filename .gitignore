@@ -6,3 +6,5 @@ dist
 
 .vercel
 docs/
+.claude/
+.playwright-cli/
