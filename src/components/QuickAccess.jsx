@@ -1,5 +1,6 @@
 import Icon from './Icon'
 import { quickAccessLinks } from '../data/links'
+import { handleAppClick } from '../utils/canvasDeepLink'
 
 const colorMap = {
   blue:   { bg: 'bg-blue-100 dark:bg-blue-900/40',    icon: 'text-blue-600 dark:text-blue-400',    cardHover: 'group-hover:border-blue-200 dark:group-hover:border-blue-700 group-hover:bg-blue-50/50 dark:group-hover:bg-blue-950/20' },
@@ -31,6 +32,7 @@ export default function QuickAccess() {
               style={{ animationDelay: `${i * 50}ms` }}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => handleAppClick(e, item.href)}
               className={`animate-fade-up group flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-5 ${colors.cardHover} hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 text-center min-w-[100px] md:flex-1 md:max-w-[172px]`}
             >
               <div className={`rounded-lg ${colors.bg} p-2.5 transition-colors duration-200`}>

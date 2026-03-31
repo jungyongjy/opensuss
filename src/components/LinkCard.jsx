@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ExternalLink, Phone, Mail, Copy, Check, Flag } from 'lucide-react'
+import { handleAppClick } from '../utils/canvasDeepLink'
 
 const FORMSPREE_URL = 'https://formspree.io/f/mqegklop'
 
@@ -230,6 +231,7 @@ export default function LinkCard({ link }) {
       href={link.href}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={(e) => handleAppClick(e, link.href)}
       className={`group flex flex-col justify-between rounded-xl border bg-white dark:bg-gray-800 p-5 hover:shadow-lg transition-all duration-200 ${
         isPortalCard
           ? 'border-l-2 border-l-navy/40 dark:border-l-blue-600/60 border-t border-r border-b border-gray-200 dark:border-gray-700 hover:border-l-navy dark:hover:border-l-blue-400 hover:border-t-gray-300 hover:border-r-gray-300 hover:border-b-gray-300 dark:hover:border-t-gray-600 dark:hover:border-r-gray-600 dark:hover:border-b-gray-600'
