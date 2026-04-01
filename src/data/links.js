@@ -33,6 +33,8 @@ export const categories = [
       { name: 'Minors Overview', description: 'Browse available minors and their course requirements', href: 'https://www.suss.edu.sg/academics/programmes/part-time-undergraduate/minor', portalPath: null, group: 'Programme & Curriculum' },
       { name: 'New SUSS Curriculum', description: 'Understand the curriculum structure, credit units, and degree requirements', href: 'https://www.suss.edu.sg/academics/why-suss/new-suss-curriculum', portalPath: null, group: 'Programme & Curriculum' },
       { name: 'Credit Waiver and Exemption', description: 'Credit recognition for polytechnic graduates', href: 'https://www.suss.edu.sg/life-at-suss/onboarding/matriculation/credit-waivers-credit-recognitions', portalPath: null, group: 'Programme & Curriculum' },
+      { name: 'Canvas Technical Support', description: 'Issues with Canvas LMS', type: 'contact', email: 'lssupport@suss.edu.sg', hours: 'Mon–Fri 8:30am–10:30pm, Sat–Sun 8:30am–5:30pm', group: 'Support' },
+      { name: 'Student Services', description: 'Academic admin enquiries', type: 'contact', phone: '6330 9111 press 1', email: 'students@suss.edu.sg', hours: 'Mon–Fri 8:30am–5:30pm', group: 'Support' },
     ],
   },
   {
@@ -58,6 +60,7 @@ export const categories = [
       { name: 'Event Service Online', description: 'Register for SUSS events', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → E-Services → Event Service Online', group: 'Events & Miscellaneous' },
       { name: 'Application for Overseas Examination', description: 'Sit exams overseas', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → E-Services → Application for Overseas Examination', group: 'Events & Miscellaneous' },
       { name: 'SSG Funding (SC/SPR Postgrad)', description: 'SkillsFuture funding', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → E-Services → SSG Funding', group: 'Events & Miscellaneous' },
+      { name: 'Student Services', description: 'Admin and e-services enquiries', type: 'contact', phone: '6330 9111 press 1', email: 'students@suss.edu.sg', hours: 'Mon–Fri 8:30am–5:30pm', group: 'Support' },
     ],
   },
   {
@@ -92,6 +95,7 @@ export const categories = [
       { name: 'Work Attachment Progress', description: 'Track your WA milestones', href: 'https://susscareerportal.suss.edu.sg', portalPath: null, note: 'Login → Home → Your Work Attachment' },
       { name: 'Career Development Info', description: 'SUSS CD team info and contacts', href: 'https://www.suss.edu.sg/life-at-suss/student-experiences/career-development', portalPath: null },
       { name: 'Elevate@SUSS', description: 'Mentoring & coaching — book sessions for personal growth, academic success & career readiness', href: 'https://elevate.suss.edu.sg', portalPath: null },
+      { name: 'Career Development', description: 'Jobs, WA, career coaching and workshops enquiries', type: 'contact', email: 'careerdev@suss.edu.sg' },
     ],
   },
   {
@@ -108,6 +112,7 @@ export const categories = [
       { name: 'Credit Waiver and Exemption', description: 'Credit recognition and fee implications for polytechnic graduates', href: 'https://www.suss.edu.sg/life-at-suss/onboarding/matriculation/credit-waivers-credit-recognitions', portalPath: null },
       { name: 'Scholarship / Financial Aid eApplication', description: 'Apply for scholarships and financial assistance', href: 'https://portal.suss.edu.sg', portalPath: 'Portal → E-Services → Full Time Scholarship / Financial Aid eApplication' },
       { name: 'SSG Funding (SC/SPR Postgrad)', description: 'SkillsFuture funding application', href: 'https://portal.suss.edu.sg', portalPath: 'Portal → E-Services → SSG Funding' },
+      { name: 'Financial Aid Enquiries', description: 'Scholarships, sponsorships and financial aid', type: 'contact', phone: '6330 9111', email: 'financialaid@suss.edu.sg', hours: 'Mon–Fri 8:30am–5:30pm' },
     ],
   },
   {
@@ -139,6 +144,7 @@ export const categories = [
       { name: 'Academic Progression Policy (Part-time UG)', description: 'Academic standing and progression requirements for part-time undergraduate students', href: 'https://www.suss.edu.sg/docs/default-source/student-life/student-resources/academic-progression-policy-(part-time-undergraduate-students).pdf?sfvrsn=787a0318_1', portalPath: null, group: 'Policies' },
       { name: 'Academic Progression Policy (Full-time UG)', description: 'Academic standing and progression requirements for full-time undergraduate students', href: 'https://www.suss.edu.sg/docs/default-source/student-life/student-resources/academic-progression-policy-(full-time-undergraduate-students).pdf?sfvrsn=98a75582_1', portalPath: null, group: 'Policies' },
       { name: 'Academic Progression Policy (Law)', description: 'Academic standing and progression requirements for School of Law students', href: 'https://www.suss.edu.sg/docs/default-source/student-life/student-resources/academic-progression-policy-(law-students).pdf?sfvrsn=bdf65ba7_1', portalPath: null, group: 'Policies' },
+      { name: 'Student Services', description: 'Form submissions and admin enquiries', type: 'contact', phone: '6330 9111 press 1', email: 'students@suss.edu.sg', hours: 'Mon–Fri 8:30am–5:30pm', group: 'Support' },
     ],
   },
   {
