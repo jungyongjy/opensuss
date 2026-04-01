@@ -1,9 +1,10 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Home, CalendarDays, Calculator } from 'lucide-react'
+import { Home, CalendarDays, Calculator, CalendarRange } from 'lucide-react'
 
 const TABS = [
   { to: '/', icon: Home, label: 'Home' },
   { to: '/academic-calendar', icon: CalendarDays, label: 'Calendar' },
+  { to: '/planner', icon: CalendarRange, label: 'Planner' },
   { to: '/tools', icon: Calculator, label: 'Tools' },
 ]
 
