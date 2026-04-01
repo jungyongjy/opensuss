@@ -11,3 +11,13 @@ docs/
 .playwright-mcp/
 audit-*.png
 .worktrees/
+
+# Local planner research/scratch artifacts (repo root only)
+/PLANNER-IMPLEMENTATION.md
+/api_*.png
+/architecture.png
+/module_*.png
+/nusmods_*.png
+/planner_container*.png
+/semester*_dir.png
+/semesters_dir.png
