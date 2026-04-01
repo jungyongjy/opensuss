@@ -91,6 +91,7 @@ export const categories = [
       { name: 'Cover Letter Tool', description: 'Draft cover letters', href: 'https://susscareerportal.suss.edu.sg', portalPath: null, note: 'Login → My Tools → Cover Letter' },
       { name: 'Work Attachment Progress', description: 'Track your WA milestones', href: 'https://susscareerportal.suss.edu.sg', portalPath: null, note: 'Login → Home → Your Work Attachment' },
       { name: 'Career Development Info', description: 'SUSS CD team info and contacts', href: 'https://www.suss.edu.sg/life-at-suss/student-experiences/career-development', portalPath: null },
+      { name: 'Elevate@SUSS', description: 'Mentoring & coaching — book sessions for personal growth, academic success & career readiness', href: 'https://elevate.suss.edu.sg', portalPath: null },
     ],
   },
   {
