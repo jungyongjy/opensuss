@@ -7,6 +7,7 @@ import SelectedModules from '../components/planner/SelectedModules'
 import WeeklyGrid from '../components/planner/WeeklyGrid'
 import CRNPickerModal from '../components/planner/CRNPickerModal'
 import ICSExportButton from '../components/planner/ICSExportButton'
+import PrereqGateModal from '../components/planner/PrereqGateModal'
 import { MODULE_COLORS } from '../utils/plannerUtils'
 
 import dayData from '../data/timetables/jul-2026-day.json'
@@ -16,6 +17,7 @@ import moduleData from '../data/timetables/BAS-MAJ1.json'
 export default function PlannerPage() {
   const [selectedModules, setSelectedModules] = useState([])
   const [pickerTarget, setPickerTarget] = useState(null)
+  const [gateTarget, setGateTarget] = useState(null)
 
   useEffect(() => {
     document.title = 'Module Planner | OpenSUSS'
@@ -28,9 +30,22 @@ export default function PlannerPage() {
 
   const excludedCodes = selectedModules.map(m => m.courseCode)
 
-  function handleAdd(courseCode, name) {
+  function addModule(courseCode, name) {
     const color = MODULE_COLORS[selectedModules.length % MODULE_COLORS.length]
     setSelectedModules(prev => [...prev, { courseCode, name, crn: null, color, timetableEntry: null }])
+  }
+
+  function handleAdd(courseCode, name) {
+    const module = moduleData.find(m => m.code === courseCode)
+    const prereqs = module?.prereqs || []
+    const excludedCombinations = module?.excludedCombinations || []
+
+    if (prereqs.length > 0 || excludedCombinations.length > 0) {
+      setGateTarget({ courseCode, name })
+      return
+    }
+
+    addModule(courseCode, name)
   }
 
   function handleRemove(courseCode) {
@@ -46,6 +61,7 @@ export default function PlannerPage() {
   }
 
   const pickerModule = pickerTarget ? selectedModules.find(m => m.courseCode === pickerTarget) : null
+  const gateModule = gateTarget ? moduleData.find(m => m.code === gateTarget.courseCode) : null
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col">
@@ -109,6 +125,17 @@ export default function PlannerPage() {
           lockedEntries={lockedEntries}
           onSelect={handleSelectCRN}
           onClose={() => setPickerTarget(null)}
+        />
+      )}
+
+      {gateTarget && (
+        <PrereqGateModal
+          courseCode={gateTarget.courseCode}
+          moduleName={gateTarget.name}
+          prereqs={gateModule?.prereqs || []}
+          excludedCombinations={gateModule?.excludedCombinations || []}
+          onConfirm={() => addModule(gateTarget.courseCode, gateTarget.name)}
+          onClose={() => setGateTarget(null)}
         />
       )}
     </div>
