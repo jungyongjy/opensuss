@@ -40,7 +40,9 @@ export default function Home() {
           (link) =>
             link.name.toLowerCase().includes(q) ||
             link.description.toLowerCase().includes(q) ||
-            (link.portalPath && link.portalPath.toLowerCase().includes(q))
+            (link.portalPath && link.portalPath.toLowerCase().includes(q)) ||
+            (link.email && link.email.toLowerCase().includes(q)) ||
+            (link.keywords && link.keywords.some((k) => k.toLowerCase().includes(q)))
         ),
       }))
       .filter((g) => g.links.length > 0)
