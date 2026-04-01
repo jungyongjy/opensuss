@@ -10,3 +10,4 @@ docs/
 .playwright-cli/
 .playwright-mcp/
 audit-*.png
+.worktrees/
