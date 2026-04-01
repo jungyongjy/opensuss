@@ -24,14 +24,20 @@ OpenSUSS is the unofficial fix. It is a student-built hub that organises every S
 - **Search** — find any link across all categories instantly by name, description or portal path
 - **8 categories** — Academics, Admin and E-Services, Library, Career, Financial, Facilities and Campus, Forms and Admin, and Notices and Support
 - **Academic Calendar** — dedicated page with calendars for Full-time UG, Part-time UG, Law and Postgrad programmes
-- **Breadcrumb navigation paths** — for Student Portal links, step-by-step paths show exactly where to go after logging in
+- **Easy to follow navigation paths** — for Student Portal links, step-by-step paths show exactly where to go after logging in
 - **Live library room availability** — direct link to the real-time discussion room booking grid
 - **Tools** — CGPA Simulator and OCAS Calculator for quick academic planning
+- **ECR Planner** — Automatically detects when a module clashes with schedules. Export to Google Calendar function available.
 - **Report broken links** — flag any outdated link directly from the card, with a confirmation step to prevent accidental submissions
 
 ---
 
 ![Category page](screenshots/category.png)
+
+---
+---
+
+![Planner_page](screenshots/Planner.gif)
 
 ---
 
