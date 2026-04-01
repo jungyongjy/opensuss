@@ -56,12 +56,12 @@
         "name": "Everyday Psychology",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "CET145",
+        "prereqs": [
             "PSY107",
-            "PSY108"
+            "PSY108",
+            "CET145"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -164,7 +164,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ACC202"
+            "ACC202",
+            "ACC201"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -179,11 +180,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ACC205",
             "ACC201"
         ],
-        "excludedCombinations": [
-            "ACC205"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -195,12 +195,13 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ACC307",
+            "ACC206",
+            "FIN303",
             "ACC205",
-            "ACC206"
-        ],
-        "excludedCombinations": [
             "ACC207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -212,11 +213,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ACC203"
+            "FIN303",
+            "ACC209",
+            "ACC203",
+            "BUS107"
         ],
-        "excludedCombinations": [
-            "ACC209"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -228,11 +230,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ACC213",
             "ACC201"
         ],
-        "excludedCombinations": [
-            "ACC213"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -244,7 +245,10 @@
         "name": "Accounting Information Systems",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "ACC203",
+            "ACC201"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jan"
@@ -257,12 +261,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ACC208",
             "ACC207",
-            "ACC208"
-        ],
-        "excludedCombinations": [
             "ACC301"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -273,7 +276,10 @@
         "name": "Assurance and Attestation",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "ACC217",
+            "ACC206"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -300,8 +306,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ACC213",
-            "ACC214"
+            "ACC214",
+            "ACC213"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -330,11 +336,11 @@
         "group": "elective",
         "prereqs": [
             "ACC209",
+            "BUS107",
+            "ACC211",
             "ACC210"
         ],
-        "excludedCombinations": [
-            "ACC211"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -345,13 +351,13 @@
         "name": "Forensic Accounting",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "ACC201",
+        "prereqs": [
+            "ACC305",
             "BUS201",
-            "BUS205",
-            "ACC305"
+            "ACC201",
+            "BUS205"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -363,10 +369,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ANL303",
-            "ACC201",
             "ACC203",
-            "ACC202"
+            "ANL303",
+            "ACC202",
+            "ACC201"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -380,11 +386,13 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ACC208"
-        ],
-        "excludedCombinations": [
+            "BUS107",
+            "ACC208",
+            "FIN303",
+            "ACC302",
             "ACC407"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -397,12 +405,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ANL101",
-            "BUS105"
+            "BUS105",
+            "ANL315",
+            "ANL101"
         ],
-        "excludedCombinations": [
-            "ANL315"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -442,7 +449,9 @@
         "name": "Fundamentals of Data Mining",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "BUS105"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul",
@@ -458,9 +467,7 @@
         "prereqs": [
             "ANL303"
         ],
-        "excludedCombinations": [
-            "ANL303"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -486,11 +493,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ANL303"
-        ],
-        "excludedCombinations": [
+            "ANL303",
             "ANL309"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -502,11 +508,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ANL311",
+            "ANL488",
             "ANL303"
         ],
-        "excludedCombinations": [
-            "ANL311"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -532,12 +538,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BUS105",
-            "ANL101"
+            "ANL101",
+            "ANL302",
+            "BUS105"
         ],
-        "excludedCombinations": [
-            "ANL302"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -548,12 +553,12 @@
         "name": "Aviation Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "LOG341",
+        "prereqs": [
+            "LOG358",
             "LOG357",
-            "LOG358"
+            "LOG341"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -700,9 +705,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "TESZ131",
             "BME209",
-            "BME207",
-            "TESZ131"
+            "BME108",
+            "BME207"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -716,9 +722,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME210",
             "BME207",
-            "TESZ131"
+            "TESZ131",
+            "BME210",
+            "BME107"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -760,8 +767,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME105",
-            "MTZS262"
+            "MTZS262",
+            "BME105"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -775,7 +782,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "TESZ232"
+            "TESZ232",
+            "BME206"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -789,12 +797,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME205"
-        ],
-        "excludedCombinations": [
+            "BME205",
             "BME301",
             "TESZ331"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -863,12 +870,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME205"
+            "BME205",
+            "BME211",
+            "TESZ331"
         ],
-        "excludedCombinations": [
-            "TESZ331",
-            "BME211"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -880,12 +886,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME205"
+            "BME205",
+            "BME213",
+            "TESZ332"
         ],
-        "excludedCombinations": [
-            "TESZ332",
-            "BME213"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -897,11 +902,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME102"
+            "BME102",
+            "BME307",
+            "BME312"
         ],
-        "excludedCombinations": [
-            "BME307"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -913,11 +918,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME102"
-        ],
-        "excludedCombinations": [
+            "BME311",
+            "BME102",
             "BME307"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -929,16 +934,16 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME107",
-            "ME108",
             "BME209",
             "ME210",
+            "BME309",
+            "BME213",
+            "BME107",
+            "ME108",
+            "BME315",
             "BME207"
         ],
-        "excludedCombinations": [
-            "BME309",
-            "BME213"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -950,16 +955,16 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "BME209",
+            "BME313",
+            "ME210",
+            "BME309",
+            "BME211",
             "BME107",
             "ME108",
-            "BME209",
-            "ME210",
             "BME207"
         ],
-        "excludedCombinations": [
-            "BME309",
-            "BME211"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -982,15 +987,15 @@
         "name": "Cardiovascular Bioengineering",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "BME205",
-            "BME107",
-            "ME108",
+        "prereqs": [
             "BME209",
             "BME210",
-            "BME207"
+            "BME205",
+            "BME207",
+            "BME107",
+            "ME108"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -1002,7 +1007,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME109"
+            "BME109",
+            "BME356"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -1016,7 +1022,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BME109"
+            "BME109",
+            "BME355"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -1029,11 +1036,11 @@
         "name": "Advanced Biomedical Instrumentation",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "BME311",
             "BME312"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -1044,14 +1051,15 @@
         "name": "Medical Imaging",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "BME107",
-            "ME108",
+        "prereqs": [
+            "BME359",
             "BME209",
             "ME210",
+            "BME107",
+            "ME108",
             "BME207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -1062,14 +1070,15 @@
         "name": "Visualisation and Image Analysis",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "BME107",
-            "ME108",
+        "prereqs": [
             "BME209",
             "ME210",
+            "BME107",
+            "ME108",
+            "BME358",
             "BME207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -1209,12 +1218,12 @@
         "name": "Cost Management for Architectural Works",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "QSM201",
+        "prereqs": [
+            "QSM301",
             "QSM202",
-            "QSM301"
+            "QSM201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -1225,12 +1234,12 @@
         "name": "Cost Management for C&S Works",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "QSM201",
+        "prereqs": [
+            "QSM301",
             "QSM202",
-            "QSM301"
+            "QSM201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -1303,12 +1312,12 @@
         "name": "Cost Management for M&E Works",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "QSM201",
+        "prereqs": [
+            "QSM301",
             "QSM202",
-            "QSM301"
+            "QSM201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -1331,7 +1340,9 @@
         "name": "Risk Management in Outdoor Education",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "BSE225"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -1355,11 +1366,11 @@
         "name": "Management in the Digital Age",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "BUS101",
-            "BSZ160"
+        "prereqs": [
+            "BSZ160",
+            "BUS101"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -1371,14 +1382,14 @@
         "name": "Organisational Behaviour in the Technology Era",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
+            "BSZ160",
             "BUS103",
             "HRM203",
-            "BSZ160",
             "CUL201",
             "BUS206"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -1406,8 +1417,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BSZ220",
-            "BZS3001"
+            "BZS3001",
+            "BSZ220"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -1488,11 +1499,11 @@
         "name": "Operations Analytics",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "BUS351",
-            "BSZ352"
+        "prereqs": [
+            "BSZ352",
+            "BUS351"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -1504,8 +1515,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BSZ352",
-            "BZS3002"
+            "BZS3002",
+            "BSZ352"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -1545,7 +1556,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BFSZ333"
+            "BFSZ333",
+            "MKT202",
+            "FIN303",
+            "ACC201"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -1587,11 +1601,11 @@
         "name": "The Intelligent Enterprise: Harnessing Emerging Technologies",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "BUS362",
-            "BUS361"
+        "prereqs": [
+            "BUS361",
+            "BUS362"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -1604,7 +1618,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "CTI101"
+            "CTI101",
+            "CCC103"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -1619,7 +1634,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "CTI103"
+            "CTI103",
+            "CCC101"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -1636,8 +1652,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "CDO303 SGN This course is letter graded and counts into CGPA."
@@ -1652,8 +1668,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "CDO303 KHH This course is letter graded and counts into CGPA."
@@ -1668,8 +1684,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "CDO354"
@@ -1692,7 +1708,14 @@
         "name": "The Law and Practice of Arbitration in Singapore",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "LAW201",
+            "LAW307",
+            "LAW305",
+            "BUS201",
+            "BUS205",
+            "LAW203"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -1730,12 +1753,12 @@
         "name": "Modern Chinese (\u73b0\u4ee3 \u6c49\u8bed)",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "CCC201",
+        "prereqs": [
             "CLS115",
-            "CLS311"
+            "CLS311",
+            "CCC201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -1759,8 +1782,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "CLS111",
-            "CLS113"
+            "CLS113",
+            "CLS111"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -1774,12 +1797,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "CHS201"
+            "CLS113",
+            "CHS201",
+            "CLS111"
         ],
-        "excludedCombinations": [
-            "CLS111",
-            "CLS113"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -1791,8 +1813,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "CLS201",
-            "CLS202"
+            "CLS202",
+            "CLS201"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -1806,12 +1828,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "CHS203"
+            "CHS203",
+            "CLS204",
+            "CLS203"
         ],
-        "excludedCombinations": [
-            "CLS203",
-            "CLS204"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -2268,6 +2289,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "HBC203",
+            "HBC201",
             "COM307"
         ],
         "excludedCombinations": [],
@@ -2431,11 +2454,11 @@
         "name": "Criminological Theories and Intervention",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "PSS305",
             "SOC355"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -2628,7 +2651,10 @@
         "name": "Chinese-English Simultaneous Interpretation",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "CTI207",
+            "CTI205"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -2640,7 +2666,10 @@
         "name": "English-Chinese Simultaneous Interpretation",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "CTI207",
+            "CTI205"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -2924,9 +2953,9 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH211",
             "EAS201",
-            "MTH316",
-            "MTH211"
+            "MTH316"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -2954,12 +2983,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ENG101",
-            "ENG103"
+            "ENG103",
+            "EAS305",
+            "ENG101"
         ],
-        "excludedCombinations": [
-            "EAS305"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "May",
             "Jan"
@@ -2972,8 +3000,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ENG101",
-            "ENG103"
+            "ENG103",
+            "ENG101"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -3002,8 +3030,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT162",
             "MTH211",
+            "ICT162",
             "MTH316"
         ],
         "excludedCombinations": [],
@@ -3018,8 +3046,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "EAS301",
-            "EAS309"
+            "EAS309",
+            "EAS301"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -3129,9 +3157,9 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT133",
-            "MTH215",
             "MTH319",
+            "MTH215",
+            "ICT133",
             "MTH240"
         ],
         "excludedCombinations": [],
@@ -3259,11 +3287,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ECE360",
             "ECE304"
         ],
-        "excludedCombinations": [
-            "ECE360"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -3300,12 +3327,12 @@
         "name": "Economic Ideas and Models for Business",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "ECO201",
+        "prereqs": [
+            "DDZS202",
             "BSZ221",
-            "DDZS202"
+            "ECO201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -3375,11 +3402,11 @@
         "name": "Cost-Benefit Analysis and Sustainability",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "ECO202",
             "ECO205"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -3417,11 +3444,11 @@
         "name": "Discovering Language",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "AZS1031",
             "ELG103"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -3447,11 +3474,12 @@
         "name": "Language and Society",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "ELG215",
-            "ELG205"
+        "prereqs": [
+            "ELG101",
+            "ELG205",
+            "ELG215"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -3505,11 +3533,11 @@
         "name": "Global Englishes",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "EZS399",
-            "ELG353"
+        "prereqs": [
+            "ELG353",
+            "EZS399"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -3520,11 +3548,11 @@
         "name": "Analysing Discourse",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "EZS3012",
-            "ELG358"
+        "prereqs": [
+            "ELG358",
+            "EZS3012"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -3535,13 +3563,13 @@
         "name": "Language and Education",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "ELG354",
-            "EZS300",
+        "prereqs": [
+            "EZS3012",
             "EZS3011",
-            "EZS3012"
+            "ELG354",
+            "EZS300"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -3591,11 +3619,12 @@
         "name": "Understanding Poetry",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "AZS1032",
-            "ELT109"
+        "prereqs": [
+            "ELT107",
+            "ELT109",
+            "AZS1032"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -3886,11 +3915,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ENG103"
-        ],
-        "excludedCombinations": [
+            "ENG103",
             "HESZ231"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -3918,8 +3946,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH107",
+            "HESZ230",
             "TZS3051",
-            "HESZ230"
+            "MTH108"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -3934,8 +3964,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH107",
             "HESZ230",
-            "TZS3051"
+            "TZS3051",
+            "MTH108"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -3948,17 +3980,17 @@
         "name": "Fundamentals of Applied Electromagnetics",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "MTH107",
-            "MTH108",
-            "MTH316",
-            "MTH319",
             "MTH109",
-            "MTH240",
             "ENG315",
-            "ENG307"
+            "MTH240",
+            "ENG307",
+            "MTH108",
+            "MTH319",
+            "MTH316"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -3997,6 +4029,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ICT271",
+            "ICT272",
             "TZS323"
         ],
         "excludedCombinations": [],
@@ -4011,6 +4045,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ENG203",
+            "ENG201",
             "TZS305",
             "TZS3051"
         ],
@@ -4026,14 +4062,13 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ENG201",
-            "ENG203",
-            "ENG311"
-        ],
-        "excludedCombinations": [
+            "ENG315",
+            "ENG311",
             "ENG307",
-            "ENG315"
+            "ENG203",
+            "ENG201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -4045,12 +4080,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ENG203",
             "ENG201",
-            "ENG203"
-        ],
-        "excludedCombinations": [
             "HESZ330"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -4062,7 +4096,9 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ENG377"
+            "ENG203",
+            "ENG377",
+            "ENG201"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -4076,7 +4112,9 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ENG377"
+            "ENG203",
+            "ENG377",
+            "ENG201"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -4090,8 +4128,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH211",
             "HESZ341",
-            "TZS354"
+            "ENG103",
+            "TZS354",
+            "MTH219",
+            "ENG101"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -4105,8 +4147,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH211",
             "HESZ341",
-            "TZS354"
+            "ENG103",
+            "TZS354",
+            "MTH219",
+            "ENG101"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -4120,11 +4166,14 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ENG331"
+            "ENG105",
+            "ENG331",
+            "ENG103",
+            "HESZ342",
+            "ENG107",
+            "ENG101"
         ],
-        "excludedCombinations": [
-            "HESZ342"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -4135,7 +4184,10 @@
         "name": "Radar System Applications",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "ENG205",
+            "ENG201"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -4147,7 +4199,10 @@
         "name": "RF and Microwave Design of Wireless Systems",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "ENG205",
+            "ENG201"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jan"
@@ -4186,14 +4241,14 @@
         "name": "Essentials of Financial Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "FIN205",
+        "prereqs": [
             "FIN303",
-            "FIN304",
+            "FIN309",
+            "FIN205",
             "FIN302",
-            "FIN309"
+            "FIN304"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -4247,17 +4302,16 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ACC201",
-            "ACC202"
-        ],
-        "excludedCombinations": [
             "BFSZ335",
             "FIN203",
-            "FIN302",
-            "FIN303",
             "FIN309",
-            "GSP177"
+            "FIN303",
+            "FIN302",
+            "GSP177",
+            "ACC202",
+            "ACC201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -4270,16 +4324,15 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "FIN203",
-            "FIN205",
-            "ACC201",
-            "ACC202"
-        ],
-        "excludedCombinations": [
             "BFSZ335",
+            "FIN203",
             "FIN301",
-            "FIN305E"
+            "FIN205",
+            "FIN305E",
+            "ACC202",
+            "ACC201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -4291,16 +4344,16 @@
         "name": "Financial Data Science",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "ANL101",
-            "BUS105",
-            "ANL251",
-            "ANL252",
+        "prereqs": [
             "FIN201",
+            "BUS105",
+            "FIN312",
             "FIN311",
-            "FIN312"
+            "ANL101",
+            "ANL251",
+            "ANL252"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -4311,15 +4364,15 @@
         "name": "AI with Financial Data",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
+            "FIN313",
             "BUS105",
             "ANL251",
-            "ANL252",
-            "ICT133",
             "FIN353",
-            "FIN313"
+            "ICT133",
+            "ANL252"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -4345,10 +4398,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "FIN203",
             "FIN205",
-            "ACC201",
-            "ACC202"
+            "FIN203",
+            "ACC202",
+            "ACC201"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -4362,16 +4415,15 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ACC202",
+            "FIN354",
             "FIN203",
             "FIN205",
+            "FIN353",
             "FIN304",
-            "ACC201",
-            "ACC202"
+            "ACC201"
         ],
-        "excludedCombinations": [
-            "FIN354",
-            "FIN353"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -4383,14 +4435,13 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "BFSZ332",
             "FIN203",
+            "FIN309",
             "FIN303",
-            "FIN304",
-            "FIN309"
+            "FIN304"
         ],
-        "excludedCombinations": [
-            "BFSZ332"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -4402,17 +4453,16 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "FIN359",
+            "BFSZ332",
             "FIN203",
+            "FIN309",
+            "FIN357",
             "FIN303",
             "FIN304",
-            "FIN309"
+            "BFSZ333"
         ],
-        "excludedCombinations": [
-            "BFSZ332",
-            "BFSZ333",
-            "FIN357",
-            "FIN359"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -4454,16 +4504,15 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ACC202",
+            "FIN381",
             "FIN203",
             "FIN205",
-            "ACC201",
-            "ACC202"
-        ],
-        "excludedCombinations": [
+            "FIN369",
             "FIN382",
-            "FIN381",
-            "FIN369"
+            "ACC201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -4475,18 +4524,17 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "FIN203",
-            "FIN205",
-            "ACC201",
-            "ACC202"
-        ],
-        "excludedCombinations": [
-            "FIN371",
-            "FIN373",
             "FIN375",
+            "GSP110",
+            "FIN203",
+            "FIN371",
             "FIN377",
-            "GSP110"
+            "FIN205",
+            "FIN373",
+            "ACC202",
+            "ACC201"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -4498,13 +4546,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "FIN202",
+            "FIN389",
             "ANL251",
-            "ANL252",
-            "FIN202"
+            "ANL252"
         ],
-        "excludedCombinations": [
-            "FIN389"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -4744,12 +4791,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "FEM101",
-            "FMT101"
+            "FMT101",
+            "FMT301",
+            "FEM101"
         ],
-        "excludedCombinations": [
-            "FMT301"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -4799,9 +4845,9 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "FEM101",
+            "FMT101",
             "FMT201",
-            "FMT101"
+            "FEM101"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -4858,8 +4904,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "FEM111",
-            "FMT316"
+            "FMT316",
+            "FEM111"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -5021,8 +5067,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "FIN379"
@@ -5035,8 +5081,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "75% compulsory attendance required. All lessons are conducted at NAFA. The two Saturday classes may differ from the dates in the course schedule. Your instructors will confirm the actual Saturday class dates during the first class. Multiple runs."
@@ -5051,8 +5097,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "COR160 Students enrolled before January 2019 semester are required to complete COR160 as part of their UCore requirement for graduation. With the retirement of COR160, students who have not completed COR160 must register for GSP160 as part of their UCore requirement for graduation."
@@ -5067,8 +5113,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "GSP163"
@@ -5081,8 +5127,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": ""
@@ -5120,15 +5166,15 @@
         "name": "Religion in the Modern World",
         "cu": 2.5,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "SSC251",
+        "prereqs": [
             "HBC251",
+            "SSC251",
             "SOC252"
         ],
+        "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "SSC251, HBC251, SOC252"
@@ -5156,8 +5202,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "FIN304 Exclusion: BSFI & FIMS."
@@ -5238,14 +5284,14 @@
         "name": "Human-centred Design Thinking",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "COR175",
             "CET217"
         ],
+        "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "COR175, CET217"
@@ -5323,11 +5369,10 @@
         "prereqs": [
             "SSC109",
             "HBC103",
-            "HBC105"
-        ],
-        "excludedCombinations": [
+            "HBC105",
             "SSC109E"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -5339,12 +5384,13 @@
         "name": "\u7406\u89e3\u5f53\u4ee3\u793e\u4f1a\uff1a\u6765\u81ea\u793e \u4f1a\u4e0e\u884c\u4e3a\u79d1\u5b66\u7684\u542f\u793a",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "SSC109",
+            "HBC207",
             "HBC101",
             "HBC105"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -5356,12 +5402,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "SSC201",
-            "SSC211"
+            "SSC211",
+            "SSC201"
         ],
-        "excludedCombinations": [
-            "SSC211"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -5373,11 +5417,11 @@
         "name": "Statistics and Data Analysis for the Social and Behavioural Sciences",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "PSY392",
             "SOC392"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -5389,11 +5433,11 @@
         "name": "Why Read?",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "HBC213",
             "HBC215"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -5404,11 +5448,12 @@
         "name": "\u4e3a\u4f55\u9605\u8bfb?",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "HBC207",
-            "HBC215"
+        "prereqs": [
+            "HBC101",
+            "HBC215",
+            "HBC207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -5420,12 +5465,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "SSC263E",
-            "SSC201E"
-        ],
-        "excludedCombinations": [
+            "SSC201E",
             "SSC263E"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -5437,11 +5480,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ABS352",
             "HBC201"
         ],
-        "excludedCombinations": [
-            "ABS352"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -5701,14 +5743,14 @@
         "name": "Human Behaviour in Organisations",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
+            "BUS103",
+            "BUS104",
             "BUS206",
             "HRM201",
-            "BUS101",
-            "BUS103",
-            "BUS104"
+            "BUS101"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -5819,13 +5861,12 @@
         "group": "elective",
         "prereqs": [
             "BUS105",
+            "PSY391",
+            "HRM317",
             "PSY390",
-            "PSY391"
+            "HRM319"
         ],
-        "excludedCombinations": [
-            "HRM319",
-            "HRM317"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -5975,8 +6016,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT131",
-            "ICT271"
+            "ICT271",
+            "ICT131"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -5991,12 +6032,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT133"
+            "ICT272",
+            "ICT133",
+            "ICT201"
         ],
-        "excludedCombinations": [
-            "ICT201",
-            "ICT272"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -6054,11 +6094,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ICT203",
             "ICT133"
         ],
-        "excludedCombinations": [
-            "ICT203"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -6071,14 +6110,13 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT133"
-        ],
-        "excludedCombinations": [
-            "MTH251",
-            "MTH252",
+            "ICT232",
             "ICT231",
-            "ICT232"
+            "MTH252",
+            "ICT133",
+            "MTH251"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -6090,12 +6128,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ICT162",
             "ICT133",
-            "ICT162"
-        ],
-        "excludedCombinations": [
             "ICT205"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -6108,8 +6145,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT209",
-            "ICT259"
+            "ICT259",
+            "ICT209"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -6234,12 +6271,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT246",
-            "ICT259"
+            "ICT259",
+            "ICT211",
+            "ICT246"
         ],
-        "excludedCombinations": [
-            "ICT211"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -6252,8 +6288,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT114",
-            "ICT246"
+            "ICT246",
+            "ICT114"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -6279,8 +6315,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT321",
-            "ICT340"
+            "ICT340",
+            "ICT321"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -6310,8 +6346,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT336",
-            "ICT335"
+            "ICT335",
+            "ICT336"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -6339,12 +6375,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT162"
-        ],
-        "excludedCombinations": [
+            "ICT162",
             "ICT322",
             "ICT330"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -6357,12 +6392,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT233",
-            "ICT239"
+            "ICT239",
+            "ICT333",
+            "ICT233"
         ],
-        "excludedCombinations": [
-            "ICT333"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -6374,12 +6408,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "ICT246",
-            "ICT259"
+            "ICT259",
+            "ICT212",
+            "ICT246"
         ],
-        "excludedCombinations": [
-            "ICT212"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -6437,13 +6470,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "ICT368",
+            "ANL252",
             "ICT133",
-            "ICT263",
-            "ANL252"
+            "ICT263"
         ],
-        "excludedCombinations": [
-            "ICT368"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -6610,10 +6642,10 @@
         "group": "elective",
         "prereqs": [
             "LOG205",
-            "LOG208",
             "LOG207",
-            "LOG302",
-            "LOG301"
+            "LOG301",
+            "LOG208",
+            "LOG302"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -6665,12 +6697,12 @@
         "name": "Marketing Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "BMSZ326",
             "MKT201",
             "MKT203"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -6720,13 +6752,13 @@
         "name": "Integrated Marketing Communications",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "MKT357",
+            "ASZ338",
             "MKT359",
-            "BMSZ323",
-            "ASZ338"
+            "BMSZ323"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -6813,11 +6845,11 @@
         "name": "B2B Marketing and Sales Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "MKT352",
             "MKT361"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -6942,7 +6974,9 @@
         "name": "Malay Language for Work 1",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "MLL171"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -6990,12 +7024,12 @@
         "name": "Malay Language for Work 2",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "MLL171",
-            "MLL181",
-            "MLL271"
+            "MLL271",
+            "MLL181"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7066,7 +7100,9 @@
         "name": "Classical Malay Literature",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "MLL311"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -7209,6 +7245,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTD309",
             "MTD353"
         ],
         "excludedCombinations": [],
@@ -7223,6 +7260,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTD307",
             "MTD353"
         ],
         "excludedCombinations": [],
@@ -7316,7 +7354,9 @@
         "name": "Television Studio Production",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "MTD301"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul",
@@ -7454,12 +7494,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH207"
+            "MTH207",
+            "MTH209"
         ],
-        "excludedCombinations": [
-            "MTH209",
-            "MTH207"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7471,13 +7509,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH108",
-            "MTH109"
-        ],
-        "excludedCombinations": [
             "MZS248",
-            "MTH219"
+            "MTH109",
+            "MTH219",
+            "MTH108"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -7507,13 +7544,12 @@
         "group": "elective",
         "prereqs": [
             "MTH107",
-            "MTH109"
-        ],
-        "excludedCombinations": [
-            "MTH207",
+            "MTH109",
             "MTH219",
-            "MTH319"
+            "MTH319",
+            "MTH207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7525,11 +7561,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MZS337",
             "MTH316"
         ],
-        "excludedCombinations": [
-            "MZS337"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7541,11 +7576,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH301"
-        ],
-        "excludedCombinations": [
+            "MTH301",
             "MZS337"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7557,13 +7591,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH103",
             "MTH107",
+            "MTH205",
+            "MTH103",
             "MTH109"
         ],
-        "excludedCombinations": [
-            "MTH205"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7575,12 +7608,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH206",
             "MTH205",
             "MTH312"
         ],
-        "excludedCombinations": [
-            "MTH206"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7592,13 +7624,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH103",
+            "MTH211",
             "MTH107",
+            "MTH103",
             "MTH109"
         ],
-        "excludedCombinations": [
-            "MTH211"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7610,12 +7641,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH213",
             "MTH205",
             "MTH312"
         ],
-        "excludedCombinations": [
-            "MTH213"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7627,14 +7657,13 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH217",
             "MTH211",
+            "MTH320",
+            "MTH215",
             "MTH316"
         ],
-        "excludedCombinations": [
-            "MTH215",
-            "MTH217",
-            "MTH320"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7646,12 +7675,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH207"
-        ],
-        "excludedCombinations": [
             "MTH311",
+            "MTH207",
             "MTH352"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7663,11 +7691,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH313"
-        ],
-        "excludedCombinations": [
+            "MTH313",
             "MTH351"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7680,14 +7707,13 @@
         "group": "elective",
         "prereqs": [
             "BUS105",
-            "HBC203",
+            "MTH212",
             "MTH220",
-            "MTH212"
-        ],
-        "excludedCombinations": [
+            "HBC203",
             "MTH315",
             "MTH354"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7699,12 +7725,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH353"
-        ],
-        "excludedCombinations": [
             "MTH317",
             "MTH353"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7716,15 +7740,14 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH207",
             "MTH211",
+            "MTH356",
+            "MTH240",
             "MTH319",
-            "MTH240"
-        ],
-        "excludedCombinations": [
             "MTH310",
-            "MTH356"
+            "MTH207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7737,13 +7760,12 @@
         "group": "elective",
         "prereqs": [
             "DSM101",
+            "MTH355",
+            "MTH309",
             "MTH211",
             "MTH316"
         ],
-        "excludedCombinations": [
-            "MTH309",
-            "MTH355"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7755,15 +7777,14 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "BUS105",
-            "HBC203",
-            "MTH220",
-            "MTH212"
-        ],
-        "excludedCombinations": [
             "MTH307",
+            "BUS105",
+            "MTH212",
+            "MTH220",
+            "HBC203",
             "MTH358"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7775,12 +7796,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH357"
+            "MTH357",
+            "MTH308"
         ],
-        "excludedCombinations": [
-            "MTH308",
-            "MTH357"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7792,15 +7811,14 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH360",
             "MTH220",
-            "MTH316",
-            "MTH217",
             "MTH212",
-            "MTH221"
+            "MTH217",
+            "MTH221",
+            "MTH316"
         ],
-        "excludedCombinations": [
-            "MTH360"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7813,12 +7831,10 @@
         "group": "elective",
         "prereqs": [
             "MTH221",
-            "MTH359"
-        ],
-        "excludedCombinations": [
             "MTH222",
             "MTH359"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7830,14 +7846,13 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH207",
+            "MTH362",
             "MTH219",
-            "MTH210",
-            "MTH305"
+            "MTH305",
+            "MTH207",
+            "MTH210"
         ],
-        "excludedCombinations": [
-            "MTH362"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7850,12 +7865,10 @@
         "group": "elective",
         "prereqs": [
             "MTH305",
-            "MTH361"
-        ],
-        "excludedCombinations": [
             "MTH306",
             "MTH361"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7867,14 +7880,13 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH367",
+            "MTH303",
             "MTH101",
             "MTH105",
             "MTH207"
         ],
-        "excludedCombinations": [
-            "MTH303",
-            "MTH367"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -7886,12 +7898,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "MTH207"
-        ],
-        "excludedCombinations": [
             "MTH304",
+            "MTH207",
             "MTH366"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -7958,11 +7969,11 @@
         "name": "Port Management and Technology",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "LOG356",
-            "LOG357"
+        "prereqs": [
+            "LOG357",
+            "LOG356"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -8201,7 +8212,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "OGP181"
+            "OGP181",
+            "OGP261"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -8216,7 +8228,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "OGP281"
+            "OGP281",
+            "OGP361"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -8248,8 +8261,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "OST164S G"
@@ -8272,11 +8285,11 @@
         "name": "Influential and Facilitative Leadership for Advocacy",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "OST161",
             "OST162"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -8289,14 +8302,14 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "OST165",
+            "OST362",
             "OST361",
-            "OST362"
+            "OST165"
         ],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": "OST165 and OST361 or OST362"
@@ -8306,11 +8319,11 @@
         "name": "Performance Management (Practice)",
         "cu": 2.5,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "HRM323",
-            "GSP187"
+        "prereqs": [
+            "GSP187",
+            "HRM323"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -8493,7 +8506,9 @@
         "name": "Introduction to Comparative Politics",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "POL103"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -8506,11 +8521,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "SSC205"
-        ],
-        "excludedCombinations": [
+            "SSC205",
             "SSC205E"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -8533,11 +8547,11 @@
         "name": "Government and Politics in China",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "CCS102",
-            "CCS251"
+        "prereqs": [
+            "CCS251",
+            "CCS102"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -8549,6 +8563,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "POL203",
             "CCS252"
         ],
         "excludedCombinations": [],
@@ -8562,7 +8577,9 @@
         "name": "AI and Public Administration",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "POL201"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -8574,7 +8591,9 @@
         "name": "Comparative Politics in Southeast Asia",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "POL203"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jan"
@@ -8586,7 +8605,9 @@
         "name": "Public Administration in Southeast Asia",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "POL201"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -8599,7 +8620,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "POL355"
+            "POL355",
+            "POL201"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -8613,6 +8635,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "POL203",
             "CCS351"
         ],
         "excludedCombinations": [],
@@ -8627,6 +8650,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "POL208",
             "CCS253"
         ],
         "excludedCombinations": [],
@@ -8640,12 +8664,12 @@
         "name": "Sourcing and Procurement",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
+            "PRM315",
             "LOG303",
-            "LOG304",
-            "PRM315"
+            "LOG304"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -8670,12 +8694,12 @@
         "name": "Supplier Performance and Relationship Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
+            "PRM313",
             "LOG303",
-            "LOG304",
-            "PRM313"
+            "LOG304"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -8701,11 +8725,11 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "LOG313",
-            "PRM315",
-            "LOG315",
             "PRM317",
-            "LOG317"
+            "PRM315",
+            "LOG317",
+            "LOG313",
+            "LOG315"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -8770,13 +8794,13 @@
         "name": "Introduction to Psychology 1",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "DSZ1021",
-            "PSY103",
+        "prereqs": [
+            "ABS103",
             "SSC107",
-            "ABS103"
+            "DSZ1021",
+            "PSY103"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -8788,13 +8812,13 @@
         "name": "Introduction to Psychology 2",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "DSZ1021",
-            "PSY103",
+        "prereqs": [
+            "ABS103",
             "SSC107",
-            "ABS103"
+            "DSZ1021",
+            "PSY103"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -8806,7 +8830,10 @@
         "name": "Organisational Psychology",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -8819,8 +8846,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "PSY107",
             "DZS3171",
-            "DZS3172"
+            "DZS3172",
+            "PSY108"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -8834,7 +8863,9 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "SWK104"
+            "PSY107",
+            "SWK104",
+            "PSY108"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -8847,12 +8878,12 @@
         "name": "Mental Health and Well-being in Singapore",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
+            "PSY203",
             "DSZ3011",
-            "DSZ3012",
-            "PSY203"
+            "DSZ3012"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -8863,7 +8894,10 @@
         "name": "Personality and Individual Differences",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jan"
@@ -8875,7 +8909,10 @@
         "name": "Group Dynamics",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -8887,7 +8924,10 @@
         "name": "Health Psychology",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -8900,13 +8940,17 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "MTH220",
+            "DZS309",
             "PSY391",
-            "PSY390"
-        ],
-        "excludedCombinations": [
+            "PSY107",
+            "PSY390",
+            "MTH219",
+            "PSY392",
             "PSY303",
-            "DZS309"
+            "PSY108"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -8917,7 +8961,11 @@
         "name": "Personnel Assessment and Selection",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108",
+            "PSY201"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -8930,6 +8978,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "PSY107",
+            "PSY108",
             "PSY351"
         ],
         "excludedCombinations": [],
@@ -8943,7 +8993,11 @@
         "name": "Positive Psychology",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108",
+            "PSY205"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -8955,7 +9009,10 @@
         "name": "Counselling Psychology in Singapore",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jan"
@@ -8967,7 +9024,10 @@
         "name": "Psychology of Creativity",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jan"
@@ -8980,7 +9040,9 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "SDZS226"
+            "SDZS226",
+            "PSY107",
+            "PSY108"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -8993,7 +9055,12 @@
         "name": "Psychology of Consumer Behaviour",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY205",
+            "PSY107",
+            "PSY108",
+            "PSY201"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jul"
@@ -9005,7 +9072,11 @@
         "name": "Work Stress",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108",
+            "PSY201"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jan"
@@ -9018,7 +9089,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "PSY205",
+            "PSY391",
             "PSY107",
+            "PSY305",
+            "PSY390",
+            "PSY259",
             "PSY108"
         ],
         "excludedCombinations": [],
@@ -9032,7 +9108,10 @@
         "name": "Performance Psychology",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jan"
@@ -9044,7 +9123,10 @@
         "name": "Psychology of Nonverbal Behaviours",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "PSY107",
+            "PSY108"
+        ],
         "excludedCombinations": [],
         "semesters": [
             "Jan"
@@ -9056,12 +9138,12 @@
         "name": "Construction Measurement (1 of 4) Civil & Structural Works",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "BPM207",
+        "prereqs": [
             "BPM209",
+            "BPM207",
             "BPM309"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -9072,12 +9154,12 @@
         "name": "Construction Measurement (2 of 4) Architectural and M&E Works",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "BPM207",
+        "prereqs": [
             "BPM209",
+            "BPM207",
             "BPM309"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9089,13 +9171,12 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "BPM209",
+            "BPM309",
+            "BPM207",
             "QSM201"
         ],
-        "excludedCombinations": [
-            "BPM207",
-            "BPM209",
-            "BPM309"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -9190,11 +9271,11 @@
         "name": "Warehouse Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "LOG207",
             "LOG208"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9205,11 +9286,11 @@
         "name": "Transport Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "LOG205",
             "LOG206"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9246,11 +9327,11 @@
         "name": "Freight Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "LOG205",
             "LOG206"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9275,12 +9356,12 @@
         "name": "Supply Chain Technology Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "LOG301",
-            "LOG302",
-            "LOG309"
+            "LOG309",
+            "LOG302"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -9305,11 +9386,11 @@
         "name": "Lean Six Sigma for Supply Chains",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "LOG351",
             "BUS366"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9322,6 +9403,8 @@
         "group": "elective",
         "prereqs": [
             "LOG359",
+            "LOG206",
+            "LOG208",
             "LOG360"
         ],
         "excludedCombinations": [],
@@ -9503,12 +9586,12 @@
         "name": "Introduction to Sociology",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "DSZ1022",
+        "prereqs": [
             "SOC102",
+            "DSZ1022",
             "SOC203"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -9521,6 +9604,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "SOC105",
             "CHS215"
         ],
         "excludedCombinations": [],
@@ -9551,13 +9635,11 @@
         "group": "elective",
         "prereqs": [
             "HBC251",
+            "GSP169",
             "SSC251",
-            "GSP169"
+            "SSC251E"
         ],
-        "excludedCombinations": [
-            "SSC251E",
-            "HBC251"
-        ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul",
             "Jan"
@@ -9569,11 +9651,12 @@
         "name": "Gender and Society",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "SOC255",
+            "SOC315",
             "SOC209"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -9596,11 +9679,11 @@
         "name": "Classical Social Thought",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "SOC301",
             "SOC305"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9611,11 +9694,11 @@
         "name": "Contemporary Social Theory",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "SOC301",
             "SOC305"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -9626,11 +9709,11 @@
         "name": "Sociology of Education",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "SOC263",
-            "SOC257"
+        "prereqs": [
+            "SOC257",
+            "SOC263"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -9655,11 +9738,12 @@
         "name": "Sociology of Health and Healthcare",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "SOC253",
+            "SOC331",
             "SOC361"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9672,13 +9756,12 @@
         "group": "elective",
         "prereqs": [
             "HBC201",
-            "HBC203"
-        ],
-        "excludedCombinations": [
-            "DSZ250",
+            "HBC203",
             "SOC390",
-            "PSY390"
+            "PSY390",
+            "DSZ250"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9690,6 +9773,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "SOC319",
             "SOC363"
         ],
         "excludedCombinations": [],
@@ -9717,11 +9801,11 @@
         "name": "Popular Culture",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "SOC312",
             "DZS3182"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -9995,7 +10079,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "TLL003"
+            "TLL003",
+            "TLL104"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -10009,7 +10094,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "TLL003"
+            "TLL003",
+            "TLL103"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -10023,6 +10109,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "TLL106",
             "TLL001"
         ],
         "excludedCombinations": [],
@@ -10037,6 +10124,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "TLL105",
             "TLL001"
         ],
         "excludedCombinations": [],
@@ -10051,7 +10139,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "TLL012"
+            "TLL012",
+            "TLL107"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -10093,6 +10182,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "TLL202",
             "TLL005"
         ],
         "excludedCombinations": [],
@@ -10107,6 +10197,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "TLL201",
             "TLL005"
         ],
         "excludedCombinations": [],
@@ -10121,6 +10212,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "TLL204",
             "TLL007"
         ],
         "excludedCombinations": [],
@@ -10135,7 +10227,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "TLL002"
+            "TLL002",
+            "TLL206"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -10149,7 +10242,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "TLL002"
+            "TLL002",
+            "TLL205"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -10190,12 +10284,13 @@
         "name": "B\u0082L\u00a2\u00ca<I\u0082\u0094\u00e9",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
-            "HBC207",
+        "prereqs": [
+            "HBC101",
             "HBC213",
-            "HBC215"
+            "HBC215",
+            "HBC207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -10277,11 +10372,10 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "TLL009"
-        ],
-        "excludedCombinations": [
+            "TLL009",
             "TLL305"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -10293,7 +10387,8 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
-            "TLL010"
+            "TLL010",
+            "TLL308"
         ],
         "excludedCombinations": [],
         "semesters": [
@@ -10307,6 +10402,7 @@
         "cu": 5.0,
         "group": "elective",
         "prereqs": [
+            "TLL307",
             "TLL010"
         ],
         "excludedCombinations": [],
@@ -10349,8 +10445,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": ""
@@ -10363,8 +10459,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": ""
@@ -10377,8 +10473,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "May",
             "Jul",
+            "May",
             "Jan"
         ],
         "remarks": ""
