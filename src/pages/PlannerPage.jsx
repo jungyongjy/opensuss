@@ -73,8 +73,8 @@ export default function PlannerPage() {
         </div>
       </header>
 
-      <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-6 flex gap-4 items-start">
-        <aside className="w-72 shrink-0 flex flex-col gap-4 sticky top-20">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-6 flex flex-col lg:flex-row gap-4 items-start pb-20 md:pb-6">
+        <aside className="w-full lg:w-72 shrink-0 flex flex-col gap-4 lg:sticky lg:top-20">
           <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 flex flex-col gap-4">
             <h2 className="font-display text-sm font-bold text-gray-900 dark:text-gray-100">Add Modules</h2>
             <ModuleSearch
@@ -93,7 +93,7 @@ export default function PlannerPage() {
           </div>
         </aside>
 
-        <div className="flex-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden min-h-[600px]">
+        <div className="flex-1 w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden min-h-[500px]">
           <WeeklyGrid modules={selectedModules} />
         </div>
       </main>
