@@ -980,7 +980,8 @@
         "name": "Cardiovascular Bioengineering",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "BME205",
             "BME107",
             "ME108",
@@ -988,7 +989,6 @@
             "BME210",
             "BME207"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -1042,14 +1042,14 @@
         "name": "Medical Imaging",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "BME107",
             "ME108",
             "BME209",
             "ME210",
             "BME207"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -1060,14 +1060,14 @@
         "name": "Visualisation and Image Analysis",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "BME107",
             "ME108",
             "BME209",
             "ME210",
             "BME207"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -1301,12 +1301,12 @@
         "name": "Cost Management for M&E Works",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "QSM201",
             "QSM202",
             "QSM301"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -1369,14 +1369,14 @@
         "name": "Organisational Behaviour in the Technology Era",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "BUS103",
             "HRM203",
             "BSZ160",
             "CUL201",
             "BUS206"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan",
             "Jul"
@@ -1728,12 +1728,12 @@
         "name": "Modern Chinese (\u73b0\u4ee3 \u6c49\u8bed)",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "CCC201",
             "CLS115",
             "CLS311"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -3298,12 +3298,12 @@
         "name": "Economic Ideas and Models for Business",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "ECO201",
             "BSZ221",
             "DDZS202"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan",
             "Jul"
@@ -3415,11 +3415,11 @@
         "name": "Discovering Language",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "AZS1031",
             "ELG103"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan",
             "Jul"
@@ -3445,11 +3445,11 @@
         "name": "Language and Society",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "ELG215",
             "ELG205"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan",
             "Jul"
@@ -3503,11 +3503,11 @@
         "name": "Global Englishes",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "EZS399",
             "ELG353"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -3518,11 +3518,11 @@
         "name": "Analysing Discourse",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "EZS3012",
             "ELG358"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -3533,13 +3533,13 @@
         "name": "Language and Education",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "ELG354",
             "EZS300",
             "EZS3011",
             "EZS3012"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -3589,11 +3589,11 @@
         "name": "Understanding Poetry",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "AZS1032",
             "ELT109"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan",
             "Jul"
@@ -3946,7 +3946,8 @@
         "name": "Fundamentals of Applied Electromagnetics",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "MTH107",
             "MTH108",
             "MTH316",
@@ -3956,7 +3957,6 @@
             "ENG315",
             "ENG307"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -4184,14 +4184,14 @@
         "name": "Essentials of Financial Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "FIN205",
             "FIN303",
             "FIN304",
             "FIN302",
             "FIN309"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan",
             "Jul"
@@ -4289,7 +4289,8 @@
         "name": "Financial Data Science",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "ANL101",
             "BUS105",
             "ANL251",
@@ -4298,7 +4299,6 @@
             "FIN311",
             "FIN312"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -4309,7 +4309,8 @@
         "name": "AI with Financial Data",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "BUS105",
             "ANL251",
             "ANL252",
@@ -4317,7 +4318,6 @@
             "FIN353",
             "FIN313"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -5337,12 +5337,12 @@
         "name": "\u7406\u89e3\u5f53\u4ee3\u793e\u4f1a\uff1a\u6765\u81ea\u793e \u4f1a\u4e0e\u884c\u4e3a\u79d1\u5b66\u7684\u542f\u793a",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "SSC109",
             "HBC101",
             "HBC105"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -5402,11 +5402,11 @@
         "name": "\u4e3a\u4f55\u9605\u8bfb?",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "HBC207",
             "HBC215"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -6663,12 +6663,12 @@
         "name": "Marketing Management",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "BMSZ326",
             "MKT201",
             "MKT203"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan",
             "Jul"
@@ -6718,13 +6718,13 @@
         "name": "Integrated Marketing Communications",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "MKT357",
             "MKT359",
             "BMSZ323",
             "ASZ338"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -6988,12 +6988,12 @@
         "name": "Malay Language for Work 2",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "MLL171",
             "MLL181",
             "MLL271"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -8270,11 +8270,11 @@
         "name": "Influential and Facilitative Leadership for Advocacy",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "OST161",
             "OST162"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan",
             "Jul"
@@ -8845,12 +8845,12 @@
         "name": "Mental Health and Well-being in Singapore",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "DSZ3011",
             "DSZ3012",
             "PSY203"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9501,12 +9501,12 @@
         "name": "Introduction to Sociology",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "DSZ1022",
             "SOC102",
             "SOC203"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan",
             "Jul"
@@ -9567,11 +9567,11 @@
         "name": "Gender and Society",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "SOC255",
             "SOC209"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -9594,11 +9594,11 @@
         "name": "Classical Social Thought",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "SOC301",
             "SOC305"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9609,11 +9609,11 @@
         "name": "Contemporary Social Theory",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "SOC301",
             "SOC305"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -9653,11 +9653,11 @@
         "name": "Sociology of Health and Healthcare",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "SOC253",
             "SOC361"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -9715,11 +9715,11 @@
         "name": "Popular Culture",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "SOC312",
             "DZS3182"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
@@ -10188,12 +10188,12 @@
         "name": "B\u0082L\u00a2\u00ca<I\u0082\u0094\u00e9",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
+        "prereqs": [],
+        "excludedCombinations": [
             "HBC207",
             "HBC213",
             "HBC215"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
