@@ -1038,14 +1038,14 @@
         "name": "Medical Imaging",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "BME107",
-            "ME108",
+            "BME108",
             "BME209",
-            "ME210",
+            "BME210",
             "BME207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -1056,14 +1056,14 @@
         "name": "Visualisation and Image Analysis",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "BME107",
-            "ME108",
+            "BME108",
             "BME209",
-            "ME210",
+            "BME210",
             "BME207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
