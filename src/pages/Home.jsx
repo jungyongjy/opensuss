@@ -14,7 +14,9 @@ export default function Home() {
 
   const totalLinks = categories.reduce((sum, cat) => sum + cat.links.length, 0)
 
-  useEffect(() => { document.title = 'OpenSUSS: All your SUSS portals in one place' }, [])
+  useEffect(() => {
+    document.title = 'OpenSUSS: SUSS student portal directory and tools'
+  }, [])
 
   useEffect(() => {
     function handleKey(e) {
