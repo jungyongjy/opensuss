@@ -8,11 +8,12 @@ import WeeklyGrid from '../components/planner/WeeklyGrid'
 import CRNPickerModal from '../components/planner/CRNPickerModal'
 import ICSExportButton from '../components/planner/ICSExportButton'
 import PrereqGateModal from '../components/planner/PrereqGateModal'
-import { MODULE_COLORS } from '../utils/plannerUtils'
+import { MODULE_COLORS, parseOverridesCsv, resolveGateRules } from '../utils/plannerUtils'
 
 import dayData from '../data/timetables/jul-2026-day.json'
 import eveningData from '../data/timetables/jul-2026-evening.json'
 import moduleData from '../data/timetables/BAS-MAJ1.json'
+import overridesCsv from '../data/timetables/BAS-MAJ1.overrides.csv?raw'
 
 export default function PlannerPage() {
   const [selectedModules, setSelectedModules] = useState([])
@@ -28,6 +29,8 @@ export default function PlannerPage() {
     [selectedModules]
   )
 
+  const overridesMap = useMemo(() => parseOverridesCsv(overridesCsv), [])
+
   const excludedCodes = selectedModules.map(m => m.courseCode)
 
   function addModule(courseCode, name) {
@@ -36,12 +39,12 @@ export default function PlannerPage() {
   }
 
   function handleAdd(courseCode, name) {
-    const module = moduleData.find(m => m.code === courseCode)
-    const prereqs = module?.prereqs || []
-    const excludedCombinations = module?.excludedCombinations || []
+    const rules = resolveGateRules(courseCode, moduleData, overridesMap)
+    const prereqs = rules.prereqs
+    const excludedCombinations = rules.excludedCombinations
 
     if (prereqs.length > 0 || excludedCombinations.length > 0) {
-      setGateTarget({ courseCode, name })
+      setGateTarget({ courseCode, name, prereqs, excludedCombinations })
       return
     }
 
@@ -61,8 +64,6 @@ export default function PlannerPage() {
   }
 
   const pickerModule = pickerTarget ? selectedModules.find(m => m.courseCode === pickerTarget) : null
-  const gateModule = gateTarget ? moduleData.find(m => m.code === gateTarget.courseCode) : null
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col">
       <Navbar />
@@ -132,8 +133,8 @@ export default function PlannerPage() {
         <PrereqGateModal
           courseCode={gateTarget.courseCode}
           moduleName={gateTarget.name}
-          prereqs={gateModule?.prereqs || []}
-          excludedCombinations={gateModule?.excludedCombinations || []}
+          prereqs={gateTarget.prereqs}
+          excludedCombinations={gateTarget.excludedCombinations}
           onConfirm={() => addModule(gateTarget.courseCode, gateTarget.name)}
           onClose={() => setGateTarget(null)}
         />
