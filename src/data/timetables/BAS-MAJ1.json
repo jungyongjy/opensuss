@@ -924,9 +924,15 @@
         "name": "Biomedical Devices",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "BME107",
+            "BME108",
+            "BME209",
+            "BME210",
+            "BME207"
+        ],
         "excludedCombinations": [
-            "BME107"
+            "BME309"
         ],
         "semesters": [
             "Jan"
@@ -938,9 +944,15 @@
         "name": "Rehabilitative and Assistive Engineering",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
+        "prereqs": [
+            "BME107",
+            "BME108",
+            "BME209",
+            "BME210",
+            "BME207"
+        ],
         "excludedCombinations": [
-            "BME107"
+            "BME309"
         ],
         "semesters": [
             "Jan"
@@ -964,15 +976,15 @@
         "name": "Cardiovascular Bioengineering",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [],
-        "excludedCombinations": [
+        "prereqs": [
             "BME205",
             "BME107",
-            "ME108",
+            "BME108",
             "BME209",
             "BME210",
             "BME207"
         ],
+        "excludedCombinations": [],
         "semesters": [
             "Jan"
         ],
