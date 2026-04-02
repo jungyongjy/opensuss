@@ -82,7 +82,16 @@ export default function PrereqGateModal({
           </div>
 
           <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-            Please check your curriculum plan to confirm whether this module is required before finalising your selection.
+            Please check your{' '}
+            <a
+              href="https://www.suss.edu.sg/academics/why-suss/new-suss-curriculum"
+              target="_blank"
+              rel="noreferrer"
+              className="underline hover:text-gray-700 dark:hover:text-gray-200"
+            >
+              curriculum plan
+            </a>{' '}
+            to confirm whether this module is required before finalising your selection.
           </p>
 
           <div className="mt-5 flex justify-end gap-2">
