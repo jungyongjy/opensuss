@@ -7,8 +7,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Completed at least 50cu of courses from more than 1 discipline"
     },
@@ -20,8 +20,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -33,8 +33,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -46,8 +46,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -75,8 +75,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -140,8 +140,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ACC202"
     },
@@ -153,8 +153,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -168,8 +168,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ACC202 Suggested to be taken after ACC201."
     },
@@ -234,8 +234,8 @@
             "ACC213"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ACC201 ACC213"
     },
@@ -386,8 +386,8 @@
             "ACC407"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ACC208 ACC407 Suggested to be taken after ACC302, BUS107, FIN303."
     },
@@ -404,8 +404,8 @@
             "ANL315"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ANL101 or BUS105 ANL315"
     },
@@ -417,8 +417,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -432,8 +432,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ANL251"
     },
@@ -445,8 +445,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Non- Analytics students are strongly advised to complete BUS105 or a course that covers data analysis with the use of a statistical software before taking ANL303."
     },
@@ -458,7 +458,9 @@
         "prereqs": [
             "ANL303"
         ],
-        "excludedCombinations": [],
+        "excludedCombinations": [
+            "ANL303"
+        ],
         "semesters": [
             "Jul"
         ],
@@ -687,8 +689,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "TESZ130"
     },
@@ -1131,8 +1133,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FEM109"
     },
@@ -1146,8 +1148,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FEM103"
     },
@@ -1161,8 +1163,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FEM105"
     },
@@ -1359,8 +1361,8 @@
             "BSZ160"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BUS101, BSZ160"
     },
@@ -1378,8 +1380,8 @@
             "BUS206"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BUS103, HRM203, BSZ160 or CUL201 or BUS206"
     },
@@ -1393,8 +1395,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BSZ220"
     },
@@ -1409,8 +1411,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BSZ220 OR BZS3001"
     },
@@ -1422,8 +1424,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -1437,8 +1439,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BSZ150"
     },
@@ -1476,8 +1478,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -1507,8 +1509,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BSZ352 OR BZS3002 Students intending to take this course are required to have a personal Windows laptop."
     },
@@ -1520,8 +1522,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -1547,8 +1549,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BFSZ333 Students are strongly recommend ed to complete ACC201, MKT202 and FIN303 before taking BUS357."
     },
@@ -1562,8 +1564,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BUS360"
     },
@@ -1575,8 +1577,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -1591,8 +1593,8 @@
             "BUS361"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BUS362, BUS361"
     },
@@ -1606,8 +1608,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CTI101 CTI-Major students: to take this with CCC103 in your first two semesters."
     },
@@ -1621,8 +1623,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CTI103 CTI-Major students: to take this with CCC101 in your first two semesters."
     },
@@ -1634,9 +1636,9 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "CDO303 SGN This course is letter graded and counts into CGPA."
     },
@@ -1650,9 +1652,9 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "CDO303 KHH This course is letter graded and counts into CGPA."
     },
@@ -1666,9 +1668,9 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "CDO354"
     },
@@ -1680,8 +1682,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "years. Credit recognition for students enrolled in SUSS from the 2023/07 semester only."
     },
@@ -1931,8 +1933,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CLS109"
     },
@@ -1944,8 +1946,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -1957,8 +1959,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -2012,8 +2014,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CLS306"
     },
@@ -2027,8 +2029,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CLS307"
     },
@@ -2104,8 +2106,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "SSC101"
     },
@@ -2119,8 +2121,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "SSC103"
     },
@@ -2134,8 +2136,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "SSC105"
     },
@@ -2177,8 +2179,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ASZ223e"
     },
@@ -2537,8 +2539,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CTI201 Students must achieve at least B4 in GCE O Level Chinese and a pass in GCE O level English (or equivalent)."
     },
@@ -2552,8 +2554,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CTI202 Students must achieve at least B4 in GCE O Level Chinese and a pass in GCE O level English (or equivalent)."
     },
@@ -2743,8 +2745,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "GSP209 Min 50% of class attendance. Students will be attending classes at Singapore Polytechnic. Students will receive a Pass or Fail at the end of the course."
     },
@@ -2756,8 +2758,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -2772,8 +2774,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "GSP211 or GSP210 Min 50% of class attendance. Students will be attending classes at Singapore Polytechnic. Students will receive a Pass or Fail at the end of the course."
     },
@@ -2787,8 +2789,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CET310 Students will be required to bring their own laptop to class."
     },
@@ -2803,8 +2805,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "MKT365 or CET365"
     },
@@ -2843,8 +2845,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -2856,8 +2858,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Lab sessions will be conducted in face-to- face mode."
     },
@@ -2869,8 +2871,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Lab sessions will be conducted in face-to- face mode."
     },
@@ -2882,8 +2884,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Lab sessions will be conducted in face-to- face mode."
     },
@@ -2959,8 +2961,8 @@
             "EAS305"
         ],
         "semesters": [
-            "Jan",
-            "May"
+            "May",
+            "Jan"
         ],
         "remarks": "ENG101 & ENG103 EAS305"
     },
@@ -3246,8 +3248,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -3305,8 +3307,8 @@
             "DDZS202"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ECO201, BSZ221, DDZS202 1"
     },
@@ -3320,8 +3322,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BSZ221"
     },
@@ -3333,8 +3335,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -3348,8 +3350,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BUS105"
     },
@@ -3363,8 +3365,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ECO202"
     },
@@ -3405,8 +3407,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ECO351"
     },
@@ -3421,8 +3423,8 @@
             "ELG103"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "AZS1031, ELG103 To take in first year. ELG101 replaces ELG103."
     },
@@ -3451,8 +3453,8 @@
             "ELG205"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ELG215, ELG205 To take after completing ELG101."
     },
@@ -3493,8 +3495,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "EZS399 To take after completing Levels 1 and 2 language courses. Compulsory course with effect from Jan 2023."
     },
@@ -3579,8 +3581,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "AZS1032 To take in first year."
     },
@@ -3595,8 +3597,8 @@
             "ELT109"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "AZS1032, ELT109 To take after completing ELT107. ELT201 replaces ELT109."
     },
@@ -3707,8 +3709,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "To take after completing Levels 1 and 2 compulsory literature courses. Compulsory course with effect from Jan 2023."
     },
@@ -3858,8 +3860,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HESZ231 Labs will be conducted on weekends."
     },
@@ -3873,8 +3875,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HESZ231 Labs will be conducted on weekends."
     },
@@ -3890,8 +3892,8 @@
             "HESZ231"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ENG103 HESZ231 Labs will be conducted on weekends. Strongly suggested prerequisite: ENG103"
     },
@@ -3905,8 +3907,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "TZS173"
     },
@@ -3921,8 +3923,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "TZS3051 or HESZ230 Strongly suggested prerequisite s: MTH107 and MTH108. Labs will be conducted on weekends"
     },
@@ -3984,8 +3986,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ENG317 This course is compulsory only for students joining the programme on or after Jan 2011."
     },
@@ -4174,8 +4176,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -4193,8 +4195,8 @@
             "FIN309"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FIN205, FIN303, FIN304, FIN302 and FIN309"
     },
@@ -4208,8 +4210,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FIN203"
     },
@@ -4257,8 +4259,8 @@
             "GSP177"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ACC201 or ACC202 BFSZ335, FIN203, FIN302, FIN303, FIN309, GSP177"
     },
@@ -4279,8 +4281,8 @@
             "FIN305E"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FIN203 or FIN205 or ACC201 or ACC202 BFSZ335, FIN301, FIN305e"
     },
@@ -4427,8 +4429,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FIN203 or FIN304"
     },
@@ -4518,8 +4520,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ELT251 Final exam will be conducted via e-exam mode."
     },
@@ -4543,8 +4545,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -4646,8 +4648,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -4689,8 +4691,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FLM365 Students must contact the HoP first to find out more about the internship before applying. Students who apply without contacting the HoP to determine eligibility will be withdrawn from the course."
     },
@@ -4704,8 +4706,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FEM101"
     },
@@ -4717,8 +4719,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -4861,8 +4863,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "FEM111 or FMT316 The Week 7 Face to Face session is a guided practical walkthrough comprising of 9 stations within the SUSS campus."
     },
@@ -4965,8 +4967,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -4978,8 +4980,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -4991,8 +4993,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5004,8 +5006,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5019,9 +5021,9 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "FIN379"
     },
@@ -5033,9 +5035,9 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "75% compulsory attendance required. All lessons are conducted at NAFA. The two Saturday classes may differ from the dates in the course schedule. Your instructors will confirm the actual Saturday class dates during the first class. Multiple runs."
     },
@@ -5049,9 +5051,9 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "COR160 Students enrolled before January 2019 semester are required to complete COR160 as part of their UCore requirement for graduation. With the retirement of COR160, students who have not completed COR160 must register for GSP160 as part of their UCore requirement for graduation."
     },
@@ -5065,9 +5067,9 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "GSP163"
     },
@@ -5079,9 +5081,9 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5095,8 +5097,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "GSP165"
     },
@@ -5108,8 +5110,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5125,9 +5127,9 @@
             "SOC252"
         ],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "SSC251, HBC251, SOC252"
     },
@@ -5139,8 +5141,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5154,9 +5156,9 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "FIN304 Exclusion: BSFI & FIMS."
     },
@@ -5170,8 +5172,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HRM217"
     },
@@ -5185,8 +5187,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CET248"
     },
@@ -5200,8 +5202,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CET252"
     },
@@ -5213,8 +5215,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "75% compulsory attendance is required."
     },
@@ -5226,8 +5228,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5242,9 +5244,9 @@
             "CET217"
         ],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "COR175, CET217"
     },
@@ -5256,8 +5258,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5269,8 +5271,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5282,8 +5284,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5295,8 +5297,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5308,8 +5310,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "years. Credit recognition for students enrolled in SUSS before the 2023/07 semester only."
     },
@@ -5327,8 +5329,8 @@
             "SSC109E"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "SSC109, HBC103, HBC105 SSC109e has been redeveloped as HBC101 Understandi ng Contempora ry Society: The Social and Behavioural Sciences. It will also be offered in Mandarin and Tamil with an appreciation of the context and cultural nuances."
     },
@@ -5361,8 +5363,8 @@
             "SSC211"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "SSC201, SSC211 SSC211 is redeveloped as HBC201 Research Methods for the Social and Behavioural Sciences."
     },
@@ -5377,8 +5379,8 @@
             "SOC392"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "PSY392, SOC392"
     },
@@ -5453,8 +5455,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5466,8 +5468,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5479,8 +5481,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5590,8 +5592,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5615,8 +5617,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5652,8 +5654,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Please note: Field trips are not included in the January course runs. Students who wish to participate in the field trip component should register for the July course runs, where field trips are scheduled as part of the curriculum."
     },
@@ -5677,8 +5679,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5708,8 +5710,8 @@
             "BUS104"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BUS206, HRM201, BUS101, BUS103, BUS104"
     },
@@ -5723,8 +5725,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HRM253"
     },
@@ -5738,8 +5740,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HRM219"
     },
@@ -5777,8 +5779,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5792,8 +5794,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HRM213"
     },
@@ -5805,8 +5807,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5825,8 +5827,8 @@
             "HRM317"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BUS105 or PSY390 or PSY391 HRM319, HRM317"
     },
@@ -5838,8 +5840,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5853,8 +5855,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HRM323"
     },
@@ -5868,8 +5870,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HRM325"
     },
@@ -5881,8 +5883,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5896,8 +5898,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HRM359"
     },
@@ -5909,8 +5911,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5922,8 +5924,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5947,8 +5949,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -5962,8 +5964,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT121"
     },
@@ -5978,8 +5980,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT131 or ICT271 The course includes two runs on Thurs and Fri respectively. Excluded combination may be removed on a case by case basis."
     },
@@ -5996,8 +5998,8 @@
             "ICT272"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT133 ICT201 or ICT272 The course includes two runs on Thurs and Fri respectively. Excluded combination may be removed on a case by case basis."
     },
@@ -6026,8 +6028,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT219"
     },
@@ -6041,8 +6043,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT220"
     },
@@ -6058,8 +6060,8 @@
             "ICT203"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT133 ICT203"
     },
@@ -6095,8 +6097,8 @@
             "ICT205"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT133, ICT162 ICT205"
     },
@@ -6111,8 +6113,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT209 Can be taken with ICT259 in the same semester"
     },
@@ -6124,8 +6126,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -6140,8 +6142,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT210 Can be taken with ICT246 in the same semester"
     },
@@ -6153,8 +6155,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -6168,8 +6170,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT262"
     },
@@ -6221,8 +6223,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -6239,8 +6241,8 @@
             "ICT211"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT246 & ICT259 ICT211"
     },
@@ -6282,8 +6284,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT321 Can be taken with ICT340 in the same semester"
     },
@@ -6297,8 +6299,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Can take with ICT337 in the same semester"
     },
@@ -6307,11 +6309,10 @@
         "name": "Big Data Computing in the Cloud",
         "cu": 5.0,
         "group": "elective",
-        "prereqs": [
-            "ICT336",
-            "ICT335"
+        "prereqs": [],
+        "excludedCombinations": [
+            "ICT336"
         ],
-        "excludedCombinations": [],
         "semesters": [
             "Jul"
         ],
@@ -6344,8 +6345,8 @@
             "ICT330"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT162 ICT322 Can be taken with ICT330 in the same semester"
     },
@@ -6379,8 +6380,8 @@
             "ICT212"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT246 & ICT259 ICT212"
     },
@@ -6394,8 +6395,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT263"
     },
@@ -6409,8 +6410,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT263"
     },
@@ -6424,8 +6425,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT263"
     },
@@ -6443,8 +6444,8 @@
             "ICT368"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT133 & ICT263 OR ANL252 & ICT263 ICT368"
     },
@@ -6458,8 +6459,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT371 Requires domain knowledge in finance"
     },
@@ -6473,8 +6474,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT373 Requires background in Finance"
     },
@@ -6488,8 +6489,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT375 Background knowledge in Procuremen t is assumed"
     },
@@ -6503,8 +6504,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT377 Background knowledge in Order Fulfillment is assumed"
     },
@@ -6518,8 +6519,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "ICT379 Background knowledge in production planning in manufacturi ng is assumed"
     },
@@ -6670,8 +6671,8 @@
             "MKT203"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "BMSZ326 , MKT201 & MKT203"
     },
@@ -7096,8 +7097,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "MTD101"
     },
@@ -7111,8 +7112,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "MTD103"
     },
@@ -7127,8 +7128,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "MTD105 or MTD107"
     },
@@ -7196,8 +7197,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "If there is more than one group, the classes for the second group will be scheduled on Saturday."
     },
@@ -7317,8 +7318,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Students should preferably have completed MTD301 first."
     },
@@ -7344,8 +7345,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -7397,8 +7398,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -7412,8 +7413,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "MTH101"
     },
@@ -7427,8 +7428,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "MTH108"
     },
@@ -7477,8 +7478,8 @@
             "MTH219"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "MTH108 or MTH109 MZS248 or MTH219"
     },
@@ -7493,8 +7494,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "MZS248 or MTH220"
     },
@@ -8022,8 +8023,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -8035,8 +8036,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "The course spans 2 regular semesters."
     },
@@ -8050,8 +8051,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "NIE201 The course spans 2 regular semesters. There is a compulsory travel component during the semester break. The pre-requisite of NIE201 only applies to students from Part- Time Honours & Full-Time Programme s."
     },
@@ -8065,8 +8066,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "NIE201 The pre- requisite of NIE201 only applies to students from Part- Time Honours & Full-Time Programme s."
     },
@@ -8128,8 +8129,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Have not taken the same language at secondary school level and/or above. OGP161 CET students are exempted from the pre- requisites."
     },
@@ -8143,8 +8144,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "OGP162"
     },
@@ -8158,8 +8159,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "OGP163"
     },
@@ -8173,8 +8174,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "OGP164"
     },
@@ -8188,8 +8189,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "OGP165"
     },
@@ -8203,8 +8204,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Placement Chinese Test or have taken OGP181. CET students are exempted from the Placement Test. OGP261 To be eligible for OGP281, students must take the Placement Chinese Test to determine if the course level is appropriate for them. All oral and written assessment s are in Chinese. CET students are exempted from the Placement Test."
     },
@@ -8218,8 +8219,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "Placement Chinese Test or have taken OGP281. CET students are exempted from the Placement Test. OGP361 To be eligible for OGP381, students must take the Placement Chinese Test to determine if the course level is appropriate for them. All oral and written assessment s are in Chinese. CET students are exempted from Placement Test."
     },
@@ -8231,8 +8232,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -8246,9 +8247,9 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "OST164S G"
     },
@@ -8260,8 +8261,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -8276,8 +8277,8 @@
             "OST162"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "OST161, OST162 Please note that students are expected to attend all sessions as this is an experiential course. PCT assessment includes on- site attendance and participation during experiential sessions. GBA is assessed during these sessions and require all group member involvement onsite."
     },
@@ -8293,9 +8294,9 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": "OST165 and OST361 or OST362"
     },
@@ -8310,8 +8311,8 @@
             "GSP187"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HRM323, GSP187"
     },
@@ -8325,8 +8326,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "GSP188"
     },
@@ -8340,8 +8341,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "GSP189"
     },
@@ -8355,8 +8356,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "GSP191"
     },
@@ -8382,8 +8383,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "GSP193"
     },
@@ -8443,8 +8444,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -8456,8 +8457,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -8469,8 +8470,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -8721,8 +8722,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "PSS313"
     },
@@ -8758,8 +8759,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -8776,8 +8777,8 @@
             "ABS103"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "DSZ1021, PSY103, SSC107, ABS103"
     },
@@ -8794,8 +8795,8 @@
             "ABS103"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "DSZ1021, PSY103, SSC107, ABS103"
     },
@@ -9135,8 +9136,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "LOG201"
     },
@@ -9164,8 +9165,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "LOG202"
     },
@@ -9508,8 +9509,8 @@
             "SOC203"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "DSZ1022, SOC102, SOC203 Students are recommend ed to take this course before any other Sociology courses."
     },
@@ -9523,8 +9524,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "CHS215 Students are recommend ed to take this course after completing SOC105."
     },
@@ -9557,8 +9558,8 @@
             "HBC251"
         ],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HBC251, SSC251, GSP169 SSC251e is recoded as HBC251. It will reside in the SHBS Core Elective Basket."
     },
@@ -9759,8 +9760,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "SPE101 can be taken with SPE103. Students are highly recommend ed to take this course before any other Special Education courses."
     },
@@ -9772,8 +9773,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9785,8 +9786,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9798,8 +9799,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9811,8 +9812,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9824,8 +9825,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9837,8 +9838,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9850,8 +9851,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9863,8 +9864,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9876,8 +9877,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9889,8 +9890,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9902,8 +9903,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9915,8 +9916,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9928,8 +9929,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9941,8 +9942,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9956,8 +9957,8 @@
         ],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": "HFS101"
     },
@@ -9969,8 +9970,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -9982,8 +9983,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -10321,8 +10322,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -10334,8 +10335,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     },
@@ -10347,9 +10348,9 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": ""
     },
@@ -10361,9 +10362,9 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": ""
     },
@@ -10375,9 +10376,9 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
+            "May",
             "Jul",
-            "May"
+            "Jan"
         ],
         "remarks": ""
     },
@@ -10389,8 +10390,8 @@
         "prereqs": [],
         "excludedCombinations": [],
         "semesters": [
-            "Jan",
-            "Jul"
+            "Jul",
+            "Jan"
         ],
         "remarks": ""
     }
