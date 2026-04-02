@@ -84,7 +84,7 @@ export default function PrereqGateModal({
           <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
             Please check your{' '}
             <a
-              href="https://www.suss.edu.sg/academics/why-suss/new-suss-curriculum"
+              href="https://sims1.suss.edu.sg/eservice/public/viewcp/viewcp.aspx?progcd=BAS-MAJ1&viewtype=mhtml"
               target="_blank"
               rel="noreferrer"
               className="underline hover:text-gray-700 dark:hover:text-gray-200"
