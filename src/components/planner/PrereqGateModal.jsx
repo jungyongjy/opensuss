@@ -145,6 +145,21 @@ export default function PrereqGateModal({
             </>
           )}
         </div>
+
+        <div className="px-5 pb-4">
+          <p className="text-xs text-gray-400 dark:text-gray-500">
+            Note: This data is extracted from the publicly available curriculum and may not reflect recent updates. Always verify against your official curriculum plan at{' '}
+            <a
+              href="https://sims1.suss.edu.sg/eservice/public/viewcp/viewcp.aspx?progcd=BAS-MAJ1&viewtype=mhtml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-600 dark:hover:text-gray-300"
+            >
+              SUSS Curriculum
+            </a>
+            .
+          </p>
+        </div>
       </div>
     </div>
   )
