@@ -70,16 +70,20 @@ export default function PrereqGateModal({
             </p>
             <div className="mt-2 text-xs text-gray-600 dark:text-gray-300 space-y-1">
               <p>
-                <strong>Prerequisite:</strong> usually completed before taking this course.
+                <strong>Prerequisite:</strong> Modules that must be taken before this course.
               </p>
               <p>
-                <strong>Excluded combination:</strong> a related module that may overlap with this course.
+                <strong>Excluded combination:</strong> If you have taken this, you cannot take this selected course.
               </p>
             </div>
             <p className="mt-3 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
               Detected related modules: {renderCodeList(detected, 'or')}.
             </p>
           </div>
+
+          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
+            Please check your curriculum plan to confirm whether this module is required before finalising your selection.
+          </p>
 
           <div className="mt-5 flex justify-end gap-2">
             <button
@@ -95,10 +99,6 @@ export default function PrereqGateModal({
               Add module anyway
             </button>
           </div>
-
-          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-            Please check your curriculum plan to confirm whether this module is required before finalising your selection.
-          </p>
         </div>
       </div>
     </div>
