@@ -88,13 +88,13 @@ export default function PrereqGateModal({
               <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
                 {excludedCombinations.length === 1 ? (
                   <>
-                    Have you already taken <strong>{excludedCombinations[0]}</strong>? If so, you may not need{' '}
-                    <strong>{courseCode}</strong>.
+                    <strong>{excludedCombinations[0]}</strong> was detected as a related course. Have you taken it
+                    before? If yes, you may not need <strong>{courseCode}</strong>.
                   </>
                 ) : (
                   <>
-                    Have you already taken any of these? {renderCodeList(excludedCombinations, 'or')}. If so, you may
-                    not need <strong>{courseCode}</strong>.
+                    These related courses were detected: {renderCodeList(excludedCombinations, 'or')}. Have you taken
+                    any of them? If yes, you may not need <strong>{courseCode}</strong>.
                   </>
                 )}
               </p>
@@ -119,11 +119,12 @@ export default function PrereqGateModal({
               <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
                 {prereqs.length === 1 ? (
                   <>
-                    <strong>{prereqs[0]}</strong> is a prerequisite for this course. Have you completed it?
+                    <strong>{prereqs[0]}</strong> was detected as a prerequisite-related course. Have you completed it?
                   </>
                 ) : (
                   <>
-                    {renderCodeList(prereqs)} are prerequisites for this course. Have you completed all of them?
+                    {renderCodeList(prereqs)} were detected as prerequisite-related courses. Have you completed any of
+                    these?
                   </>
                 )}
               </p>
@@ -139,7 +140,7 @@ export default function PrereqGateModal({
                   onClick={handlePrereqResponse}
                   className="px-3 py-2 rounded-lg text-sm font-medium bg-navy dark:bg-blue-700 hover:bg-navy/90 dark:hover:bg-blue-600 text-white transition-colors"
                 >
-                  Yes, I've completed them
+                  Yes, I've completed one or more
                 </button>
               </div>
             </>
