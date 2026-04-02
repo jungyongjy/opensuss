@@ -30,8 +30,7 @@ export default function PrereqGateModal({
   onConfirm,
   onClose,
 }) {
-  const hasExclusions = excludedCombinations.length > 0
-  const hasPrereqs = prereqs.length > 0
+  const detected = Array.from(new Set([...(prereqs || []), ...(excludedCombinations || [])]))
 
   function handleAddAnyway() {
     onConfirm()
@@ -65,43 +64,29 @@ export default function PrereqGateModal({
         </div>
 
         <div className="p-5">
-          <div className="flex flex-col gap-4">
-            {hasPrereqs && (
-              <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-3">
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">Prerequisites</h3>
-                <p className="text-sm text-gray-700 dark:text-gray-200 mt-1 leading-relaxed">
-                  You are expected to complete these before taking <strong>{courseCode}</strong>: {renderCodeList(prereqs)}.
-                </p>
-              </div>
-            )}
-
-            {hasExclusions && (
-              <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-3">
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">Excluded combinations</h3>
-                <p className="text-sm text-gray-700 dark:text-gray-200 mt-1 leading-relaxed">
-                  If you already completed any of these, you may not need <strong>{courseCode}</strong>: {renderCodeList(excludedCombinations, 'or')}.
-                </p>
-              </div>
-            )}
+          <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-3">
+            <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              Either a prerequisite or excluded combination was detected for <strong>{courseCode}</strong>.
+            </p>
+            <div className="mt-2 text-xs text-gray-600 dark:text-gray-300 space-y-1">
+              <p>
+                <strong>Prerequisite:</strong> usually completed before taking this course.
+              </p>
+              <p>
+                <strong>Excluded combination:</strong> a related module that may overlap with this course.
+              </p>
+            </div>
+            <p className="mt-3 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              Detected related modules: {renderCodeList(detected, 'or')}.
+            </p>
           </div>
 
           <div className="mt-5 flex justify-end gap-2">
-            {hasExclusions && (
-              <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-                <button
-                  onClick={onClose}
-                  className="px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                >
-                  I've taken an excluded module
-                </button>
-              </p>
-            )}
-
             <button
               onClick={onClose}
               className="px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             >
-              Cancel
+              Skip for now
             </button>
             <button
               onClick={handleAddAnyway}
@@ -110,6 +95,10 @@ export default function PrereqGateModal({
               Add module anyway
             </button>
           </div>
+
+          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
+            Please check your curriculum plan to confirm whether this module is required before finalising your selection.
+          </p>
         </div>
       </div>
     </div>
