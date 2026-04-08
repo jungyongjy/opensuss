@@ -71,15 +71,21 @@ export default function WeeklyGrid({ modules }) {
 
       <div className="flex-1 overflow-auto">
         <div className="flex min-w-[640px]">
-          <div className="w-12 shrink-0 relative" style={{ height: GRID_HEIGHT }}>
-            {HOUR_LABELS.map(({ label, minutes }) => {
-              const top = ((minutes - GRID_START_MIN) / GRID_TOTAL_MIN) * GRID_HEIGHT
-              return (
-                <div key={label} className="absolute right-1 text-right" style={{ top: top - 8 }}>
-                  <span className="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap">{label}</span>
-                </div>
-              )
-            })}
+          <div className="w-12 shrink-0 flex flex-col">
+            <div className="text-center py-1.5 border-b border-gray-100 dark:border-gray-800 shrink-0">
+              <span className="text-xs font-medium text-gray-500 dark:text-gray-400 invisible">Mon</span>
+              <div className="text-xs text-gray-400 dark:text-gray-500 invisible">00/00</div>
+            </div>
+            <div className="relative" style={{ height: GRID_HEIGHT }}>
+              {HOUR_LABELS.map(({ label, minutes }) => {
+                const top = ((minutes - GRID_START_MIN) / GRID_TOTAL_MIN) * GRID_HEIGHT
+                return (
+                  <div key={label} className="absolute right-1 text-right" style={{ top: top - 8 }}>
+                    <span className="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap">{label}</span>
+                  </div>
+                )
+              })}
+            </div>
           </div>
 
           {DAY_LABELS.map((dayLabel, i) => (
