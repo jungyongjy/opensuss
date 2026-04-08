@@ -8,8 +8,11 @@ function makeSemesterLabel(index) {
   return `Y${year}S${sem}`
 }
 
-function createInitialSemesters(count = 4) {
-  return Array.from({ length: count }, (_, i) => ({ id: `sem-${i + 1}`, label: makeSemesterLabel(i) }))
+function createInitialSemesters() {
+  return [
+    { id: 'sem-1', label: 'Y1S1' },
+    { id: 'sem-2', label: 'Y2S2' },
+  ]
 }
 
 function newModule(semesterId, order = 0) {
@@ -37,7 +40,23 @@ export default function CGPASimulator() {
   const [semesters, setSemesters] = useState(() => {
     try {
       const saved = localStorage.getItem('cgpa_semesters')
-      return saved ? JSON.parse(saved) : createInitialSemesters()
+      if (!saved) return createInitialSemesters()
+      const parsed = JSON.parse(saved)
+      const legacyLabels = ['Y1S1', 'Y1S2', 'Y2S1', 'Y2S2']
+      const isLegacyDefault =
+        Array.isArray(parsed) &&
+        parsed.length === 4 &&
+        parsed.every((s, i) => s?.id === `sem-${i + 1}` && s?.label === legacyLabels[i])
+
+      if (isLegacyDefault) return createInitialSemesters()
+
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed
+          .filter(s => s && typeof s.id === 'string')
+          .map((s, i) => ({ id: s.id, label: typeof s.label === 'string' && s.label.trim() ? s.label : makeSemesterLabel(i) }))
+      }
+
+      return createInitialSemesters()
     } catch {
       return createInitialSemesters()
     }
@@ -126,6 +145,50 @@ export default function CGPASimulator() {
       const nextIndex = prev.length
       return [...prev, { id: `sem-${nextIndex + 1}`, label: makeSemesterLabel(nextIndex) }]
     })
+  }
+
+  function removeSemester(semesterId) {
+    if (semesters.length <= 1) return
+
+    setSemesters(prev => {
+      const remaining = prev.filter(s => s.id !== semesterId)
+      return remaining.length > 0 ? remaining : prev
+    })
+
+    setModules(prev => {
+      const remainingSemesters = semesters.filter(s => s.id !== semesterId)
+      const fallbackSemesterId = remainingSemesters[0]?.id
+      if (!fallbackSemesterId) return prev
+
+      const reassigned = prev.map(m =>
+        m.semesterId === semesterId
+          ? { ...m, semesterId: fallbackSemesterId, semesterOrder: 0 }
+          : m
+      )
+
+      const grouped = {}
+      reassigned.forEach(m => {
+        const key = m.semesterId || fallbackSemesterId
+        if (!grouped[key]) grouped[key] = []
+        grouped[key].push(m)
+      })
+
+      Object.values(grouped).forEach(list => {
+        list
+          .sort((a, b) => (a.semesterOrder || 0) - (b.semesterOrder || 0))
+          .forEach((m, idx) => {
+            m.semesterOrder = idx
+          })
+      })
+
+      return reassigned
+    })
+  }
+
+  function renameSemester(semesterId, label) {
+    setSemesters(prev =>
+      prev.map(s => (s.id === semesterId ? { ...s, label } : s))
+    )
   }
 
   function addModule(semesterId = semesters[0]?.id) {
@@ -310,8 +373,23 @@ export default function CGPASimulator() {
                 onDragOver={e => e.preventDefault()}
                 onDrop={e => handleDropToSemester(e, semester.id)}
               >
-                <div className="flex items-center justify-between px-1 pb-2 border-b border-gray-100 dark:border-gray-700">
-                  <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-200">{semester.label}</h4>
+                <div className="flex items-center justify-between gap-2 px-1 pb-2 border-b border-gray-100 dark:border-gray-700">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <input
+                      type="text"
+                      value={semester.label}
+                      onChange={e => renameSemester(semester.id, e.target.value)}
+                      className="w-20 rounded border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-1 text-xs font-semibold text-gray-700 dark:text-gray-200"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removeSemester(semester.id)}
+                      disabled={semesters.length <= 1}
+                      className="text-xs text-gray-400 hover:text-red-500 dark:hover:text-red-400 disabled:opacity-30 disabled:cursor-not-allowed"
+                    >
+                      Remove
+                    </button>
+                  </div>
                   <span className="text-xs text-gray-400 dark:text-gray-500">{semesterCredits} CU</span>
                 </div>
 
@@ -319,7 +397,7 @@ export default function CGPASimulator() {
                   <p className="text-xs text-gray-400 dark:text-gray-500 text-center py-2">Drop modules here</p>
                 ) : (
                   <div className="mt-2 space-y-2">
-                    <div className="grid grid-cols-[18px_1fr_90px_80px_60px_24px_24px_32px] gap-2 px-1">
+                    <div className="grid grid-cols-[18px_1fr_90px_80px_60px_24px_24px_36px] gap-2 px-1">
                       <span />
                       <p className="text-xs font-medium text-gray-400">Module name</p>
                       <p className="text-xs font-medium text-gray-400 text-center">Grade</p>
@@ -340,7 +418,7 @@ export default function CGPASimulator() {
                         }}
                         onDragOver={e => e.preventDefault()}
                         onDrop={e => handleDropToIndex(e, semester.id, index)}
-                        className="grid grid-cols-[18px_1fr_90px_80px_60px_24px_24px_32px] gap-2 items-center"
+                        className="grid grid-cols-[18px_1fr_90px_80px_60px_24px_24px_36px] gap-2 items-center"
                       >
                         <button type="button" className="text-gray-400 cursor-grab active:cursor-grabbing" aria-label={`Drag ${mod.name || 'module'}`}>
                           <GripVertical size={14} />
@@ -397,7 +475,7 @@ export default function CGPASimulator() {
                         <button
                           onClick={() => removeModule(mod.id)}
                           disabled={modules.length === 1}
-                          className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+                          className="w-9 h-9 flex items-center justify-center rounded-lg text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
                         >
                           <Trash2 size={14} />
                         </button>

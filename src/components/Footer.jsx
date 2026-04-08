@@ -25,7 +25,17 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-          <p className="text-white/30 text-xs">Built by Wong Jung Yong, FTBSBA · SUSS Student</p>
+          <p className="text-white/30 text-xs">
+            <a
+              href="https://www.linkedin.com/in/wongjungyong/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2 hover:text-white/60 transition-colors"
+            >
+              Built by Wong Jung Yong
+            </a>
+            , FTBSBA · SUSS Student
+          </p>
           <p className="text-white/30 text-xs">&copy; {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </div>
