@@ -2,6 +2,10 @@ import { useState, useEffect, useMemo } from 'react'
 import { Plus, Trash2, GripVertical } from 'lucide-react'
 import { GRADE_SCALE, gradeToPoints } from '../utils/gradeScale'
 
+const ALLOWED_MODULE_CREDITS = [2.5, 5, 10]
+const CGPA_INPUT_PATTERN = /^(?:[0-4](?:\.\d{0,2})?|5(?:\.0{0,2})?)?$/
+const CU_INPUT_PATTERN = /^\d*(?:\.\d{0,1})?$/
+
 function makeSemesterLabel(index) {
   const year = Math.floor(index / 2) + 1
   const sem = (index % 2) + 1
@@ -17,6 +21,15 @@ function createInitialSemesters() {
 
 function newModule(semesterId, order = 0) {
   return { id: crypto.randomUUID(), name: '', grade: 'B', credits: 5, semesterId, semesterOrder: order }
+}
+
+function normaliseModuleCredits(value) {
+  const numeric = Number(value)
+  return ALLOWED_MODULE_CREDITS.includes(numeric) ? numeric : 5
+}
+
+function formatCredits(value) {
+  return Number.isInteger(value) ? String(value) : value.toFixed(1)
 }
 
 function GradeBadge({ grade, className = '' }) {
@@ -65,7 +78,21 @@ export default function CGPASimulator() {
   const [modules, setModules] = useState(() => {
     try {
       const saved = localStorage.getItem('cgpa_modules')
-      return saved ? JSON.parse(saved) : []
+      if (!saved) return []
+
+      const parsed = JSON.parse(saved)
+      if (!Array.isArray(parsed)) return []
+
+      return parsed
+        .filter(m => m && typeof m.id === 'string')
+        .map((m, index) => ({
+          id: m.id,
+          name: typeof m.name === 'string' ? m.name : '',
+          grade: GRADE_SCALE.some(g => g.grade === m.grade) ? m.grade : 'B',
+          credits: normaliseModuleCredits(m.credits),
+          semesterId: typeof m.semesterId === 'string' ? m.semesterId : 'sem-1',
+          semesterOrder: Number.isFinite(Number(m.semesterOrder)) ? Number(m.semesterOrder) : index,
+        }))
     } catch {
       return []
     }
@@ -75,9 +102,9 @@ export default function CGPASimulator() {
   const [extCGPA, setExtCGPA] = useState('')
   const [extCredits, setExtCredits] = useState('')
   const [remainingCredits, setRemainingCredits] = useState('')
-  const [currentCGPA, setCurrentCGPA] = useState('0.00')
-  const [cuTaken, setCuTaken] = useState('0')
-  const [totalCU, setTotalCU] = useState('130')
+  const [currentCGPA, setCurrentCGPA] = useState('')
+  const [cuTaken, setCuTaken] = useState('0.0')
+  const [cuLeftInput, setCuLeftInput] = useState('130.0')
 
   useEffect(() => {
     localStorage.setItem('cgpa_modules', JSON.stringify(modules))
@@ -101,31 +128,53 @@ export default function CGPASimulator() {
     return map
   }, [modules, semesters])
 
-  const { cgpa, totalCredits } = useMemo(() => {
+  const { moduleGradePoints, moduleCredits } = useMemo(() => {
     const valid = modules.filter(m => Number(m.credits) > 0)
-    const tc = valid.reduce((sum, m) => sum + Number(m.credits), 0)
-    const tp = valid.reduce((sum, m) => sum + gradeToPoints(m.grade) * Number(m.credits), 0)
-    return { cgpa: tc > 0 ? tp / tc : 0, totalCredits: tc }
+    const credits = valid.reduce((sum, m) => sum + Number(m.credits), 0)
+    const points = valid.reduce((sum, m) => sum + gradeToPoints(m.grade) * Number(m.credits), 0)
+    return { moduleGradePoints: points, moduleCredits: credits }
   }, [modules])
 
-  const plannedCU = useMemo(
-    () => modules.reduce((sum, m) => sum + (Number(m.credits) > 0 ? Number(m.credits) : 0), 0),
-    [modules]
-  )
+  const currentCGPAValue = useMemo(() => {
+    if (currentCGPA === '') return null
+    const parsed = Number(currentCGPA)
+    return Number.isFinite(parsed) ? parsed : null
+  }, [currentCGPA])
 
-  const totalCUValue = Math.max(Number(totalCU) || 130, 1)
-  const completedPlusPlannedCU = Math.max(0, Number(cuTaken) || 0) + plannedCU
-  const cuLeft = Math.max(totalCUValue - completedPlusPlannedCU, 0)
+  const cuTakenValue = Math.max(Number(cuTaken) || 0, 0)
+  const cuLeftValue = Math.max(Number(cuLeftInput) || 0, 0)
+
+  const projectedCGPA = useMemo(() => {
+    if (moduleCredits === 0 && currentCGPAValue !== null) return currentCGPAValue
+
+    const weightedCredits = cuTakenValue + moduleCredits
+    if (weightedCredits <= 0) return 0
+
+    const basePoints = (currentCGPAValue ?? 0) * cuTakenValue
+    return (basePoints + moduleGradePoints) / weightedCredits
+  }, [currentCGPAValue, cuTakenValue, moduleGradePoints, moduleCredits])
+
+  const projectedCredits = cuTakenValue + moduleCredits
+  const hasProjectedCGPA = currentCGPAValue !== null || moduleCredits > 0
+
+  const completedPlusPlannedCU = projectedCredits
+  const totalCUValue = Math.max(cuTakenValue + cuLeftValue, 1)
+  const cuLeft = Math.max(cuLeftValue - moduleCredits, 0)
   const progressPercent = Math.min((completedPlusPlannedCU / totalCUValue) * 100, 100)
+
+  const defaultRemainingCredits = useMemo(
+    () => (cuLeft > 0 ? cuLeft.toFixed(1) : ''),
+    [cuLeft]
+  )
 
   const reverseResult = useMemo(() => {
     const target = parseFloat(targetCGPA)
-    const rc = parseFloat(remainingCredits)
-    if (!target || isNaN(target) || !rc || isNaN(rc) || rc <= 0) return null
+    const rc = parseFloat(remainingCredits || defaultRemainingCredits)
+    if (isNaN(target) || isNaN(rc) || rc <= 0) return null
     if (target < 0 || target > 5) return null
 
-    const baseCGPA = extCGPA !== '' ? parseFloat(extCGPA) : cgpa
-    const baseCredits = extCredits !== '' ? parseFloat(extCredits) : totalCredits
+    const baseCGPA = extCGPA !== '' ? parseFloat(extCGPA) : projectedCGPA
+    const baseCredits = extCredits !== '' ? parseFloat(extCredits) : projectedCredits
 
     if (isNaN(baseCGPA) || isNaN(baseCredits)) return null
 
@@ -134,10 +183,48 @@ export default function CGPASimulator() {
     if (needed <= 0) return { possible: true, alreadyMet: true }
     const grade = [...GRADE_SCALE].reverse().find(g => g.points >= needed)
     return { possible: true, needed, grade: grade ?? GRADE_SCALE[0] }
-  }, [targetCGPA, remainingCredits, extCGPA, extCredits, cgpa, totalCredits])
+  }, [targetCGPA, remainingCredits, defaultRemainingCredits, extCGPA, extCredits, projectedCGPA, projectedCredits])
+
+  const effectiveRemainingCredits = remainingCredits || defaultRemainingCredits
 
   function updateModule(id, field, value) {
-    setModules(prev => prev.map(m => (m.id === id ? { ...m, [field]: value } : m)))
+    setModules(prev => prev.map(m => {
+      if (m.id !== id) return m
+      if (field === 'credits') return { ...m, credits: normaliseModuleCredits(value) }
+      return { ...m, [field]: value }
+    }))
+  }
+
+  function handleCurrentCGPAChange(value) {
+    if (!CGPA_INPUT_PATTERN.test(value)) return
+    setCurrentCGPA(value)
+  }
+
+  function handleCurrentCGPABlur() {
+    if (currentCGPA === '') return
+    const numeric = Number(currentCGPA)
+    if (!Number.isFinite(numeric)) {
+      setCurrentCGPA('')
+      return
+    }
+    const clamped = Math.min(5, Math.max(0, numeric))
+    setCurrentCGPA(clamped.toFixed(2))
+  }
+
+  function normaliseCUInput(value, fallback = '0.0') {
+    const numeric = Number(value)
+    if (!Number.isFinite(numeric) || numeric < 0) return fallback
+    return numeric.toFixed(1)
+  }
+
+  function handleCUTakenChange(value) {
+    if (!CU_INPUT_PATTERN.test(value)) return
+    setCuTaken(value)
+  }
+
+  function handleCULeftChange(value) {
+    if (!CU_INPUT_PATTERN.test(value)) return
+    setCuLeftInput(value)
   }
 
   function addSemester() {
@@ -259,11 +346,11 @@ export default function CGPASimulator() {
   }
 
   const cgpaLabel =
-    cgpa >= 4.5 ? 'Honours (Highest Distinction)' :
-    cgpa >= 4.0 ? 'Honours (Distinction)' :
-    cgpa >= 3.5 ? 'Honours (Merit)' :
-    cgpa >= 3.0 ? 'Honours' :
-    cgpa >= 2.0 ? 'Pass' : 'Fail'
+    projectedCGPA >= 4.5 ? 'Honours (Highest Distinction)' :
+    projectedCGPA >= 4.0 ? 'Honours (Distinction)' :
+    projectedCGPA >= 3.5 ? 'Honours (Merit)' :
+    projectedCGPA >= 3.0 ? 'Honours' :
+    projectedCGPA >= 2.0 ? 'Pass' : 'Fail'
 
   return (
     <div className="space-y-6">
@@ -276,12 +363,12 @@ export default function CGPASimulator() {
         }}
       >
         <p className="text-white/60 text-sm mb-1">Projected cGPA</p>
-        <p className={`text-6xl font-bold tracking-tight ${totalCredits > 0 ? 'text-white' : 'text-white/20'}`}>
-          {totalCredits > 0 ? cgpa.toFixed(2) : '—'}
+        <p className={`text-6xl font-bold tracking-tight ${hasProjectedCGPA ? 'text-white' : 'text-white/20'}`}>
+          {hasProjectedCGPA ? projectedCGPA.toFixed(2) : '—'}
         </p>
-        {totalCredits > 0 && (
+        {hasProjectedCGPA && (
           <div className="flex items-center justify-center gap-3 mt-2">
-            <span className="text-white/50 text-xs">{totalCredits} credit unit{totalCredits !== 1 ? 's' : ''}</span>
+            <span className="text-white/50 text-xs">{projectedCredits.toFixed(1)} credit unit{projectedCredits !== 1 ? 's' : ''}</span>
             <span className="text-white/40">·</span>
             <span className="text-white/60 text-xs font-medium">{cgpaLabel}</span>
           </div>
@@ -310,24 +397,34 @@ export default function CGPASimulator() {
           <label className="text-[11px] text-white/70">
             Current CGPA
             <input
+              type="text"
+              inputMode="decimal"
               value={currentCGPA}
-              onChange={e => setCurrentCGPA(e.target.value)}
+              onChange={e => handleCurrentCGPAChange(e.target.value)}
+              onBlur={handleCurrentCGPABlur}
+              placeholder="0.00"
               className="mt-1 w-full rounded border border-white/20 bg-white/10 px-2 py-1 text-xs text-white"
             />
           </label>
           <label className="text-[11px] text-white/70">
             CU completed
             <input
+              type="text"
+              inputMode="decimal"
               value={cuTaken}
-              onChange={e => setCuTaken(e.target.value)}
+              onChange={e => handleCUTakenChange(e.target.value)}
+              onBlur={() => setCuTaken(prev => normaliseCUInput(prev, '0.0'))}
               className="mt-1 w-full rounded border border-white/20 bg-white/10 px-2 py-1 text-xs text-white"
             />
           </label>
           <label className="text-[11px] text-white/70">
-            Total CU
+            CU left
             <input
-              value={totalCU}
-              onChange={e => setTotalCU(e.target.value)}
+              type="text"
+              inputMode="decimal"
+              value={cuLeftInput}
+              onChange={e => handleCULeftChange(e.target.value)}
+              onBlur={() => setCuLeftInput(prev => normaliseCUInput(prev, '0.0'))}
               className="mt-1 w-full rounded border border-white/20 bg-white/10 px-2 py-1 text-xs text-white"
             />
           </label>
@@ -435,14 +532,15 @@ export default function CGPASimulator() {
                             <option key={g.grade} value={g.grade}>{g.grade} ({g.points.toFixed(1)})</option>
                           ))}
                         </select>
-                        <input
-                          type="number"
-                          min="1"
-                          max="30"
-                          value={mod.credits}
+                        <select
+                          value={String(mod.credits)}
                           onChange={e => updateModule(mod.id, 'credits', e.target.value)}
                           className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-2 text-sm text-gray-900 dark:text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
-                        />
+                        >
+                          {ALLOWED_MODULE_CREDITS.map(credit => (
+                            <option key={credit} value={credit}>{formatCredits(credit)}</option>
+                          ))}
+                        </select>
                         <select
                           value={mod.semesterId || semester.id}
                           onChange={e => assignSemester(mod.id, e.target.value)}
@@ -496,7 +594,7 @@ export default function CGPASimulator() {
               step="0.01"
               value={extCGPA}
               onChange={e => setExtCGPA(e.target.value)}
-              placeholder={cgpa.toFixed(2)}
+              placeholder={projectedCGPA.toFixed(2)}
               className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
             />
           </div>
@@ -509,7 +607,7 @@ export default function CGPASimulator() {
               min="0"
               value={extCredits}
               onChange={e => setExtCredits(e.target.value)}
-              placeholder={String(totalCredits)}
+              placeholder={projectedCredits.toFixed(1)}
               className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
             />
           </div>
@@ -537,7 +635,7 @@ export default function CGPASimulator() {
               min="1"
               value={remainingCredits}
               onChange={e => setRemainingCredits(e.target.value)}
-              placeholder="e.g. 20"
+              placeholder={defaultRemainingCredits || 'e.g. 20'}
               className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
             />
           </div>
@@ -555,7 +653,7 @@ export default function CGPASimulator() {
               <div className="rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 px-4 py-3 flex items-center gap-3">
                 <div>
                   <p className="text-sm text-blue-800 dark:text-blue-300">
-                    You need at least <strong>{reverseResult.needed.toFixed(2)} grade points</strong> per credit unit on your remaining {remainingCredits} credits.
+                    You need at least <strong>{reverseResult.needed.toFixed(2)} grade points</strong> per credit unit on your remaining {effectiveRemainingCredits} credits.
                   </p>
                   {reverseResult.grade && (
                     <p className="text-sm text-blue-700 dark:text-blue-400 mt-0.5">
