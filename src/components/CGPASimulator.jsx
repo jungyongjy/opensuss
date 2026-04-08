@@ -115,6 +115,23 @@ export default function CGPASimulator() {
         )}
       </div>
 
+      {/* Grade reference */}
+      <details className="rounded-xl border border-gray-200 dark:border-gray-700">
+        <summary className="px-5 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer select-none">
+          SUSS Grade Scale
+        </summary>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 px-5 pb-4 pt-2">
+          {GRADE_SCALE.map(g => (
+            <div key={g.grade} className="flex items-center justify-between text-sm">
+              <GradeBadge grade={g.grade} />
+              <span className="text-gray-500 dark:text-gray-400 text-xs">
+                {g.min === 0 ? `< 40` : `${g.min}–${g.max}`}% · {g.points.toFixed(1)}
+              </span>
+            </div>
+          ))}
+        </div>
+      </details>
+
       {/* Module table */}
       <div className="rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
         <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
@@ -178,23 +195,6 @@ export default function CGPASimulator() {
           </button>
         </div>
       </div>
-
-      {/* Grade reference */}
-      <details className="rounded-xl border border-gray-200 dark:border-gray-700">
-        <summary className="px-5 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer select-none">
-          SUSS Grade Scale
-        </summary>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 px-5 pb-4 pt-2">
-          {GRADE_SCALE.map(g => (
-            <div key={g.grade} className="flex items-center justify-between text-sm">
-              <GradeBadge grade={g.grade} />
-              <span className="text-gray-500 dark:text-gray-400 text-xs">
-                {g.min === 0 ? `< 40` : `${g.min}–${g.max}`}% · {g.points.toFixed(1)} pts
-              </span>
-            </div>
-          ))}
-        </div>
-      </details>
 
       {/* Reverse calculator */}
       <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-5">

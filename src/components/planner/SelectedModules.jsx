@@ -1,4 +1,4 @@
-import { X, ChevronDown, Check, GripVertical } from 'lucide-react'
+import { X, ChevronDown, Check, GripVertical, ArrowUp, ArrowDown } from 'lucide-react'
 
 export default function SelectedModules({
   modules,
@@ -31,6 +31,11 @@ export default function SelectedModules({
 
   return (
     <div className="flex flex-col gap-3">
+      <div className="flex items-center justify-between px-1">
+        <p className="text-xs font-semibold text-gray-700 dark:text-gray-300">Semester Planner</p>
+        <p className="text-xs text-gray-400 dark:text-gray-500">Drag or use arrows</p>
+      </div>
+
       {bySemester.map(({ id, label, modules: semesterModules }) => {
         const semesterCU = semesterModules.reduce((sum, m) => sum + (m.cu || 0), 0)
         return (
@@ -110,6 +115,25 @@ export default function SelectedModules({
                           ))}
                         </select>
                       </div>
+                    </div>
+
+                    <div className="shrink-0 flex items-center gap-1">
+                      <button
+                        onClick={() => onMoveModule(courseCode, id, Math.max(index - 1, 0))}
+                        disabled={index === 0}
+                        className="p-0.5 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                        aria-label={`Move ${courseCode} up`}
+                      >
+                        <ArrowUp size={12} />
+                      </button>
+                      <button
+                        onClick={() => onMoveModule(courseCode, id, index + 1)}
+                        disabled={index === semesterModules.length - 1}
+                        className="p-0.5 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                        aria-label={`Move ${courseCode} down`}
+                      >
+                        <ArrowDown size={12} />
+                      </button>
                     </div>
 
                     <button
