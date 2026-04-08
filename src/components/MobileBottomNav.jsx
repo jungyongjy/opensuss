@@ -12,7 +12,9 @@ export default function MobileBottomNav() {
   const { pathname } = useLocation()
 
   function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    document.body.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   }
 
   return (
@@ -26,8 +28,10 @@ export default function MobileBottomNav() {
             onClick={e => {
               if (active) {
                 e.preventDefault()
+                scrollToTop()
+              } else {
+                setTimeout(() => scrollToTop(), 0)
               }
-              scrollToTop()
             }}
             className={`flex-1 flex flex-col items-center justify-center gap-1 py-2.5 text-xs font-medium transition-colors ${
               active

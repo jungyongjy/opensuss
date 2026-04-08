@@ -1,39 +1,54 @@
 import { useState, useEffect, useMemo } from 'react'
-import { Plus, Trash2 } from 'lucide-react'
+import { Plus, Trash2, GripVertical, ArrowUp, ArrowDown } from 'lucide-react'
 import { GRADE_SCALE, gradeToPoints } from '../utils/gradeScale'
 
-function newModule() {
-  return { id: crypto.randomUUID(), name: '', grade: 'B', credits: 5 }
+function makeSemesterLabel(index) {
+  const year = Math.floor(index / 2) + 1
+  const sem = (index % 2) + 1
+  return `Y${year}S${sem}`
+}
+
+function createInitialSemesters(count = 4) {
+  return Array.from({ length: count }, (_, i) => ({ id: `sem-${i + 1}`, label: makeSemesterLabel(i) }))
+}
+
+function newModule(semesterId, order = 0) {
+  return { id: crypto.randomUUID(), name: '', grade: 'B', credits: 5, semesterId, semesterOrder: order }
 }
 
 function GradeBadge({ grade, className = '' }) {
   const colorMap = {
     'A+': 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300',
-    'A':  'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300',
+    A: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300',
     'A-': 'bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300',
     'B+': 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300',
-    'B':  'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300',
+    B: 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300',
     'B-': 'bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300',
     'C+': 'bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300',
-    'C':  'bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300',
+    C: 'bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300',
     'D+': 'bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300',
-    'D':  'bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300',
-    'F':  'bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300',
+    D: 'bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300',
+    F: 'bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300',
   }
-  return (
-    <span className={`inline-block text-xs font-bold px-2 py-0.5 rounded ${colorMap[grade] ?? ''} ${className}`}>
-      {grade}
-    </span>
-  )
+  return <span className={`inline-block text-xs font-bold px-2 py-0.5 rounded ${colorMap[grade] ?? ''} ${className}`}>{grade}</span>
 }
 
 export default function CGPASimulator() {
+  const [semesters, setSemesters] = useState(() => {
+    try {
+      const saved = localStorage.getItem('cgpa_semesters')
+      return saved ? JSON.parse(saved) : createInitialSemesters()
+    } catch {
+      return createInitialSemesters()
+    }
+  })
+
   const [modules, setModules] = useState(() => {
     try {
       const saved = localStorage.getItem('cgpa_modules')
-      return saved ? JSON.parse(saved) : [newModule()]
+      return saved ? JSON.parse(saved) : [newModule('sem-1', 0)]
     } catch {
-      return [newModule()]
+      return [newModule('sem-1', 0)]
     }
   })
 
@@ -41,10 +56,31 @@ export default function CGPASimulator() {
   const [extCGPA, setExtCGPA] = useState('')
   const [extCredits, setExtCredits] = useState('')
   const [remainingCredits, setRemainingCredits] = useState('')
+  const [currentCGPA, setCurrentCGPA] = useState('0.00')
+  const [cuTaken, setCuTaken] = useState('0')
+  const [totalCU, setTotalCU] = useState('130')
 
   useEffect(() => {
     localStorage.setItem('cgpa_modules', JSON.stringify(modules))
   }, [modules])
+
+  useEffect(() => {
+    localStorage.setItem('cgpa_semesters', JSON.stringify(semesters))
+  }, [semesters])
+
+  const modulesBySemester = useMemo(() => {
+    const map = Object.fromEntries(semesters.map(s => [s.id, []]))
+    modules.forEach(mod => {
+      const fallback = semesters[0]?.id
+      const semId = mod.semesterId && map[mod.semesterId] ? mod.semesterId : fallback
+      if (!semId) return
+      map[semId].push(mod)
+    })
+    Object.keys(map).forEach(semId => {
+      map[semId].sort((a, b) => (a.semesterOrder || 0) - (b.semesterOrder || 0))
+    })
+    return map
+  }, [modules, semesters])
 
   const { cgpa, totalCredits } = useMemo(() => {
     const valid = modules.filter(m => Number(m.credits) > 0)
@@ -52,6 +88,16 @@ export default function CGPASimulator() {
     const tp = valid.reduce((sum, m) => sum + gradeToPoints(m.grade) * Number(m.credits), 0)
     return { cgpa: tc > 0 ? tp / tc : 0, totalCredits: tc }
   }, [modules])
+
+  const plannedCU = useMemo(
+    () => modules.reduce((sum, m) => sum + (Number(m.credits) > 0 ? Number(m.credits) : 0), 0),
+    [modules]
+  )
+
+  const totalCUValue = Math.max(Number(totalCU) || 130, 1)
+  const completedPlusPlannedCU = Math.max(0, Number(cuTaken) || 0) + plannedCU
+  const cuLeft = Math.max(totalCUValue - completedPlusPlannedCU, 0)
+  const progressPercent = Math.min((completedPlusPlannedCU / totalCUValue) * 100, 100)
 
   const reverseResult = useMemo(() => {
     const target = parseFloat(targetCGPA)
@@ -65,24 +111,91 @@ export default function CGPASimulator() {
     if (isNaN(baseCGPA) || isNaN(baseCredits)) return null
 
     const needed = (target * (baseCredits + rc) - baseCGPA * baseCredits) / rc
-
     if (needed > 5) return { possible: false, needed }
     if (needed <= 0) return { possible: true, alreadyMet: true }
-
-    // Find lowest grade whose points meet the needed threshold
     const grade = [...GRADE_SCALE].reverse().find(g => g.points >= needed)
     return { possible: true, needed, grade: grade ?? GRADE_SCALE[0] }
   }, [targetCGPA, remainingCredits, extCGPA, extCredits, cgpa, totalCredits])
 
   function updateModule(id, field, value) {
-    setModules(prev => prev.map(m => m.id === id ? { ...m, [field]: value } : m))
+    setModules(prev => prev.map(m => (m.id === id ? { ...m, [field]: value } : m)))
   }
-  function addModule() { setModules(prev => [...prev, newModule()]) }
+
+  function addSemester() {
+    setSemesters(prev => {
+      const nextIndex = prev.length
+      return [...prev, { id: `sem-${nextIndex + 1}`, label: makeSemesterLabel(nextIndex) }]
+    })
+  }
+
+  function addModule(semesterId = semesters[0]?.id) {
+    const semId = semesterId || semesters[0]?.id || 'sem-1'
+    const current = modulesBySemester[semId] || []
+    setModules(prev => [...prev, newModule(semId, current.length)])
+  }
+
   function removeModule(id) {
     if (modules.length === 1) return
     setModules(prev => prev.filter(m => m.id !== id))
   }
-  function clearAll() { setModules([newModule()]) }
+
+  function clearAll() {
+    const first = semesters[0]?.id || 'sem-1'
+    setModules([newModule(first, 0)])
+  }
+
+  function moveModule(id, targetSemesterId, targetIndex) {
+    setModules(prev => {
+      const moving = prev.find(m => m.id === id)
+      if (!moving) return prev
+
+      const buckets = {}
+      semesters.forEach(sem => {
+        buckets[sem.id] = prev
+          .filter(m => m.semesterId === sem.id)
+          .sort((a, b) => (a.semesterOrder || 0) - (b.semesterOrder || 0))
+          .map(m => m.id)
+      })
+
+      if (!buckets[targetSemesterId]) buckets[targetSemesterId] = []
+      Object.keys(buckets).forEach(semId => {
+        buckets[semId] = buckets[semId].filter(moduleId => moduleId !== id)
+      })
+
+      const insertAt = targetIndex == null
+        ? buckets[targetSemesterId].length
+        : Math.min(Math.max(targetIndex, 0), buckets[targetSemesterId].length)
+      buckets[targetSemesterId].splice(insertAt, 0, id)
+
+      return prev.map(m => {
+        for (const [semId, list] of Object.entries(buckets)) {
+          const idx = list.indexOf(m.id)
+          if (idx !== -1) return { ...m, semesterId: semId, semesterOrder: idx }
+        }
+        return m
+      })
+    })
+  }
+
+  function assignSemester(id, semesterId) {
+    const target = modulesBySemester[semesterId] || []
+    setModules(prev => prev.map(m => (m.id === id ? { ...m, semesterId, semesterOrder: target.length } : m)))
+  }
+
+  function handleDropToSemester(e, semesterId) {
+    e.preventDefault()
+    const id = e.dataTransfer.getData('text/plain')
+    if (!id) return
+    moveModule(id, semesterId, null)
+  }
+
+  function handleDropToIndex(e, semesterId, index) {
+    e.preventDefault()
+    e.stopPropagation()
+    const id = e.dataTransfer.getData('text/plain')
+    if (!id) return
+    moveModule(id, semesterId, index)
+  }
 
   const cgpaLabel =
     cgpa >= 4.5 ? 'Honours (Highest Distinction)' :
@@ -93,7 +206,6 @@ export default function CGPASimulator() {
 
   return (
     <div className="space-y-6">
-      {/* cGPA display */}
       <div
         className="rounded-xl text-white p-6 text-center relative overflow-hidden"
         style={{
@@ -115,7 +227,6 @@ export default function CGPASimulator() {
         )}
       </div>
 
-      {/* Grade reference */}
       <details className="rounded-xl border border-gray-200 dark:border-gray-700">
         <summary className="px-5 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer select-none">
           SUSS Grade Scale
@@ -132,7 +243,43 @@ export default function CGPASimulator() {
         </div>
       </details>
 
-      {/* Module table */}
+      <div className="rounded-xl border border-navy/20 dark:border-blue-600/40 bg-navy dark:bg-gray-900 p-4 text-white">
+        <p className="text-xs font-semibold text-white/90">Your Progress</p>
+        <div className="mt-2 grid grid-cols-3 gap-2">
+          <label className="text-[11px] text-white/70">
+            Current CGPA
+            <input
+              value={currentCGPA}
+              onChange={e => setCurrentCGPA(e.target.value)}
+              className="mt-1 w-full rounded border border-white/20 bg-white/10 px-2 py-1 text-xs text-white"
+            />
+          </label>
+          <label className="text-[11px] text-white/70">
+            CU completed
+            <input
+              value={cuTaken}
+              onChange={e => setCuTaken(e.target.value)}
+              className="mt-1 w-full rounded border border-white/20 bg-white/10 px-2 py-1 text-xs text-white"
+            />
+          </label>
+          <label className="text-[11px] text-white/70">
+            Total CU
+            <input
+              value={totalCU}
+              onChange={e => setTotalCU(e.target.value)}
+              className="mt-1 w-full rounded border border-white/20 bg-white/10 px-2 py-1 text-xs text-white"
+            />
+          </label>
+        </div>
+        <div className="mt-2 h-2 rounded-full bg-white/20 overflow-hidden">
+          <div className="h-full bg-suss-red transition-all" style={{ width: `${progressPercent}%` }} />
+        </div>
+        <div className="mt-1 flex items-center justify-between text-[11px] text-white/70">
+          <span>{completedPlusPlannedCU.toFixed(1)} / {totalCUValue} CU</span>
+          <span>{cuLeft.toFixed(1)} CU left</span>
+        </div>
+      </div>
+
       <div className="rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
         <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
           <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">Modules</h3>
@@ -141,62 +288,139 @@ export default function CGPASimulator() {
           </button>
         </div>
 
-        <div className="p-4 space-y-2">
-          <div className="grid grid-cols-[1fr_90px_80px_32px] gap-2 px-1">
-            <p className="text-xs font-medium text-gray-400">Module name</p>
-            <p className="text-xs font-medium text-gray-400 text-center">Grade</p>
-            <p className="text-xs font-medium text-gray-400 text-center">Credits</p>
-            <span />
+        <div className="p-4 space-y-3">
+          <div className="flex items-center justify-between">
+            <p className="text-xs font-semibold text-gray-700 dark:text-gray-300">Semester Planner</p>
+            <button
+              onClick={addSemester}
+              className="text-xs px-2 py-1 rounded border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
+            >
+              + Add semester
+            </button>
           </div>
 
-          {modules.map((mod) => (
-            <div key={mod.id} className="grid grid-cols-[1fr_90px_80px_32px] gap-2 items-center">
-              <input
-                type="text"
-                value={mod.name}
-                onChange={e => updateModule(mod.id, 'name', e.target.value)}
-                placeholder="e.g. MKT101"
-                className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400 focus:border-transparent"
-              />
-              <select
-                value={mod.grade}
-                onChange={e => updateModule(mod.id, 'grade', e.target.value)}
-                className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-2 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400 text-center"
-              >
-                {GRADE_SCALE.map(g => (
-                  <option key={g.grade} value={g.grade}>{g.grade} ({g.points.toFixed(1)})</option>
-                ))}
-              </select>
-              <input
-                type="number"
-                min="1" max="30"
-                value={mod.credits}
-                onChange={e => updateModule(mod.id, 'credits', e.target.value)}
-                className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-2 text-sm text-gray-900 dark:text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
-              />
-              <button
-                onClick={() => removeModule(mod.id)}
-                disabled={modules.length === 1}
-                className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
-              >
-                <Trash2 size={14} />
-              </button>
-            </div>
-          ))}
-        </div>
+          {semesters.map(semester => {
+            const semesterMods = modulesBySemester[semester.id] || []
+            const semesterCredits = semesterMods.reduce((sum, m) => sum + (Number(m.credits) || 0), 0)
 
-        <div className="px-4 pb-4">
-          <button
-            onClick={addModule}
-            className="flex items-center gap-1.5 text-sm text-navy dark:text-blue-400 hover:opacity-75 font-medium transition-opacity"
-          >
-            <Plus size={16} />
-            Add module
-          </button>
+            return (
+              <section
+                key={semester.id}
+                className="rounded-lg border border-gray-200 dark:border-gray-700 p-2"
+                onDragOver={e => e.preventDefault()}
+                onDrop={e => handleDropToSemester(e, semester.id)}
+              >
+                <div className="flex items-center justify-between px-1 pb-2 border-b border-gray-100 dark:border-gray-700">
+                  <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-200">{semester.label}</h4>
+                  <span className="text-xs text-gray-400 dark:text-gray-500">{semesterCredits} CU</span>
+                </div>
+
+                {semesterMods.length === 0 ? (
+                  <p className="text-xs text-gray-400 dark:text-gray-500 text-center py-2">Drop modules here</p>
+                ) : (
+                  <div className="mt-2 space-y-2">
+                    <div className="grid grid-cols-[18px_1fr_90px_80px_60px_24px_24px_32px] gap-2 px-1">
+                      <span />
+                      <p className="text-xs font-medium text-gray-400">Module name</p>
+                      <p className="text-xs font-medium text-gray-400 text-center">Grade</p>
+                      <p className="text-xs font-medium text-gray-400 text-center">Credits</p>
+                      <p className="text-xs font-medium text-gray-400 text-center">Semester</p>
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+
+                    {semesterMods.map((mod, index) => (
+                      <div
+                        key={mod.id}
+                        draggable
+                        onDragStart={e => {
+                          e.dataTransfer.effectAllowed = 'move'
+                          e.dataTransfer.setData('text/plain', mod.id)
+                        }}
+                        onDragOver={e => e.preventDefault()}
+                        onDrop={e => handleDropToIndex(e, semester.id, index)}
+                        className="grid grid-cols-[18px_1fr_90px_80px_60px_24px_24px_32px] gap-2 items-center"
+                      >
+                        <button type="button" className="text-gray-400 cursor-grab active:cursor-grabbing" aria-label={`Drag ${mod.name || 'module'}`}>
+                          <GripVertical size={14} />
+                        </button>
+                        <input
+                          type="text"
+                          value={mod.name}
+                          onChange={e => updateModule(mod.id, 'name', e.target.value)}
+                          placeholder="e.g. MKT101"
+                          className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400 focus:border-transparent"
+                        />
+                        <select
+                          value={mod.grade}
+                          onChange={e => updateModule(mod.id, 'grade', e.target.value)}
+                          className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-2 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400 text-center"
+                        >
+                          {GRADE_SCALE.map(g => (
+                            <option key={g.grade} value={g.grade}>{g.grade} ({g.points.toFixed(1)})</option>
+                          ))}
+                        </select>
+                        <input
+                          type="number"
+                          min="1"
+                          max="30"
+                          value={mod.credits}
+                          onChange={e => updateModule(mod.id, 'credits', e.target.value)}
+                          className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-2 text-sm text-gray-900 dark:text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
+                        />
+                        <select
+                          value={mod.semesterId || semester.id}
+                          onChange={e => assignSemester(mod.id, e.target.value)}
+                          className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-1 py-2 text-xs text-gray-700 dark:text-gray-200"
+                        >
+                          {semesters.map(s => (
+                            <option key={s.id} value={s.id}>{s.label}</option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => moveModule(mod.id, semester.id, Math.max(index - 1, 0))}
+                          disabled={index === 0}
+                          className="p-1 rounded text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                          aria-label={`Move ${mod.name || 'module'} up`}
+                        >
+                          <ArrowUp size={13} />
+                        </button>
+                        <button
+                          onClick={() => moveModule(mod.id, semester.id, index + 1)}
+                          disabled={index === semesterMods.length - 1}
+                          className="p-1 rounded text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                          aria-label={`Move ${mod.name || 'module'} down`}
+                        >
+                          <ArrowDown size={13} />
+                        </button>
+                        <button
+                          onClick={() => removeModule(mod.id)}
+                          disabled={modules.length === 1}
+                          className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div className="mt-2 px-1">
+                  <button
+                    onClick={() => addModule(semester.id)}
+                    className="flex items-center gap-1.5 text-sm text-navy dark:text-blue-400 hover:opacity-75 font-medium transition-opacity"
+                  >
+                    <Plus size={16} />
+                    Add module to {semester.label}
+                  </button>
+                </div>
+              </section>
+            )
+          })}
         </div>
       </div>
 
-      {/* Reverse calculator */}
       <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-5">
         <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-0.5">What grade do I need?</h3>
         <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
@@ -209,7 +433,10 @@ export default function CGPASimulator() {
               Current cGPA <span className="text-gray-400 font-normal">(optional)</span>
             </label>
             <input
-              type="number" min="0" max="5" step="0.01"
+              type="number"
+              min="0"
+              max="5"
+              step="0.01"
               value={extCGPA}
               onChange={e => setExtCGPA(e.target.value)}
               placeholder={cgpa.toFixed(2)}
@@ -221,7 +448,8 @@ export default function CGPASimulator() {
               Credits completed <span className="text-gray-400 font-normal">(optional)</span>
             </label>
             <input
-              type="number" min="0"
+              type="number"
+              min="0"
               value={extCredits}
               onChange={e => setExtCredits(e.target.value)}
               placeholder={String(totalCredits)}
@@ -233,7 +461,10 @@ export default function CGPASimulator() {
               Target cGPA <span className="text-suss-red">*</span>
             </label>
             <input
-              type="number" min="0" max="5" step="0.01"
+              type="number"
+              min="0"
+              max="5"
+              step="0.01"
               value={targetCGPA}
               onChange={e => setTargetCGPA(e.target.value)}
               placeholder="e.g. 3.50"
@@ -245,7 +476,8 @@ export default function CGPASimulator() {
               Remaining credit units <span className="text-suss-red">*</span>
             </label>
             <input
-              type="number" min="1"
+              type="number"
+              min="1"
               value={remainingCredits}
               onChange={e => setRemainingCredits(e.target.value)}
               placeholder="e.g. 20"
