@@ -10,6 +10,11 @@ const TABS = [
 
 export default function MobileBottomNav() {
   const { pathname } = useLocation()
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 flex">
       {TABS.map(({ to, icon: Icon, label }) => {
@@ -18,6 +23,12 @@ export default function MobileBottomNav() {
           <Link
             key={to}
             to={to}
+            onClick={e => {
+              if (active) {
+                e.preventDefault()
+              }
+              scrollToTop()
+            }}
             className={`flex-1 flex flex-col items-center justify-center gap-1 py-2.5 text-xs font-medium transition-colors ${
               active
                 ? 'text-navy dark:text-blue-400'
