@@ -55,6 +55,88 @@ export function formatShortDate(date) {
   return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
 }
 
+function parseCsvLine(line) {
+  const fields = []
+  let curr = ''
+  let inQuotes = false
+
+  for (let i = 0; i < line.length; i += 1) {
+    const ch = line[i]
+    if (ch === '"') {
+      inQuotes = !inQuotes
+      continue
+    }
+    if (ch === ',' && !inQuotes) {
+      fields.push(curr.trim())
+      curr = ''
+      continue
+    }
+    curr += ch
+  }
+  fields.push(curr.trim())
+  return fields
+}
+
+export function sanitizeModuleCodes(values) {
+  if (!Array.isArray(values)) return []
+  const codePattern = /^[A-Z]{2,}\d{3,4}[A-Z0-9]*$/
+  const seen = new Set()
+
+  return values
+    .map(v => (typeof v === 'string' ? v.trim().toUpperCase() : ''))
+    .filter(Boolean)
+    .filter(v => codePattern.test(v))
+    .filter(v => {
+      if (seen.has(v)) return false
+      seen.add(v)
+      return true
+    })
+}
+
+export function parseOverridesCsv(csvText) {
+  if (!csvText || typeof csvText !== 'string') return {}
+
+  const lines = csvText
+    .split(/\r?\n/)
+    .map(l => l.trim())
+    .filter(Boolean)
+
+  if (lines.length < 2) return {}
+
+  const overrides = {}
+
+  for (let i = 1; i < lines.length; i += 1) {
+    const [rawCode = '', rawPrereq = '', rawExcluded = ''] = parseCsvLine(lines[i])
+    const code = rawCode.trim().toUpperCase()
+    if (!code) continue
+
+    const prereqs = sanitizeModuleCodes(rawPrereq ? rawPrereq.split(',') : [])
+    const excludedCombinations = sanitizeModuleCodes(rawExcluded ? rawExcluded.split(',') : [])
+
+    overrides[code] = { prereqs, excludedCombinations }
+  }
+
+  return overrides
+}
+
+export function resolveGateRules(courseCode, moduleData, overridesMap = {}) {
+  const code = (courseCode || '').trim().toUpperCase()
+  const module = Array.isArray(moduleData) ? moduleData.find(m => m.code === code) : null
+
+  const basePrereqs = sanitizeModuleCodes(module?.prereqs || [])
+  const baseExcluded = sanitizeModuleCodes(module?.excludedCombinations || [])
+
+  const override = overridesMap[code]
+  if (!override) {
+    return { prereqs: basePrereqs, excludedCombinations: baseExcluded }
+  }
+
+  return {
+    prereqs: sanitizeModuleCodes(override.prereqs || []),
+    excludedCombinations: sanitizeModuleCodes(override.excludedCombinations || []),
+  }
+}
+
 export function searchModules(query, dayData, eveningData, moduleData, excludedCodes = []) {
   if (!query.trim()) return []
   const q = query.trim().toLowerCase()

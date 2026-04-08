@@ -1,4 +1,3 @@
-import { useMemo, useState } from 'react'
 import { X } from 'lucide-react'
 
 function renderCodeList(codes, conjunction = 'and') {
@@ -31,29 +30,9 @@ export default function PrereqGateModal({
   onConfirm,
   onClose,
 }) {
-  const hasExclusions = excludedCombinations.length > 0
-  const hasPrereqs = prereqs.length > 0
-  const [step, setStep] = useState(hasExclusions ? 'exclusion' : 'prereq')
+  const detected = Array.from(new Set([...(prereqs || []), ...(excludedCombinations || [])]))
 
-  const title = useMemo(() => {
-    if (step === 'exclusion') return 'Check Excluded Combinations'
-    return 'Check Prerequisites'
-  }, [step])
-
-  function handleExcludeYes() {
-    onClose()
-  }
-
-  function handleExcludeNo() {
-    if (hasPrereqs) {
-      setStep('prereq')
-      return
-    }
-    onConfirm()
-    onClose()
-  }
-
-  function handlePrereqResponse() {
+  function handleAddAnyway() {
     onConfirm()
     onClose()
   }
@@ -68,7 +47,9 @@ export default function PrereqGateModal({
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
         <div className="flex items-start justify-between p-5 border-b border-gray-100 dark:border-gray-700">
           <div>
-            <h2 className="font-display text-base font-bold text-gray-900 dark:text-gray-100">{title}</h2>
+            <h2 className="font-display text-base font-bold text-gray-900 dark:text-gray-100">
+              Prerequisite or excluded combination detected
+            </h2>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
               Adding <strong>{courseCode}</strong>
               {moduleName ? ` - ${moduleName}` : ''}
@@ -83,83 +64,50 @@ export default function PrereqGateModal({
         </div>
 
         <div className="p-5">
-          {step === 'exclusion' ? (
-            <>
-              <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-                {excludedCombinations.length === 1 ? (
-                  <>
-                    <strong>{excludedCombinations[0]}</strong> was detected as a related course. Have you taken it
-                    before? If yes, you may not need <strong>{courseCode}</strong>.
-                  </>
-                ) : (
-                  <>
-                    These related courses were detected: {renderCodeList(excludedCombinations, 'or')}. Have you taken
-                    any of them? If yes, you may not need <strong>{courseCode}</strong>.
-                  </>
-                )}
+          <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-3">
+            <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              Either a prerequisite or excluded combination was detected for <strong>{courseCode}</strong>.
+            </p>
+            <div className="mt-2 text-xs text-gray-600 dark:text-gray-300 space-y-1">
+              <p>
+                <strong>Prerequisite:</strong> Modules that must be taken before this course.
               </p>
-
-              <div className="mt-5 flex justify-end gap-2">
-                <button
-                  onClick={handleExcludeYes}
-                  className="px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                >
-                  Yes, I've taken one
-                </button>
-                <button
-                  onClick={handleExcludeNo}
-                  className="px-3 py-2 rounded-lg text-sm font-medium bg-navy dark:bg-blue-700 hover:bg-navy/90 dark:hover:bg-blue-600 text-white transition-colors"
-                >
-                  No
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
-              <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-                {prereqs.length === 1 ? (
-                  <>
-                    <strong>{prereqs[0]}</strong> was detected as a prerequisite-related course. Have you completed it?
-                  </>
-                ) : (
-                  <>
-                    {renderCodeList(prereqs)} were detected as prerequisite-related courses. Have you completed any of
-                    these?
-                  </>
-                )}
+              <p>
+                <strong>Excluded combination:</strong> If you have taken this, you cannot take this selected course.
               </p>
+            </div>
+            <p className="mt-3 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              Detected related modules: {renderCodeList(detected, 'or')}.
+            </p>
+          </div>
 
-              <div className="mt-5 flex justify-end gap-2">
-                <button
-                  onClick={handlePrereqResponse}
-                  className="px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                >
-                  No / I'm planning ahead
-                </button>
-                <button
-                  onClick={handlePrereqResponse}
-                  className="px-3 py-2 rounded-lg text-sm font-medium bg-navy dark:bg-blue-700 hover:bg-navy/90 dark:hover:bg-blue-600 text-white transition-colors"
-                >
-                  Yes, I've completed one or more
-                </button>
-              </div>
-            </>
-          )}
-        </div>
-
-        <div className="px-5 pb-4">
-          <p className="text-xs text-gray-400 dark:text-gray-500">
-            Note: This data is extracted from the publicly available curriculum and may not reflect recent updates. Always verify against your official curriculum plan at{' '}
+          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
+            Please check your{' '}
             <a
               href="https://sims1.suss.edu.sg/eservice/public/viewcp/viewcp.aspx?progcd=BAS-MAJ1&viewtype=mhtml"
               target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-gray-600 dark:hover:text-gray-300"
+              rel="noreferrer"
+              className="underline hover:text-gray-700 dark:hover:text-gray-200"
             >
-              SUSS Curriculum
-            </a>
-            .
+              curriculum plan
+            </a>{' '}
+            to confirm whether this module is required before finalising your selection.
           </p>
+
+          <div className="mt-5 flex justify-end gap-2">
+            <button
+              onClick={onClose}
+              className="px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+            >
+              Skip for now
+            </button>
+            <button
+              onClick={handleAddAnyway}
+              className="px-3 py-2 rounded-lg text-sm font-medium bg-navy dark:bg-blue-700 hover:bg-navy/90 dark:hover:bg-blue-600 text-white transition-colors"
+            >
+              Add module anyway
+            </button>
+          </div>
         </div>
       </div>
     </div>
