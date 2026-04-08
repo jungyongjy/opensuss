@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { Plus, Trash2, GripVertical, ArrowUp, ArrowDown } from 'lucide-react'
+import { Plus, Trash2, GripVertical } from 'lucide-react'
 import { GRADE_SCALE, gradeToPoints } from '../utils/gradeScale'
 
 function makeSemesterLabel(index) {
@@ -65,9 +65,9 @@ export default function CGPASimulator() {
   const [modules, setModules] = useState(() => {
     try {
       const saved = localStorage.getItem('cgpa_modules')
-      return saved ? JSON.parse(saved) : [newModule('sem-1', 0)]
+      return saved ? JSON.parse(saved) : []
     } catch {
-      return [newModule('sem-1', 0)]
+      return []
     }
   })
 
@@ -198,13 +198,11 @@ export default function CGPASimulator() {
   }
 
   function removeModule(id) {
-    if (modules.length === 1) return
     setModules(prev => prev.filter(m => m.id !== id))
   }
 
   function clearAll() {
-    const first = semesters[0]?.id || 'sem-1'
-    setModules([newModule(first, 0)])
+    setModules([])
   }
 
   function moveModule(id, targetSemesterId, targetIndex) {
@@ -397,14 +395,12 @@ export default function CGPASimulator() {
                   <p className="text-xs text-gray-400 dark:text-gray-500 text-center py-2">Drop modules here</p>
                 ) : (
                   <div className="mt-2 space-y-2">
-                    <div className="grid grid-cols-[18px_1fr_90px_80px_60px_24px_24px_36px] gap-2 px-1">
+                    <div className="grid grid-cols-[18px_1fr_90px_80px_60px_24px] gap-2 px-1">
                       <span />
                       <p className="text-xs font-medium text-gray-400">Module name</p>
                       <p className="text-xs font-medium text-gray-400 text-center">Grade</p>
                       <p className="text-xs font-medium text-gray-400 text-center">Credits</p>
                       <p className="text-xs font-medium text-gray-400 text-center">Semester</p>
-                      <span />
-                      <span />
                       <span />
                     </div>
 
@@ -418,7 +414,7 @@ export default function CGPASimulator() {
                         }}
                         onDragOver={e => e.preventDefault()}
                         onDrop={e => handleDropToIndex(e, semester.id, index)}
-                        className="grid grid-cols-[18px_1fr_90px_80px_60px_24px_24px_36px] gap-2 items-center"
+                        className="grid grid-cols-[18px_1fr_90px_80px_60px_24px] gap-2 items-center"
                       >
                         <button type="button" className="text-gray-400 cursor-grab active:cursor-grabbing" aria-label={`Drag ${mod.name || 'module'}`}>
                           <GripVertical size={14} />
@@ -457,25 +453,8 @@ export default function CGPASimulator() {
                           ))}
                         </select>
                         <button
-                          onClick={() => moveModule(mod.id, semester.id, Math.max(index - 1, 0))}
-                          disabled={index === 0}
-                          className="p-1 rounded text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed"
-                          aria-label={`Move ${mod.name || 'module'} up`}
-                        >
-                          <ArrowUp size={13} />
-                        </button>
-                        <button
-                          onClick={() => moveModule(mod.id, semester.id, index + 1)}
-                          disabled={index === semesterMods.length - 1}
-                          className="p-1 rounded text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed"
-                          aria-label={`Move ${mod.name || 'module'} down`}
-                        >
-                          <ArrowDown size={13} />
-                        </button>
-                        <button
                           onClick={() => removeModule(mod.id)}
-                          disabled={modules.length === 1}
-                          className="w-9 h-9 flex items-center justify-center rounded-lg text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+                          className="p-1 rounded text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                         >
                           <Trash2 size={14} />
                         </button>
