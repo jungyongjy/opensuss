@@ -17,6 +17,7 @@ export const categories = [
       { name: 'Academic Calendar', description: 'Key dates, semester start and end, exam periods for all programmes', href: '/academic-calendar', internal: true, group: 'Shortcuts' },
       { name: 'Academic Tools', description: 'CGPA Simulator, OCAS Calculator — simulate grades and calculate scores', href: '/tools', internal: true, group: 'Shortcuts' },
       { name: 'iSmart-Guide', description: 'Digital textbooks and study guides for your courses', href: 'https://isg.suss.edu.sg/', portalPath: null, group: 'Shortcuts' },
+      { name: 'ADLeS', description: 'Access online learning support resources and services', href: 'https://adles.suss.edu.sg/', portalPath: null, group: 'Shortcuts' },
       { name: 'Canvas', description: 'Course materials, submissions, grades', href: 'https://canvas.suss.edu.sg', portalPath: null, group: 'Canvas' },
       { name: 'Canvas Calendar', description: 'Deadlines across all courses', href: 'https://canvas.suss.edu.sg/calendar', portalPath: null, group: 'Canvas' },
       { name: 'Canvas Inbox', description: 'Messages from tutors and lecturers', href: 'https://canvas.suss.edu.sg/conversations', portalPath: null, group: 'Canvas' },
