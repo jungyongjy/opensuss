@@ -6,6 +6,7 @@ const COMPONENT_TYPES = [
   'TMA',
   'GBA',
   'PCQ',
+  'Quiz',
   'Class Participation',
   'Class Test',
   'ECA',
