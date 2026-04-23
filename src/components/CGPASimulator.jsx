@@ -393,7 +393,7 @@ export default function CGPASimulator() {
 
       <div className="rounded-xl border border-navy/20 dark:border-blue-600/40 bg-navy dark:bg-gray-900 p-4 text-white">
         <p className="text-xs font-semibold text-white/90">Your Progress</p>
-        <div className="mt-2 grid grid-cols-3 gap-2">
+        <div className="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-2">
           <label className="text-[11px] text-white/70">
             Current CGPA
             <input
@@ -492,7 +492,7 @@ export default function CGPASimulator() {
                   <p className="text-xs text-gray-400 dark:text-gray-500 text-center py-2">Drop modules here</p>
                 ) : (
                   <div className="mt-2 space-y-2">
-                    <div className="grid grid-cols-[18px_1fr_90px_80px_60px_24px] gap-2 px-1">
+                    <div className="hidden sm:grid sm:grid-cols-[18px_minmax(0,1fr)_90px_80px_60px_24px] gap-2 px-1">
                       <span />
                       <p className="text-xs font-medium text-gray-400">Module name</p>
                       <p className="text-xs font-medium text-gray-400 text-center">Grade</p>
@@ -511,48 +511,80 @@ export default function CGPASimulator() {
                         }}
                         onDragOver={e => e.preventDefault()}
                         onDrop={e => handleDropToIndex(e, semester.id, index)}
-                        className="grid grid-cols-[18px_1fr_90px_80px_60px_24px] gap-2 items-center"
+                        className="grid grid-cols-2 gap-2 items-start sm:grid-cols-[18px_minmax(0,1fr)_90px_80px_60px_24px] sm:items-center"
                       >
-                        <button type="button" className="text-gray-400 cursor-grab active:cursor-grabbing" aria-label={`Drag ${mod.name || 'module'}`}>
+                        <div className="sm:hidden">
+                          <p className="mb-1 text-[11px] font-medium text-gray-400">Reorder</p>
+                          <button
+                            type="button"
+                            className="w-full h-9 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-400 flex items-center justify-center gap-1 cursor-grab active:cursor-grabbing"
+                            aria-label={`Drag ${mod.name || 'module'}`}
+                          >
+                            <GripVertical size={14} />
+                            <span className="text-xs">Drag</span>
+                          </button>
+                        </div>
+                        <button type="button" className="hidden sm:flex text-gray-400 cursor-grab active:cursor-grabbing" aria-label={`Drag ${mod.name || 'module'}`}>
                           <GripVertical size={14} />
                         </button>
-                        <input
-                          type="text"
-                          value={mod.name}
-                          onChange={e => updateModule(mod.id, 'name', e.target.value)}
-                          placeholder="e.g. MKT101"
-                          className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400 focus:border-transparent"
-                        />
-                        <select
-                          value={mod.grade}
-                          onChange={e => updateModule(mod.id, 'grade', e.target.value)}
-                          className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-2 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400 text-center"
-                        >
-                          {GRADE_SCALE.map(g => (
-                            <option key={g.grade} value={g.grade}>{g.grade} ({g.points.toFixed(1)})</option>
-                          ))}
-                        </select>
-                        <select
-                          value={String(mod.credits)}
-                          onChange={e => updateModule(mod.id, 'credits', e.target.value)}
-                          className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-2 text-sm text-gray-900 dark:text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
-                        >
-                          {ALLOWED_MODULE_CREDITS.map(credit => (
-                            <option key={credit} value={credit}>{formatCredits(credit)}</option>
-                          ))}
-                        </select>
-                        <select
-                          value={mod.semesterId || semester.id}
-                          onChange={e => assignSemester(mod.id, e.target.value)}
-                          className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-1 py-2 text-xs text-gray-700 dark:text-gray-200"
-                        >
-                          {semesters.map(s => (
-                            <option key={s.id} value={s.id}>{s.label}</option>
-                          ))}
-                        </select>
+                        <div className="sm:hidden">
+                          <p className="mb-1 text-[11px] font-medium text-gray-400">Actions</p>
+                          <button
+                            onClick={() => removeModule(mod.id)}
+                            className="w-full h-9 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-xs font-medium"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                        <div className="col-span-2 sm:col-span-1 min-w-0">
+                          <p className="sm:hidden mb-1 text-[11px] font-medium text-gray-400">Module name</p>
+                          <input
+                            type="text"
+                            value={mod.name}
+                            onChange={e => updateModule(mod.id, 'name', e.target.value)}
+                            placeholder="e.g. MKT101"
+                            className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400 focus:border-transparent"
+                          />
+                        </div>
+                        <div>
+                          <p className="sm:hidden mb-1 text-[11px] font-medium text-gray-400">Grade</p>
+                          <select
+                            value={mod.grade}
+                            onChange={e => updateModule(mod.id, 'grade', e.target.value)}
+                            className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-2 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400 text-center"
+                          >
+                            {GRADE_SCALE.map(g => (
+                              <option key={g.grade} value={g.grade}>{g.grade} ({g.points.toFixed(1)})</option>
+                            ))}
+                          </select>
+                        </div>
+                        <div>
+                          <p className="sm:hidden mb-1 text-[11px] font-medium text-gray-400">Credits</p>
+                          <select
+                            value={String(mod.credits)}
+                            onChange={e => updateModule(mod.id, 'credits', e.target.value)}
+                            className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-2 text-sm text-gray-900 dark:text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
+                          >
+                            {ALLOWED_MODULE_CREDITS.map(credit => (
+                              <option key={credit} value={credit}>{formatCredits(credit)}</option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="col-span-2 sm:col-span-1">
+                          <p className="sm:hidden mb-1 text-[11px] font-medium text-gray-400">Semester</p>
+                          <select
+                            value={mod.semesterId || semester.id}
+                            onChange={e => assignSemester(mod.id, e.target.value)}
+                            className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-1 py-2 text-xs text-gray-700 dark:text-gray-200"
+                          >
+                            {semesters.map(s => (
+                              <option key={s.id} value={s.id}>{s.label}</option>
+                            ))}
+                          </select>
+                        </div>
                         <button
                           onClick={() => removeModule(mod.id)}
-                          className="p-1 rounded text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+                          className="hidden sm:flex p-1 rounded text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                         >
                           <Trash2 size={14} />
                         </button>
