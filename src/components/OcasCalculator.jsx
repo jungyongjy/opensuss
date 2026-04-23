@@ -112,7 +112,12 @@ export default function OcasCalculator() {
       <div className="rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
         <div className="flex items-center justify-between px-5 py-3 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
           <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">Module Breakdown</h3>
-          <button onClick={reset} className="text-xs text-gray-400 hover:text-suss-red transition-colors">Reset</button>
+          <button
+            onClick={reset}
+            className="px-2 py-1.5 sm:px-0 sm:py-0 text-xs text-gray-400 hover:text-suss-red rounded-md transition-colors"
+          >
+            Reset
+          </button>
         </div>
         <div className="p-5">
           <div className="flex items-center justify-between text-sm mb-2">
@@ -149,7 +154,7 @@ export default function OcasCalculator() {
 
         <div className="p-4 space-y-2">
           {/* Headers */}
-          <div className="grid grid-cols-[1fr_80px_90px_32px] gap-2 px-1">
+          <div className="hidden sm:grid sm:grid-cols-[minmax(0,1fr)_80px_90px_32px] gap-2 px-1">
             <p className="text-xs font-medium text-gray-400">Component</p>
             <p className="text-xs font-medium text-gray-400 text-center">Weight (%)</p>
             <p className="text-xs font-medium text-gray-400 text-center">Score (/100)</p>
@@ -158,36 +163,48 @@ export default function OcasCalculator() {
 
           {components.map(comp => (
             <div key={comp.id} className="space-y-1.5">
-              <div className="grid grid-cols-[1fr_80px_90px_32px] gap-2 items-start">
+              <div className="grid grid-cols-2 gap-2 items-start sm:grid-cols-[minmax(0,1fr)_80px_90px_32px]">
                 {/* Component type select */}
-                <select
-                  value={comp.type}
-                  onChange={e => updateComponent(comp.id, 'type', e.target.value)}
-                  className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
-                >
-                  {COMPONENT_TYPES.map(t => (
-                    <option key={t} value={t}>{t}</option>
-                  ))}
-                </select>
-                <input
-                  type="number" min="0" max="100" step="1"
-                  value={comp.weight}
-                  onChange={e => updateComponent(comp.id, 'weight', Number(e.target.value))}
-                  className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
-                />
-                <input
-                  type="number" min="0" max="100" step="1"
-                  value={comp.score}
-                  onChange={e => updateComponent(comp.id, 'score', e.target.value)}
-                  placeholder="—"
-                  className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
-                />
-                <button
-                  onClick={() => removeComponent(comp.id)}
-                  className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-300 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors mt-0.5"
-                >
-                  <Trash2 size={14} />
-                </button>
+                <div className="col-span-2 sm:col-span-1 min-w-0">
+                  <p className="sm:hidden mb-1 text-[11px] font-medium text-gray-400">Component</p>
+                  <select
+                    value={comp.type}
+                    onChange={e => updateComponent(comp.id, 'type', e.target.value)}
+                    className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
+                  >
+                    {COMPONENT_TYPES.map(t => (
+                      <option key={t} value={t}>{t}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <p className="sm:hidden mb-1 text-[11px] font-medium text-gray-400">Weight (%)</p>
+                  <input
+                    type="number" min="0" max="100" step="1"
+                    value={comp.weight}
+                    onChange={e => updateComponent(comp.id, 'weight', Number(e.target.value))}
+                    className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
+                  />
+                </div>
+                <div>
+                  <p className="sm:hidden mb-1 text-[11px] font-medium text-gray-400">Score (/100)</p>
+                  <input
+                    type="number" min="0" max="100" step="1"
+                    value={comp.score}
+                    onChange={e => updateComponent(comp.id, 'score', e.target.value)}
+                    placeholder="—"
+                    className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-blue-400"
+                  />
+                </div>
+                <div className="col-span-2 sm:col-span-1">
+                  <button
+                    onClick={() => removeComponent(comp.id)}
+                    className="w-full h-9 sm:w-8 sm:h-8 flex items-center sm:justify-center justify-center gap-1 rounded-lg text-gray-400 hover:text-suss-red hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors sm:mt-0.5"
+                  >
+                    <Trash2 size={14} />
+                    <span className="sm:hidden text-xs font-medium">Remove component</span>
+                  </button>
+                </div>
               </div>
               {/* Custom name input for Others */}
               {comp.type === 'Others' && (
@@ -200,7 +217,7 @@ export default function OcasCalculator() {
                 />
               )}
               {/* Score slider */}
-              <div className="flex items-center gap-3 pl-1 pr-10">
+              <div className="flex items-center gap-2 sm:gap-3 pl-1 pr-1 sm:pr-10">
                 <input
                   type="range"
                   min="0" max="100" step="1"
@@ -223,7 +240,7 @@ export default function OcasCalculator() {
 
           <button
             onClick={addComponent}
-            className="flex items-center gap-1.5 text-sm text-navy dark:text-blue-400 hover:opacity-75 font-medium transition-opacity mt-2"
+            className="min-h-10 flex items-center gap-1.5 text-sm text-navy dark:text-blue-400 hover:opacity-75 font-medium transition-opacity mt-2"
           >
             <Plus size={16} />
             Add component

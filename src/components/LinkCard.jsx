@@ -17,7 +17,7 @@ function CopyButton({ text }) {
     <button
       onClick={handleCopy}
       title={copied ? 'Copied!' : 'Copy email'}
-      className="ml-1 p-0.5 rounded text-gray-400 hover:text-navy dark:hover:text-blue-400 transition-colors"
+      className="ml-1 p-1.5 md:p-0.5 rounded text-gray-400 hover:text-navy dark:hover:text-blue-400 transition-colors"
     >
       {copied ? <Check size={11} /> : <Copy size={11} />}
     </button>
@@ -64,7 +64,7 @@ function ReportButton({ link }) {
     <button
       onClick={handleClick}
       title="Report broken link"
-      className="shrink-0 p-0.5 rounded transition-all opacity-0 group-hover:opacity-100 text-gray-300 dark:text-gray-600 hover:text-suss-red dark:hover:text-red-400"
+      className="shrink-0 p-1.5 md:p-0.5 rounded transition-all opacity-100 md:opacity-0 group-hover:opacity-100 text-gray-300 dark:text-gray-600 hover:text-suss-red dark:hover:text-red-400"
     >
       <Flag size={12} />
     </button>

@@ -43,12 +43,14 @@ export default function Navbar() {
           OpenS<span className="text-suss-red">U</span>SS
         </Link>
         <div className="flex items-center gap-1">
-          {navLink('/academic-calendar', CalendarDays, 'Calendar', isCalendar)}
-          {navLink('/planner', CalendarRange, 'Planner', isPlanner)}
-          {navLink('/tools', Calculator, 'Tools', isTools)}
+          <div className="hidden md:flex items-center gap-1">
+            {navLink('/academic-calendar', CalendarDays, 'Calendar', isCalendar)}
+            {navLink('/planner', CalendarRange, 'Planner', isPlanner)}
+            {navLink('/tools', Calculator, 'Tools', isTools)}
+          </div>
           <button
             onClick={() => setDark(d => !d)}
-            className="text-white/70 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/10"
+            className="text-white/70 hover:text-white transition-colors p-2 md:p-1.5 rounded-lg hover:bg-white/10 min-w-10 min-h-10 md:min-w-0 md:min-h-0 flex items-center justify-center"
             aria-label="Toggle dark mode"
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
@@ -56,10 +58,18 @@ export default function Navbar() {
           {!isHome && (
             <Link
               to="/"
-              className="flex items-center gap-1.5 text-white/70 hover:text-white text-sm transition-colors p-1.5 rounded-lg hover:bg-white/10"
+              className="md:hidden flex items-center justify-center text-white/70 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10 min-w-10 min-h-10"
+            >
+              <Home size={18} />
+            </Link>
+          )}
+          {!isHome && (
+            <Link
+              to="/"
+              className="hidden md:flex items-center gap-1.5 text-white/70 hover:text-white text-sm transition-colors p-1.5 rounded-lg hover:bg-white/10"
             >
               <Home size={16} />
-              <span className="hidden sm:inline">Home</span>
+              <span>Home</span>
             </Link>
           )}
         </div>
