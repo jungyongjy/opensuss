@@ -1,5 +1,5 @@
 export const quickAccessLinks = [
-  { name: 'Canvas', href: 'https://canvas.suss.edu.sg', icon: 'BookOpen', color: 'blue' },
+  { name: 'Learnova', href: 'https://learnova.suss.edu.sg', icon: 'BookOpen', color: 'blue' },
   { name: 'Student Portal', href: 'https://portal.suss.edu.sg', icon: 'LayoutDashboard', color: 'violet' },
   { name: 'MyMail', href: 'https://outlook.office365.com', icon: 'Mail', color: 'sky' },
   { name: 'Library', href: 'https://library.suss.edu.sg', icon: 'Library', color: 'teal' },
@@ -22,6 +22,7 @@ export const categories = [
       { name: 'Canvas', description: 'Course materials, submissions, grades', href: 'https://canvas.suss.edu.sg', portalPath: null, group: 'Canvas', keywords: ['lms', 'blackboard', 'learning management'] },
       { name: 'Canvas Calendar', description: 'Deadlines across all courses', href: 'https://canvas.suss.edu.sg/calendar', portalPath: null, group: 'Canvas', keywords: ['deadlines', 'due dates', 'assignment due'] },
       { name: 'Canvas Inbox', description: 'Messages from tutors and lecturers', href: 'https://canvas.suss.edu.sg/conversations', portalPath: null, group: 'Canvas', keywords: ['messages', 'inbox', 'tutor message', 'lecturer'] },
+      { name: 'Learnova', description: 'Course materials and e-learning on the new SUSS learning platform', href: 'https://learnova.suss.edu.sg', portalPath: null, group: 'Canvas', keywords: ['lms', 'learning management', 'brightspace', 'd2l', 'learnova', 'course materials', 'elearning'] },
       { name: 'Course Material Contents Checklist', description: 'Check materials for your courses', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → Course Material Contents Checklist', group: 'Canvas' },
       { name: 'Course Timetable', description: 'View your class schedule', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → E-Services → Course Timetable', group: 'Timetables & Results', keywords: ['class schedule', 'lessons', 'lesson', 'class times'] },
       { name: 'SUSS Examinations Timetable (Current Semester)', description: 'Current semester exam timetable updates and notices', href: 'https://portal.suss.edu.sg', portalPath: 'Student Portal → E-Services → News and Notices → search "Semester Examinations" → Examination Timetable', group: 'Timetables & Results', keywords: ['exam timetable', 'current semester exam', 'semester examinations', 'exam schedule'] },
