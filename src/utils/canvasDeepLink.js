@@ -1,14 +1,16 @@
 /**
- * Mobile app deep linking for Canvas and Outlook.
+ * Mobile app deep linking for Canvas, Brightspace Pulse and Outlook.
  *
  * On mobile, intercepts link clicks and attempts to open the native app via
- * its URL scheme. Falls back to the web URL if the app isn't installed
- * (detected by the browser window not losing focus within 1.5s).
+ * its URL scheme (or universal link). Falls back to the web URL if the app
+ * isn't installed (detected by the browser window not losing focus within
+ * 1.5s).
  */
 
 const APP_SCHEMES = {
   'canvas.suss.edu.sg': (url) =>
     `canvas-courses://${url.hostname}${url.pathname}${url.search}${url.hash}`,
+  'learnova.suss.edu.sg': () => 'https://apps.brightspace.com/pulse/launch',
   'outlook.office365.com': () => 'ms-outlook://',
   'outlook.office.com': () => 'ms-outlook://',
 }
